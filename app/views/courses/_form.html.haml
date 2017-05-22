@@ -1,0 +1,40 @@
+= form_for @course, class: "form-horizontal" do |f|
+  - if @course.errors.any?
+    #error_explanation
+      %h2= "#{pluralize(@course.errors.count, "error")} prohibited this course from being saved:"
+      %ul
+        - @course.errors.full_messages.each do |message|
+          %li= message
+
+  .fieldset
+    %legend 新規講義登録
+    .field.form-group
+      %label.col-md-2.control-label 講義名 *
+      .col-md-10
+        = f.text_field :coursename, :class => "form-control", :placeholder =>"例：　xx学入門"
+    .field.form-group
+      %label.col-md-2.control-label 教員名 *
+      .col-md-10
+        = f.text_field :teacher, :class => "form-control", :placeholder =>"例：　山田太郎"
+    .field.form-group
+      %label.col-md-2.control-label 対象学部
+      .col-md-10
+        = f.text_field :dept, :class => "form-control", :placeholder =>"例：　経済・法・文"
+    .field.form-group
+      %label.col-md-2.control-label 単位数 *
+      .col-md-10
+        = f.number_field :credits, :class => "form-control"
+    .field.form-group
+      %label.col-md-2.control-label 期間 *
+      .col-md-10
+        = f.select :duration, options_for_select([['前期', '前期'], ['後期', '後期'], ['通年', '通年'],['第1ターム', '第1ターム'],['第2ターム', '第2ターム'],['第3ターム', '第3ターム'],['第4ターム', '第4ターム'],['その他', 'その他']]),{} ,{:class => "form-control", :id => "select"}
+    .field.form-group
+      %label.col-md-2.control-label 何曜何限
+      .col-md-10
+        = f.text_field :weekday, :class => "form-control", :placeholder =>"例：　月1,火5"
+    .field.form-group
+      %label.col-md-2.control-label 講義コード
+      .col-md-10
+        = f.text_field :code, :class => "form-control"
+    .actions.form-group.col-md-10.col-md-offset-2
+      = f.submit '登録'

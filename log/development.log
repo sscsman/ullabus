@@ -1,0 +1,1717 @@
+  [1m[36m (9.9ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (14.7ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCourses (20170514180357)
+  [1m[35m (13.6ms)[0m  CREATE TABLE `courses` (`id` int(11) auto_increment PRIMARY KEY, `coursename` varchar(255), `teacher` varchar(255), `credits` int(11), `duration` varchar(255), `weekday` varchar(255), `code` varchar(255), `univ` varchar(255), `dept` varchar(255), `creator` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170514180357')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20170514184019)
+  [1m[35m (15.7ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `unconfirmed_email` varchar(255), `univ` varchar(255), `dept` varchar(255), `majorin` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (14.0ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (13.3ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (14.4ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_confirmation_token`  ON `users` (`confirmation_token`) [0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20170514184019')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Migrating to CreateRatings (20170514195149)
+  [1m[36m (10.2ms)[0m  [1mCREATE TABLE `ratings` (`id` int(11) auto_increment PRIMARY KEY, `courseid` int(11) DEFAULT 0, `vote` int(11) DEFAULT 0, `teacher` int(11) DEFAULT 0, `courserate` int(11) DEFAULT 0, `easy` int(11) DEFAULT 0, `attendance` int(11) DEFAULT 0, `homework` int(11) DEFAULT 0, `credit` int(11) DEFAULT 0, `taker` int(11) DEFAULT 0, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20170514195149')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddColumnToUser (20170514201539)
+  [1m[36m (22.2ms)[0m  [1mALTER TABLE `users` ADD `createdclass` text[0m
+  [1m[35m (19.3ms)[0m  ALTER TABLE `users` ADD `ratedclass` text
+  [1m[36m (17.4ms)[0m  [1mALTER TABLE `users` ADD `votedclass` text[0m
+  [1m[35m (20.5ms)[0m  ALTER TABLE `users` ADD `commentedclass` text
+  [1m[36m (22.1ms)[0m  [1mALTER TABLE `users` ADD `commentedid` text[0m
+  [1m[35m (19.1ms)[0m  ALTER TABLE `users` ADD `votedcomid` text
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170514201539')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateComments (20170515050811)
+  [1m[35m (17.7ms)[0m  CREATE TABLE `comments` (`id` int(11) auto_increment PRIMARY KEY, `courseid` int(11), `message` text, `year` int(11), `typos` int(11) DEFAULT 0, `goods` int(11) DEFAULT 0, `bads` int(11) DEFAULT 0, `usersid` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170515050811')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToUser2 (20170516033139)
+  [1m[35m (17.2ms)[0m  ALTER TABLE `users` ADD `likedclass` text
+  [1m[36m (22.5ms)[0m  [1mALTER TABLE `users` ADD `bycommented` text[0m
+  [1m[35m (14.0ms)[0m  ALTER TABLE `courses` ADD `pv` int(11) DEFAULT 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170516033139')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToComment (20170516061923)
+  [1m[35m (17.6ms)[0m  ALTER TABLE `comments` ADD `bycommented` int(11) DEFAULT 0
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170516061923')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToUserWithAdmin (20170522182741)
+  [1m[35m (15.6ms)[0m  ALTER TABLE `users` ADD `admin` tinyint(1) DEFAULT 0
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170522182741')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.5ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'ullabus_development'
+  AND fk.table_name = 'comments'
+[0m
+  [1m[35m (0.4ms)[0m  SHOW CREATE TABLE `comments`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'ullabus_development'
+  AND fk.table_name = 'courses'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `courses`
+  [1m[36m (0.6ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'ullabus_development'
+  AND fk.table_name = 'ratings'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `ratings`
+  [1m[36m (0.5ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'ullabus_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.3ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 03:39:11 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 54ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 03:39:12 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.4ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (45.8ms)
+  Rendered layouts/_navbar.html.haml (6.2ms)
+Completed 200 OK in 25546ms (Views: 25511.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-23 03:40:01 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (5.9ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 709ms (Views: 707.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 03:40:06 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"8yOZTy2fRn8Zy2AcxCasBl5Ty6fzoRxucN84Zk+/UzYhYn7VD4KkpocPAhTREinvCVQQoc5pF6Hk/n0W7jN+EQ==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'test@test.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('test@test.com', '$2a$11$Zg1hJvpsMJHHcu6vOX9rS.5yUdWJ25Cls8oxKQltMogpmcBgX6uOG', '2017-05-22 18:40:06', '2017-05-22 18:40:06')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2017-05-22 18:40:06', `current_sign_in_at` = '2017-05-22 18:40:06', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2017-05-22 18:40:06' WHERE `users`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/mypage/index
+Completed 302 Found in 251ms (ActiveRecord: 2.7ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 03:40:06 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (19.9ms)
+  Rendered layouts/_navbar.html.haml (13.7ms)
+Completed 200 OK in 331ms (Views: 312.8ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 03:40:11 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (8.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (8.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (3.5ms)
+  Rendered layouts/_navbar.html.haml (3.2ms)
+Completed 200 OK in 308ms (Views: 285.7ms | ActiveRecord: 16.5ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 03:40:16 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  Rendered mypage/result.html.haml within layouts/application (14.7ms)
+  Rendered layouts/_navbar.html.haml (2.9ms)
+Completed 200 OK in 355ms (Views: 351.3ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-05-23 03:40:17 +0900
+Processing by CoursesController#new as HTML
+  [1m[35mUser Load (5.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered courses/_form.html.haml (21.2ms)
+  Rendered courses/new.html.haml within layouts/application (45.6ms)
+  Rendered layouts/_navbar.html.haml (7.4ms)
+Completed 200 OK in 586ms (Views: 550.5ms | ActiveRecord: 6.8ms)
+
+
+Started POST "/courses" for ::1 at 2017-05-23 03:40:37 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OSkjJ7IAvrQrKXKKYM3G0zTEoZj+FB7SERIkms9ApBnraMS9kB1cbbXtEIJ1+UM6Y8N6nsPcFR2FM2HqbsyJPg==", "course"=>{"coursename"=>"テスト講義", "teacher"=>"山田太郎", "dept"=>"経済", "credits"=>"2", "duration"=>"前期", "weekday"=>"月1", "code"=>""}, "commit"=>"登録"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `courses` (`coursename`, `teacher`, `credits`, `duration`, `weekday`, `code`, `dept`, `creator`, `created_at`, `updated_at`) VALUES ('テスト講義', '山田太郎', 2, '前期', '月1', '', '経済', 1, '2017-05-22 18:40:37', '2017-05-22 18:40:37')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `courses`
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `createdclass` = '1#', `updated_at` = '2017-05-22 18:40:37' WHERE `users`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 24ms (ActiveRecord: 5.0ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 03:40:37 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.8ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `courses` SET `pv` = 1, `updated_at` = '2017-05-22 18:40:37' WHERE `courses`.`id` = 1[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `ratings` (`courseid`, `created_at`, `updated_at`) VALUES (1, '2017-05-22 18:40:37', '2017-05-22 18:40:37')
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+  Rendered courses/_likebutton.html.haml (3.8ms)
+  Rendered courses/_chartbox.html.haml (4.0ms)
+  Rendered courses/_rateform.html.haml (17.4ms)
+  Rendered courses/_commentform.html.haml (4.2ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (15.1ms)
+  Rendered courses/show.html.haml within layouts/application (74.8ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 600ms (Views: 538.5ms | ActiveRecord: 10.3ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 03:40:44 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT DISTINCT `courses`.* FROM `courses`
+  [1m[36mRating Load (0.9ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered mypage/result.html.haml within layouts/application (12.9ms)
+  Rendered layouts/_navbar.html.haml (10.4ms)
+Completed 200 OK in 318ms (Views: 307.3ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/courses/" for ::1 at 2017-05-23 03:40:55 +0900
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT `courses`.* FROM `courses`
+  Rendered courses/index.html.haml within layouts/application (6.7ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 550ms (Views: 546.7ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/1/edit" for ::1 at 2017-05-23 03:40:58 +0900
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (3.8ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (6.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 17ms (ActiveRecord: 9.8ms)
+
+NoMethodError (undefined method `unpublished?' for nil:NilClass):
+  app/loyalties/courses_loyalty.rb:4:in `edit?'
+  app/controllers/courses_controller.rb:144:in `edit'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (7.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (45.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (2.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (65.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (2.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (147.5ms)
+
+
+Started GET "/courses/1/edit" for ::1 at 2017-05-23 03:42:04 +0900
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 56ms (ActiveRecord: 3.4ms)
+
+Banken::NotAuthorizedError (not allowed to edit? of courses by #<CoursesLoyalty:0x007fd0e5b11148 @user=#<User id: 1, email: "test@test.com", univ: nil, dept: nil, majorin: nil, created_at: "2017-05-22 18:40:06", updated_at: "2017-05-22 18:40:37", createdclass: "1#", ratedclass: nil, votedclass: nil, commentedclass: nil, commentedid: nil, votedcomid: nil, likedclass: nil, bycommented: nil, admin: false>, @record=nil>):
+  app/controllers/courses_controller.rb:144:in `edit'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.9ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 03:43:34 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT DISTINCT `courses`.* FROM `courses`
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered mypage/result.html.haml within layouts/application (34.5ms)
+  Rendered layouts/_navbar.html.haml (4.0ms)
+Completed 200 OK in 531ms (Views: 481.8ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/courses/" for ::1 at 2017-05-23 03:43:40 +0900
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 0.8ms)
+
+Banken::NotAuthorizedError (not allowed to index? of courses by #<CoursesLoyalty:0x007fd0e11f5090 @user=#<User id: 1, email: "test@test.com", univ: nil, dept: nil, majorin: nil, created_at: "2017-05-22 18:40:06", updated_at: "2017-05-22 18:40:37", createdclass: "1#", ratedclass: nil, votedclass: nil, commentedclass: nil, commentedid: nil, votedcomid: nil, likedclass: nil, bycommented: nil, admin: false>, @record=nil>):
+  app/controllers/courses_controller.rb:7:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (38.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.3ms)
+
+
+Started GET "/courses/" for ::1 at 2017-05-23 03:44:10 +0900
+Processing by CoursesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.6ms)
+
+Banken::NotAuthorizedError (not allowed to index? of courses by #<CoursesLoyalty:0x007fd0e5800d78 @user=#<User id: 1, email: "test@test.com", univ: nil, dept: nil, majorin: nil, created_at: "2017-05-22 18:40:06", updated_at: "2017-05-22 18:40:37", createdclass: "1#", ratedclass: nil, votedclass: nil, commentedclass: nil, commentedid: nil, votedcomid: nil, likedclass: nil, bycommented: nil, admin: false>, @record=nil>):
+  app/controllers/courses_controller.rb:7:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (56.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (1.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (57.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (132.7ms)
+
+
+Started GET "/courses/" for ::1 at 2017-05-23 03:44:19 +0900
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 1.5ms)
+
+Banken::NotAuthorizedError (not allowed to index? of courses by #<CoursesLoyalty:0x007fd0e79af870 @user=#<User id: 1, email: "test@test.com", univ: nil, dept: nil, majorin: nil, created_at: "2017-05-22 18:40:06", updated_at: "2017-05-22 18:40:37", createdclass: "1#", ratedclass: nil, votedclass: nil, commentedclass: nil, commentedid: nil, votedcomid: nil, likedclass: nil, bycommented: nil, admin: false>, @record=nil>):
+  app/controllers/courses_controller.rb:7:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (39.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (89.5ms)
+
+
+Started GET "/courses/" for ::1 at 2017-05-23 03:45:17 +0900
+Processing by CoursesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT `courses`.* FROM `courses`[0m
+  Rendered courses/index.html.haml within layouts/application (2.8ms)
+  Rendered layouts/_navbar.html.haml (1.8ms)
+Completed 200 OK in 520ms (Views: 516.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses/1/edit" for ::1 at 2017-05-23 03:45:21 +0900
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered courses/_form.html.haml (2.7ms)
+  Rendered courses/edit.html.haml within layouts/application (5.5ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 450ms (Views: 445.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 03:45:25 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (1.2ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (4.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (3.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `courses` SET `pv` = 2, `updated_at` = '2017-05-22 18:45:25' WHERE `courses`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (1.9ms)
+  Rendered courses/_commentform.html.haml (2.3ms)
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (4.5ms)
+  Rendered courses/show.html.haml within layouts/application (16.5ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 336ms (Views: 305.3ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 03:52:26 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (4.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (8.9ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 302ms (Views: 292.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 03:52:29 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (5.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (6.4ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 311ms (Views: 291.9ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 05:20:53 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (1.1ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (922.6ms)
+  Rendered layouts/_navbar.html.haml (11.9ms)
+Completed 200 OK in 1479ms (Views: 1385.2ms | ActiveRecord: 5.4ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 05:20:57 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `courses` SET `pv` = 3, `updated_at` = '2017-05-22 20:20:57' WHERE `courses`.`id` = 1
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  Rendered courses/_likebutton.html.haml (3.0ms)
+  Rendered courses/_chartbox.html.haml (4.2ms)
+  Rendered courses/_rateform.html.haml (15.1ms)
+  Rendered courses/_commentform.html.haml (9.7ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (22.0ms)
+  Rendered courses/show.html.haml within layouts/application (63.9ms)
+  Rendered layouts/_navbar.html.haml (1.8ms)
+Completed 200 OK in 395ms (Views: 341.6ms | ActiveRecord: 6.6ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-05-23 05:21:04 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bXKn2EE5TldAD0UkRel7M54t+vRjjWoaTNs0a3Re/vW/M0BCYySsjt7LJyxQ3f7aySoh8l5FYdXY+nEb1dLT0g==", "comment"=>{"typos"=>"0", "year"=>"0", "message"=>"ssss"}, "commit"=>"登録", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.8ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  INSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 1, 'ssss', 0, 3, '2017-05-22 20:21:04', '2017-05-22 20:21:04')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments`[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `commentedclass` = '1#', `commentedid` = '1#', `bycommented` = '3#', `updated_at` = '2017-05-22 20:21:04' WHERE `users`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 26ms (ActiveRecord: 5.9ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 05:21:04 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `courses` SET `pv` = 4, `updated_at` = '2017-05-22 20:21:04' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.6ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.6ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (1.7ms)
+  Rendered courses/_commentform.html.haml (1.9ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (23.1ms)
+  Rendered courses/show.html.haml within layouts/application (37.9ms)
+  Rendered layouts/_navbar.html.haml (3.1ms)
+Completed 200 OK in 460ms (Views: 378.2ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/comments" for ::1 at 2017-05-23 05:22:08 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActionController::RoutingError (No route matches [GET] "/comments"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (21.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (177.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (1.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (613.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (659.9ms)
+
+
+Started GET "/comment" for ::1 at 2017-05-23 05:22:16 +0900
+
+ActionController::RoutingError (No route matches [GET] "/comment"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (3.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (70.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.4ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:22:23 +0900
+Processing by CommentController#index as HTML
+  Rendered comment/index.html.haml within layouts/application (1.8ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered layouts/_navbar.html.haml (107.2ms)
+Completed 200 OK in 10311ms (Views: 10306.6ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/assets/comment.self-877aef30ae1b040ab8a3aba4e3e309a11d7f2612f44dde450b5c157aa5f95c05.js?body=1" for ::1 at 2017-05-23 05:22:34 +0900
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 05:26:57 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (43.7ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 5024ms (Views: 4975.2ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 05:27:08 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (5.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT DISTINCT `courses`.* FROM `courses`
+  [1m[36mRating Load (0.6ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered mypage/result.html.haml within layouts/application (60.3ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 470ms (Views: 459.2ms | ActiveRecord: 8.2ms)
+
+
+Started GET "/courses/" for ::1 at 2017-05-23 05:27:18 +0900
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT `courses`.* FROM `courses`
+  Rendered courses/index.html.haml within layouts/application (7.4ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 402ms (Views: 396.2ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/course" for ::1 at 2017-05-23 05:36:06 +0900
+
+ActionController::RoutingError (No route matches [GET] "/course"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (1.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.9ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (74.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (38.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (155.0ms)
+
+
+Started GET "/courses/" for ::1 at 2017-05-23 05:42:52 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by CoursesController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT `courses`.* FROM `courses`[0m
+  Rendered courses/index.html.haml within layouts/application (25.7ms)
+  Rendered layouts/_navbar.html.haml (32.5ms)
+Completed 200 OK in 8550ms (Views: 8462.9ms | ActiveRecord: 3.7ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 05:43:01 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (66.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.7ms)[0m  [1mUPDATE `courses` SET `pv` = 5, `updated_at` = '2017-05-22 20:43:01' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (4.0ms)
+  Rendered courses/_chartbox.html.haml (5.7ms)
+  Rendered courses/_rateform.html.haml (29.5ms)
+  Rendered courses/_commentform.html.haml (8.0ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (26.7ms)
+  Rendered courses/show.html.haml within layouts/application (103.8ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 1454ms (Views: 814.2ms | ActiveRecord: 74.8ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 05:43:17 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE `courses` SET `pv` = 6, `updated_at` = '2017-05-22 20:43:17' WHERE `courses`.`id` = 1[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+  [1m[36mUser Load (3.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (2.2ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.7ms)
+  Rendered courses/_chartbox.html.haml (0.5ms)
+  Rendered courses/_rateform.html.haml (1.8ms)
+  Rendered courses/_commentform.html.haml (2.3ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (20.8ms)
+  Rendered courses/show.html.haml within layouts/application (38.7ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 367ms (Views: 344.9ms | ActiveRecord: 11.2ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-05-23 05:43:56 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"cYIhiM6PZLpNHVAH6VvCNh947je8I7dsxsA3U/Deahejw8YS7JKGY9PZMg/8b0ffSH81MYHrvKNS4XIjUVJHMA==", "comment"=>{"typos"=>"2", "year"=>"2016", "message"=>"effeeeeeeeeeeeeeeeeee"}, "commit"=>"登録", "id"=>"1"}
+  [1m[35mUser Load (2.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  BEGIN
+  [1m[36mSQL (1.4ms)[0m  [1mINSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `typos`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 1, 'effeeeeeeeeeeeeeeeeee', 2016, 2, 6, '2017-05-22 20:43:56', '2017-05-22 20:43:56')[0m
+  [1m[35m (0.7ms)[0m  COMMIT
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `comments`
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (4.3ms)[0m  [1mUPDATE `users` SET `commentedclass` = '1#1#', `commentedid` = '1#2#', `bycommented` = '3#6#', `updated_at` = '2017-05-22 20:43:56' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 29ms (ActiveRecord: 12.5ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 05:43:56 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `courses` SET `pv` = 7, `updated_at` = '2017-05-22 20:43:56' WHERE `courses`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRating Load (1.2ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (1.6ms)
+  Rendered courses/_commentform.html.haml (131.0ms)
+  [1m[35mComment Load (8.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (167.3ms)
+  Rendered courses/show.html.haml within layouts/application (178.5ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 655ms (Views: 630.3ms | ActiveRecord: 13.4ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-05-23 05:44:05 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JbZi7aYIgw5dXBW0ZdS1NEFRdEEgZA7btAKy0XCKtZL394V3hBVh18OYd7xw4DDdFlavRx2sBRQgI/eh0QaYtQ==", "comment"=>{"typos"=>"3", "year"=>"2015", "message"=>"aaaaaaaaaaaaaaaaaaa"}, "commit"=>"登録", "id"=>"1"}
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.8ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `typos`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 1, 'aaaaaaaaaaaaaaaaaaa', 2015, 3, 7, '2017-05-22 20:44:05', '2017-05-22 20:44:05')
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM `comments`[0m
+  [1m[35mCourse Load (0.7ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  UPDATE `users` SET `commentedclass` = '1#1#1#', `commentedid` = '1#2#3#', `bycommented` = '3#6#7#', `updated_at` = '2017-05-22 20:44:05' WHERE `users`.`id` = 1
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 25ms (ActiveRecord: 9.0ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 05:44:05 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.9ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (1.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `courses` SET `pv` = 8, `updated_at` = '2017-05-22 20:44:05' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (1.6ms)
+  Rendered courses/_commentform.html.haml (2.7ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (14.8ms)
+  Rendered courses/show.html.haml within layouts/application (26.9ms)
+  Rendered layouts/_navbar.html.haml (2.9ms)
+Completed 200 OK in 445ms (Views: 431.8ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:44:13 +0900
+Processing by CommentController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered comment/index.html.haml within layouts/application (8.2ms)
+Completed 500 Internal Server Error in 25ms (ActiveRecord: 0.5ms)
+
+SyntaxError (/Users/shindenryuusei/sylla/ullabus/app/views/comment/index.html.haml:34: syntax error, unexpected ')'
+));}</td>\n<td>#{_hamlout.form...
+ ^
+/Users/shindenryuusei/sylla/ullabus/app/views/comment/index.html.haml:35: syntax error, unexpected ')'
+));}</td>\n<td>#{_hamlout.form...
+ ^
+/Users/shindenryuusei/sylla/ullabus/app/views/comment/index.html.haml:36: unknown regexp options - td
+/Users/shindenryuusei/sylla/ullabus/app/views/comment/index.html.haml:36: syntax error, unexpected $undefined
+));}</td>\n</tr>\n";end;_hamlout.buffer...
+          ^
+/Users/shindenryuusei/sylla/ullabus/app/views/comment/index.html.haml:36: unknown regexp options - tbdy
+/Users/shindenryuusei/sylla/ullabus/app/views/comment/index.html.haml:36: syntax error, unexpected $undefined
+...d;_hamlout.buffer << "</tbody>\n</table>\n<br>\n#{
+...                               ^
+/Users/shindenryuusei/sylla/ullabus/app/views/comment/index.html.haml:36: unterminated regexp meets end of file
+/Users/shindenryuusei/sylla/ullabus/app/views/comment/index.html.haml:36: syntax error, unexpected end-of-input, expecting ')'):
+  app/views/comment/index.html.haml:34: syntax error, unexpected ')'
+  app/views/comment/index.html.haml:35: syntax error, unexpected ')'
+  app/views/comment/index.html.haml:36: unknown regexp options - td
+  app/views/comment/index.html.haml:36: syntax error, unexpected $undefined
+  app/views/comment/index.html.haml:36: unknown regexp options - tbdy
+  app/views/comment/index.html.haml:36: syntax error, unexpected $undefined
+  app/views/comment/index.html.haml:36: unterminated regexp meets end of file
+  app/views/comment/index.html.haml:36: syntax error, unexpected end-of-input, expecting ')'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (54.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (748.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (792.0ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:44:35 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (38.9ms)
+Completed 500 Internal Server Error in 47ms (ActiveRecord: 1.1ms)
+
+ActionView::Template::Error (undefined local variable or method `comments' for #<#<Class:0x007f8b037cb6c8>:0x007f8b00ca13a8>):
+    21:   %tbody
+    22:     - @comments.each do |course|
+    23:       %tr
+    24:         %td= comments.id
+    25:         %td= comments.courseid
+    26:         %td= comments.message
+    27:         %td= comments.year
+  app/views/comment/index.html.haml:24:in `block in _app_views_comment_index_html_haml___1813761401808002048_70117495233900'
+  app/views/comment/index.html.haml:22:in `_app_views_comment_index_html_haml___1813761401808002048_70117495233900'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.9ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (42.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (64.8ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:45:13 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (39.7ms)
+Completed 500 Internal Server Error in 49ms (ActiveRecord: 1.3ms)
+
+ActionView::Template::Error (undefined local variable or method `comment' for #<#<Class:0x007f8b037cb6c8>:0x007f8affb84c00>):
+    21:   %tbody
+    22:     - @comments.each do |course|
+    23:       %tr
+    24:         %td= comment.id
+    25:         %td= comment.courseid
+    26:         %td= comment.message
+    27:         %td= comment.year
+  app/views/comment/index.html.haml:24:in `block in _app_views_comment_index_html_haml___1813761401808002048_70117493198560'
+  app/views/comment/index.html.haml:22:in `_app_views_comment_index_html_haml___1813761401808002048_70117493198560'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (1.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (30.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (62.3ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:45:29 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (9.9ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `userid' for #<Comment:0x007f8b042c56a0>):
+    28:         %td= comment.typos
+    29:         %td= comment.goods
+    30:         %td= comment.bads
+    31:         %td= comment.userid
+    32:         %td= comment.created_at
+    33:         %td= なし
+    34:         %td= なし
+  app/views/comment/index.html.haml:31:in `block in _app_views_comment_index_html_haml___1813761401808002048_70117528026840'
+  app/views/comment/index.html.haml:22:in `_app_views_comment_index_html_haml___1813761401808002048_70117528026840'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (38.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (29.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.6ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:45:40 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (9.1ms)
+Completed 500 Internal Server Error in 18ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `user_id' for #<Comment:0x007f8b044fed90>):
+    28:         %td= comment.typos
+    29:         %td= comment.goods
+    30:         %td= comment.bads
+    31:         %td= comment.user_id
+    32:         %td= comment.created_at
+    33:         %td= なし
+    34:         %td= なし
+  app/views/comment/index.html.haml:31:in `block in _app_views_comment_index_html_haml___1813761401808002048_70117530151840'
+  app/views/comment/index.html.haml:22:in `_app_views_comment_index_html_haml___1813761401808002048_70117530151840'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (44.9ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (61.0ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:45:46 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (36.3ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined local variable or method `なし' for #<#<Class:0x007f8b037cb6c8>:0x007f8b01e1c010>):
+    30:         %td= comment.bads
+    31:         %td= comment.usersid
+    32:         %td= comment.created_at
+    33:         %td= なし
+    34:         %td= なし
+    35:         %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+    36: 
+  app/views/comment/index.html.haml:33:in `block in _app_views_comment_index_html_haml___1813761401808002048_70117499213880'
+  app/views/comment/index.html.haml:22:in `_app_views_comment_index_html_haml___1813761401808002048_70117499213880'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (46.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (26.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (57.1ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:45:58 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (35.1ms)
+Completed 500 Internal Server Error in 43ms (ActiveRecord: 1.0ms)
+
+ActionView::Template::Error (undefined method `comment_path' for #<#<Class:0x007f8b037cb6c8>:0x007f8b0441e2b8>):
+    32:         %td= comment.created_at
+    33:         %td  なし
+    34:         %td  なし
+    35:         %td= link_to 'Destroy', comment, method: :delete, data: { confirm: 'Are you sure?' }
+    36: 
+    37: %br
+    38: 
+  app/views/comment/index.html.haml:35:in `block in _app_views_comment_index_html_haml___1813761401808002048_70117524301700'
+  app/views/comment/index.html.haml:22:in `_app_views_comment_index_html_haml___1813761401808002048_70117524301700'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (41.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (28.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (59.4ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:46:59 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.7ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (303.5ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 612ms (Views: 608.2ms | ActiveRecord: 1.2ms)
+
+
+Started DELETE "/comment/2" for ::1 at 2017-05-23 05:47:12 +0900
+Processing by CommentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CGl8q5+h9vjtT6wTpgm/U+0W6bWL+aTeVmcRNtE1ANbaKJsxvbwUIXOLzhuzPTq6uhEys7YxrxHCRlRGcLkt8Q==", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  app/controllers/comment_controller.rb:13:in `destroy'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (32.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (57.6ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 05:47:29 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (16.4ms)
+  Rendered layouts/_navbar.html.haml (5.3ms)
+Completed 200 OK in 354ms (Views: 343.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 05:47:31 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `courses` SET `pv` = 9, `updated_at` = '2017-05-22 20:47:31' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.6ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (1.7ms)
+  Rendered courses/_commentform.html.haml (4.2ms)
+  [1m[36mComment Load (1.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (15.3ms)
+  Rendered courses/show.html.haml within layouts/application (28.7ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 788ms (Views: 774.7ms | ActiveRecord: 4.9ms)
+
+
+Started DELETE "/comment/1" for ::1 at 2017-05-23 05:47:47 +0900
+Processing by CommentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CGl8q5+h9vjtT6wTpgm/U+0W6bWL+aTeVmcRNtE1ANbaKJsxvbwUIXOLzhuzPTq6uhEys7YxrxHCRlRGcLkt8Q==", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 500 Internal Server Error in 4ms (ActiveRecord: 0.5ms)
+
+NoMethodError (undefined method `destroy' for nil:NilClass):
+  app/controllers/comment_controller.rb:13:in `destroy'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (65.9ms)
+
+
+Started DELETE "/comment/2" for ::1 at 2017-05-23 05:48:47 +0900
+Processing by CommentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"CGl8q5+h9vjtT6wTpgm/U+0W6bWL+aTeVmcRNtE1ANbaKJsxvbwUIXOLzhuzPTq6uhEys7YxrxHCRlRGcLkt8Q==", "id"=>"2"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.9ms)[0m  DELETE FROM `comments` WHERE `comments`.`id` = 2
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Completed 500 Internal Server Error in 68ms (ActiveRecord: 4.7ms)
+
+ActionView::MissingTemplate (Missing template comment/destroy, application/destroy with {:locale=>[:ja], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/shindenryuusei/sylla/ullabus/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-i18n-1.1.2/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-i18n-views-0.3.7/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-bootstrap-views-0.0.11/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/devise-4.3.0/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/rails_admin-1.1.1/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/kaminari-0.17.0/app/views"
+):
+  actionview (4.2.8) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.8) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.8) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.8) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.8) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.8) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.8) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.8) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.8) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.8) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.8) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/benchmark.rb:294:in `realtime'
+  activesupport (4.2.8) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.8) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  remotipart (1.3.1) lib/remotipart/render_overrides.rb:16:in `render_with_remotipart'
+  actionpack (4.2.8) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.8) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.8) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.8) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.8) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.8) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.8) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.8) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.8) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.8) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.8) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.8) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.8) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.8) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.8) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.8) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.8) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  rack-pjax (1.0.0) lib/rack/pjax.rb:12:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.8) lib/rack/etag.rb:24:in `call'
+  rack (1.6.8) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.8) lib/rack/head.rb:13:in `call'
+  remotipart (1.3.1) lib/remotipart/middleware.rb:32:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.8) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.8) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.8) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.8) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  web-console (2.3.0) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `catch'
+  web-console (2.3.0) lib/web_console/middleware.rb:18:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/2.1.0/webrick/server.rb:295:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.9ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/missing_template.html.erb within rescues/layout (38.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (31.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (60.1ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:48:57 +0900
+Processing by CommentController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments`[0m
+  Rendered comment/index.html.haml within layouts/application (2.4ms)
+  Rendered layouts/_navbar.html.haml (12.0ms)
+Completed 200 OK in 446ms (Views: 441.6ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 05:49:43 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (50.9ms)
+Completed 500 Internal Server Error in 103ms (ActiveRecord: 7.2ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'=2):
+  app/views/mypage/index.html.haml:47:in `block in _app_views_mypage_index_html_haml__278014158920064822_70117484876840'
+  app/views/mypage/index.html.haml:45:in `each'
+  app/views/mypage/index.html.haml:45:in `_app_views_mypage_index_html_haml__278014158920064822_70117484876840'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.9ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (49.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (50.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (122.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 05:54:09 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.9ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (36.4ms)
+  Rendered layouts/_navbar.html.haml (3.7ms)
+Completed 200 OK in 453ms (Views: 401.3ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:54:41 +0900
+Processing by CommentController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments`[0m
+  Rendered comment/index.html.haml within layouts/application (2.4ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 615ms (Views: 608.6ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/comment/3" for ::1 at 2017-05-23 05:54:45 +0900
+Processing by CommentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"yeT02nUeK62xq1aThI5PyhluDV7TUbcSEVtm5DWFwZIbpRNAVwPJdC9vNJuRusojTmnWWO6ZvN2FeiOUlAnstQ==", "id"=>"3"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+Completed 500 Internal Server Error in 7ms (ActiveRecord: 1.4ms)
+
+NoMethodError (undefined method `commentedid' for nil:NilClass):
+  app/controllers/comment_controller.rb:17:in `destroy'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (8.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (42.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (32.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (68.8ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:55:01 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (12.9ms)
+  Rendered layouts/_navbar.html.haml (12.2ms)
+Completed 200 OK in 476ms (Views: 430.5ms | ActiveRecord: 4.0ms)
+
+
+Started DELETE "/comment/1" for ::1 at 2017-05-23 05:55:04 +0900
+Processing by CommentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jGZC8+77k4fvRisWFd1lhlluYD9bB3gQrlz9vFT9GE1eJ6VpzOZxXnGCSR4A6eBvDmm7OWbPc986fbjM9XE1ag==", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+Completed 500 Internal Server Error in 9ms (ActiveRecord: 1.8ms)
+
+NoMethodError (undefined method `slice!' for nil:NilClass):
+  app/controllers/comment_controller.rb:18:in `destroy'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (9.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (3.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (36.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_markup.html.erb (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_inner_console_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/_prompt_box_markup.html.erb within layouts/inlined_string (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/style.css.erb within layouts/inlined_string (0.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/console.js.erb within layouts/javascript (27.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/main.js.erb within layouts/javascript (0.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/error_page.js.erb within layouts/javascript (0.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.1.2/lib/ruby/gems/2.1.0/gems/web-console-2.3.0/lib/web_console/templates/index.html.erb (58.7ms)
+
+
+Started DELETE "/comment/1" for ::1 at 2017-05-23 05:55:22 +0900
+Processing by CommentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"jGZC8+77k4fvRisWFd1lhlluYD9bB3gQrlz9vFT9GE1eJ6VpzOZxXnGCSR4A6eBvDmm7OWbPc986fbjM9XE1ag==", "id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `users` SET `commentedid` = '3#', `updated_at` = '2017-05-22 20:55:22' WHERE `users`.`id` = 1
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `comments` WHERE `comments`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+Redirected to http://localhost:3000/comment/index
+Completed 302 Found in 59ms (ActiveRecord: 7.7ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 05:55:22 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (3.1ms)
+  Rendered layouts/_navbar.html.haml (13.1ms)
+Completed 200 OK in 395ms (Views: 391.1ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 05:55:24 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (1.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.6ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (17.6ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 313ms (Views: 295.1ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 05:58:02 +0900
+Processing by InquiryController#index as HTML
+  Rendered inquiry/index.html.erb within layouts/application (2.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_navbar.html.haml (9.1ms)
+Completed 200 OK in 597ms (Views: 589.1ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 06:02:30 +0900
+Processing by InquiryController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered inquiry/index.html.haml within layouts/application (15.1ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 330ms (Views: 328.0ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/courses/" for ::1 at 2017-05-23 06:02:42 +0900
+Processing by CoursesController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT `courses`.* FROM `courses`[0m
+  Rendered courses/index.html.haml within layouts/application (2.8ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 377ms (Views: 372.7ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 06:02:46 +0900
+Processing by CommentController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mComment Load (5.9ms)[0m  [1mSELECT `comments`.* FROM `comments`[0m
+  Rendered comment/index.html.haml within layouts/application (8.1ms)
+  Rendered layouts/_navbar.html.haml (4.8ms)
+Completed 200 OK in 571ms (Views: 561.6ms | ActiveRecord: 6.7ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 06:11:48 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (1.1ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (23.3ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 328ms (Views: 319.2ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 06:11:50 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (1.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (2.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 440ms (Views: 431.6ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 06:11:52 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.7ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (38.6ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 387ms (Views: 381.8ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 06:11:53 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (7.1ms)
+  Rendered layouts/_navbar.html.haml (3.7ms)
+Completed 200 OK in 305ms (Views: 299.4ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 06:12:04 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (7.2ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 451ms (Views: 446.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 06:34:31 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (9.8ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 336ms (Views: 331.9ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 06:40:41 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (11.3ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 324ms (Views: 318.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 06:40:44 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (8.5ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 482ms (Views: 478.3ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 06:40:45 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (17.1ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 378ms (Views: 372.4ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 06:43:03 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (5.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (14.3ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 311ms (Views: 298.5ms | ActiveRecord: 7.3ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 06:43:05 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (16.8ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.7ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (45.4ms)
+  Rendered layouts/_navbar.html.haml (3.3ms)
+Completed 200 OK in 515ms (Views: 493.0ms | ActiveRecord: 19.4ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 06:43:25 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (8.7ms)
+  Rendered layouts/_navbar.html.haml (2.9ms)
+Completed 200 OK in 327ms (Views: 321.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 06:43:27 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.haml (7.7ms)
+Completed 200 OK in 542ms (Views: 534.0ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 06:43:46 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE `courses` SET `pv` = 10, `updated_at` = '2017-05-22 21:43:46' WHERE `courses`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (2.0ms)
+  Rendered courses/_commentform.html.haml (2.4ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (8.7ms)
+  Rendered courses/show.html.haml within layouts/application (22.2ms)
+  Rendered layouts/_navbar.html.haml (3.6ms)
+Completed 200 OK in 353ms (Views: 338.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/courses/1/edit" for ::1 at 2017-05-23 06:43:54 +0900
+Processing by CoursesController#edit as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (2.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered courses/_form.html.haml (33.3ms)
+  Rendered courses/edit.html.haml within layouts/application (37.6ms)
+  Rendered layouts/_navbar.html.haml (2.6ms)
+Completed 200 OK in 382ms (Views: 373.3ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/courses" for ::1 at 2017-05-23 06:43:57 +0900
+Processing by CoursesController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT `courses`.* FROM `courses`[0m
+  Rendered courses/index.html.haml within layouts/application (2.6ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 469ms (Views: 465.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 06:44:02 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (10.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (12.7ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 348ms (Views: 332.4ms | ActiveRecord: 11.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-05-23 06:44:16 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"mIasoNJRImF1S0jb4jqNfsmlgjwMaISDuqY7H9wZUbRKx0s68EzAuOuPKtP3DgiXnqJZOjGgj0wuh35vfZV8kw=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 06:44:16 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (18.3ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 308ms (Views: 300.5ms | ActiveRecord: 0.0ms)

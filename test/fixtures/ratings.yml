@@ -1,0 +1,23 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  courseid: 1
+  vote: 1
+  teacher: 1
+  courserate: 1
+  easy: 1
+  attendance: 1
+  homework: 1
+  credit: 1
+  taker: 1
+
+two:
+  courseid: 1
+  vote: 1
+  teacher: 1
+  courserate: 1
+  easy: 1
+  attendance: 1
+  homework: 1
+  credit: 1
+  taker: 1

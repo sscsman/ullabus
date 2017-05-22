@@ -1,0 +1,23 @@
+- if @likedornot.blank? then
+  %button{ id: "likethisclass" , class: "btn btn-default" , disabled: false} お気に入り登録
+- else
+  %button{ id: "dislikethisclass" , class: "btn btn-default" , disabled: false} お気に入り解除
+
+
+:javascript
+  $(document).on('click', '#likethisclass' , function () {
+    $.post( "/like/#{params[:id]}", $(this).serialize(), function(response){       } );
+
+      $("button#likethisclass").html("お気に入り解除");
+      $("button#likethisclass").attr("id","dislikethi	sclass");
+
+      return false;
+  });
+  $(document).on('click', '#dislikethisclass' , function () {
+    $.post( "/dislike/#{params[:id]}", $(this).serialize(), function(response){       } );
+
+      $("button#dislikethisclass").html("お気に入り登録");
+      $("button#dislikethisclass").attr("id","likethisclass");
+
+      return false;
+  });

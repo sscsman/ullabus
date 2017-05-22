@@ -1,0 +1,56 @@
+%legend コメント
+.row.comme
+
+  .postcoms.col-md-12
+    = render 'commentform'
+  .commentblock.col-md-12
+    -if @mess.blank?
+      %p まだ登録されたコメントはありません
+    - @mess.reverse.each do |a|
+      - arr = ["その他","授業","試験","課題","先生","レポート","出席"]
+      .eachcom
+        .col-xs-5
+          %p.det
+            -unless a.year == 0
+              %span.classyear #{a.year.to_s}年度
+            %span.typos　#{arr[a.typos.to_i]}
+
+        .votes.col-xs-7
+          .col-xs-6
+            = form_for @comments, url: '/vote/g/'+ a.id.to_s , :class => "vvvg" do |b|
+              %span{ id: "goods"+a.id.to_s } #{a.goods.to_s}
+              - if @votedornot.find{ |ids| ids.to_i ==   a.id.to_i }.blank? then
+                %button{ id: "bgoods"+a.id.to_s , class: "btn btn-default" , disabled: false} Good
+              - else
+                %button{ id: "bgoods"+a.id.to_s , class: "btn btn-default" , disabled: true} Good
+
+          .col-xs-6
+            = form_for @comments, url: '/vote/b/'+ a.id.to_s , :class => "vvvb" do |b|
+              %span{ id: "bads"+a.id.to_s } #{a.bads.to_s}
+              - if @votedornot.find{ |ids| ids.to_i ==   a.id.to_i }.blank? then
+                %button{ id: "bbads"+a.id.to_s , class: "btn btn-default", disabled: false} Bad
+              - else
+                %button{ id: "bbads"+a.id.to_s , class: "btn btn-default", disabled: true} Bad
+
+        %p.clear
+          #{simple_format(h(a.message.to_s), class:'maintex ttt')}
+
+      :javascript
+        $("form button#bgoods#{a.id.to_s}").click(function () {
+          $.post( "/vote/g/#{a.id.to_s}", $(this).serialize(), function(response){       } );
+            var goodnum = Number($("#goods#{a.id.to_s}").html());
+            $("#goods#{a.id.to_s}").html(goodnum + 1);
+            $("button#bgoods#{a.id.to_s}").prop("disabled",true);
+            $("button#bbads#{a.id.to_s}").prop("disabled",true);
+            return false;
+
+        });
+
+        $("form button#bbads#{a.id.to_s}").click(function () {
+          $.post( "/vote/b/#{a.id.to_s}", $(this).serialize(), function(response){      } );
+              var badnum = Number($("#bads#{a.id.to_s}").html());
+              $("#bads#{a.id.to_s}").html(badnum + 1);
+              $("button#bgoods#{a.id.to_s}").prop("disabled",true);
+              $("button#bbads#{a.id.to_s}").prop("disabled",true);
+              return false;
+        });

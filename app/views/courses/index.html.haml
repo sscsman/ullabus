@@ -1,0 +1,37 @@
+%h1 Listing courses
+
+%table
+  %thead
+    %tr
+      %th Coursename
+      %th Teacher
+      %th Credits
+      %th Duration
+      %th Weekday
+      %th Code
+      %th Univ
+      %th Dept
+      %th Creator
+      %th
+      %th
+      %th
+
+  %tbody
+    - @courses.each do |course|
+      %tr
+        %td= course.coursename
+        %td= course.teacher
+        %td= course.credits
+        %td= course.duration
+        %td= course.weekday
+        %td= course.code
+        %td= course.univ
+        %td= course.dept
+        %td= course.creator
+        %td= link_to 'Show', course
+        %td= link_to 'Edit', edit_course_path(course)
+        %td= link_to 'Destroy', course, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Course', new_course_path

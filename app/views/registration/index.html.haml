@@ -1,0 +1,26 @@
+= stylesheet_link_tag "css/toppage", :media => "all"
+.firstbox
+  .row
+    .col-md-6
+      .box1
+        %p.tit
+          阪大生による
+          %br
+          阪大生のための
+          %br
+          講義評価サイト
+          %br
+        %p.ullabus
+          ウラバス!!
+    .col-md-6
+      .box2
+        %a{:class => "toppagebtn", :href => "#{new_user_session_path}"}
+          %button.loginb
+            ログイン
+        %a{:class => "toppagebtn", :href => "#{new_user_registration_path}"}
+          %button.registb
+            サインアップ
+
+  .footer
+    %p
+      Copyright 2017 Ullabus

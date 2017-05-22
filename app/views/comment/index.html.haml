@@ -1,0 +1,39 @@
+%h1 Comment#index
+%p Find me in app/views/comment/index.html.haml
+
+
+%table
+  %thead
+    %tr
+      %th id
+      %th courseid
+      %th コメント内容
+      %th 受講年度
+      %th カテゴリ
+      %th good数
+      %th bad数
+      %th ユーザid
+      %th 作成時間
+      %th
+      %th
+      %th
+
+  %tbody
+    - @comments.each do |comment|
+      %tr
+        %td= comment.id
+        %td= comment.courseid
+        %td= comment.message
+        %td= comment.year
+        %td= comment.typos
+        %td= comment.goods
+        %td= comment.bads
+        %td= comment.usersid
+        %td= comment.created_at
+        %td  なし
+        %td  なし
+        %td= link_to 'Destroy', '/comment/'+comment.id.to_s, method: :delete, data: { confirm: 'Are you sure?' }
+
+%br
+
+= link_to 'New Course', new_course_path

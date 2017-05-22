@@ -1,0 +1,19 @@
+# Read about fixtures at http://api.rubyonrails.org/classes/ActiveRecord/FixtureSet.html
+
+one:
+  courseid: 1
+  message: MyText
+  year: 1
+  typos: 1
+  goods: 1
+  bads: 1
+  usersid: 1
+
+two:
+  courseid: 1
+  message: MyText
+  year: 1
+  typos: 1
+  goods: 1
+  bads: 1
+  usersid: 1

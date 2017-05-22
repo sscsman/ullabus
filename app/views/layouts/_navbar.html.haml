@@ -1,0 +1,27 @@
+%nav.navbar.navbar-inverse
+  .container-fluid
+    %ul.nav.navbar-nav.navbar-left
+      -unless user_signed_in?
+        %li= link_to 'ウラバス', "/"
+
+      -else
+        %li= link_to 'マイページ', "/mypage/index"
+        %li= link_to '講義一覧', "/search/result?utf8=✓&q%5Bcoursename_cont%5D=&commit=Search"
+
+
+        = search_form_for Course.search(params[:q]), :class => 'navbar-form navbar-left', :url => '/search/result' do |f|
+          .form-group
+            = f.search_field :coursename_cont, :class => 'form-control', :placeholder => '講義名で検索'
+            = f.submit "Search", :class => 'btn btn-default'
+
+    %ul.nav.navbar-nav.navbar-right
+      -if user_signed_in?
+        %li= link_to current_user.email, edit_user_registration_path
+        %li= link_to "ログアウト", destroy_user_session_path, method: :delete
+        %li= link_to "お問い合わせ", inquiry_path
+      -else
+        %li= link_to "アカウント登録", new_user_registration_path
+        %li= link_to "ログイン", new_user_session_path
+
+
+-# 参照　https://bootswatch.com/superhero/

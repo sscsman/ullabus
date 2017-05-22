@@ -1,0 +1,54 @@
+= stylesheet_link_tag "css/mypageindex", :media => "all"
+.username_outer
+  .username
+    %h1= link_to current_user.email + "さん", mypage_index_path
+
+.mypage_outer
+  .row
+    .liked.col-md-4
+      %legend お気に入り
+      -if @likeds.blank?
+        %p.black お気に入りした講義はまだありません。
+      -else
+        -@likeds.reverse.each do |a|
+          .eachlikes.eachelem
+            %a{:class => "courselink", :href => "/courses/#{a}"}
+              .alert.alert-warning
+                -@aaa = Course.find(a.to_i)
+                .col-xs-12.coursename #{@aaa.coursename.truncate(11)}
+                .col-xs-6 - #{@aaa.teacher.truncate(8)}
+                .col-xs-6  コメント (#{Comment.where(courseid: a.to_i).count})
+                .clear
+
+
+    .created.col-md-4
+      %legend 自分が新規登録した講義
+      -if @createds.blank?
+        %p.black  登録した講義はまだありません。
+      -else
+        -@createds.reverse.each do |c|
+          .eachcommenteds.eachelem
+            %a{:class => "courselink", :href => "/courses/#{c}"}
+              .alert.alert-info
+                - @ccou = Course.find(c.to_i)
+                .col-xs-12.coursename #{@ccou.coursename.truncate(11)}
+                .col-xs-6 - #{@ccou.teacher.truncate(8)}
+                .col-xs-6  閲覧数: #{@ccou.pv}
+                .clear
+
+
+    .commented.col-md-4
+      %legend コメント
+      -if @commenteds.blank?
+        %p.black コメントした講義はまだありません。
+      -else
+        -@commenteds.reverse.each do |b|
+          .eachcommenteds.eachelem
+            - @comfind = Comment.find(b.to_i)
+            %a{:class => "courselink", :href => "/courses/#{@comfind.courseid}"}
+              .alert.alert-success
+                .col-xs-12.messages 「#{@comfind.message.truncate(17)}」
+                .col-xs-12 【#{Course.find(@comfind.courseid).coursename.truncate(10)}】
+                .col-xs-7 Good: #{@comfind.goods} Bad: #{@comfind.goods}
+                .col-xs-5 閲覧: #{Course.find(@comfind.courseid).pv - @comfind.bycommented}
+                .clear

@@ -1,0 +1,55 @@
+= stylesheet_link_tag "css/courses", :media => "all"
+
+.page
+
+  .likebuttonbox.rightblock
+    = render 'likebutton'
+  %legend 講義情報
+
+  .row.fstrw
+    .information.clear.col-md-5
+      .row
+        %p.col-xs-3 講義名
+        %p.bigg.col-xs-9
+          = @course.coursename
+      .row
+        %p.col-xs-3 教員名
+        %p.bigg.col-xs-9
+          = @course.teacher
+      .row
+        %p.col-xs-3 対象学部
+        %p.col-xs-9
+          = @course.dept
+      .row
+        %p.col-xs-3 単位数
+        %p.col-xs-9
+          = @course.credits
+      .row
+        %p.col-xs-3 期間
+        %p.col-xs-9
+          = @course.duration
+      .row
+        %p.col-xs-3 何曜何限
+        %p.col-xs-9
+          = @course.weekday
+      .row
+        %p.col-xs-3 コード
+        %p.col-xs-9
+          = @course.code
+
+    .charts.col-md-6.col-md-offset-1
+      = render 'chartbox'
+      .rateinner
+        - if @ratedornot.blank?
+          = render 'rateform'
+        - else
+          %p.thanksrated 評価ありがとうございました。
+
+
+  .combox
+    = render 'commentbox'
+
+
+  = link_to 'Edit', edit_course_path(@course)
+  \|
+  = link_to 'Back', courses_path

@@ -1,0 +1,26 @@
+!!!
+%html{:lang => "ja"}
+  %head
+    %meta{:content => "text/html; charset=UTF-8", "http-equiv" => "Content-Type"}/
+    %meta{:content => "ja", "http-equiv" => "content-language"}/
+    %title Ullabus
+    = stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true
+    = javascript_include_tag 'application', 'data-turbolinks-track' => true
+    = csrf_meta_tags
+
+    -# ナビゲーションバー
+    = render 'layouts/navbar'
+
+
+  %body
+    - if notice.present?
+      .alert.alert-dismissable.alert-success
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %p= notice
+    - if alert.present?
+      .alert.alert-dismissable.alert-danger
+        %button.close{"data-dismiss" => "alert", :type => "button"} ×
+        %p= alert
+
+    .container
+      = yield

@@ -1,0 +1,14 @@
+= form_for @comments, url: '/comm/'+params[:id].to_s do |f|
+
+  .field
+
+    %br
+    
+    = f.select :typos, options_for_select([['- カテゴリ -', 0], ['授業について', 1], ['試験について', 2], ['課題について', 3], ['先生について', 4], ['レポートについて', 5], ['出席について', 6], ['その他', 0]])
+
+    = f.select :year, options_for_select([['- 履修年度 -', 0], ['今年度(2017年度)', 2017],['去年度(2016年度)', 2016],['2015年度', 2015],['2014年度', 2014],['2013年度より前', 2013],])
+
+    = f.text_area :message
+
+  .actions
+    = f.submit '登録', :class =>"btn btn-default"

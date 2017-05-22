@@ -1,0 +1,105 @@
+= form_for @charts, url: '/rate/'+params[:id].to_s do |f|
+
+
+  .field
+    .row
+      .col-xs-3
+        %label
+          先生
+        = f.hidden_field :teacher, :value => 2
+      .col-xs-9
+        %p.upp
+          %span.left 悪い
+          %span.right 良い
+        .sliders
+          #slider1
+  .field
+    .row
+      .col-xs-3
+        %label
+          授業
+        = f.hidden_field :courserate, :value => 2
+      .col-xs-9
+        %p.upp
+          %span.left 悪い
+          %span.right 良い
+        .sliders
+          #slider2
+
+  .field
+    .row
+      .col-xs-3
+        %label
+          簡単さ
+        = f.hidden_field :easy, :value => 2
+      .col-xs-9
+        %p.upp
+          %span.left 難しい
+          %span.right 簡単
+        .sliders
+          #slider3
+
+  .field
+    .row
+      .col-xs-3
+        %label
+          出席
+        = f.hidden_field :attendance, :value => 2
+      .col-xs-9
+        %p.upp
+          %span.left 厳しい
+          %span.right 緩い
+        .sliders
+          #slider4
+
+  .field
+    .row
+      .col-xs-3
+        %label
+          宿題
+        = f.hidden_field :homework, :value => 2
+      .col-xs-9
+        %p.upp
+          %span.left 負担重
+          %span.right 負担軽
+        .sliders
+          #slider5
+
+  .actions
+    = f.submit '登録', :class =>"btn btn-default"
+  .clear
+
+:javascript
+  $(function() {
+  $( "#slider1" ).slider({
+  max:5,   min: 0,  value: 2,  step: 1,
+  //orientation: "vertical", //縦設置か横設置か
+  slide: function( event, ui ) {
+   $("#rating_teacher").attr("value",ui.value);
+  }  });
+  $( "#slider2" ).slider({
+  max:5,   min: 0,  value: 2,  step: 1,
+  //orientation: "vertical", //縦設置か横設置か
+  slide: function( event, ui ) {
+   $("#rating_course").attr("value",ui.value);
+  }  });
+  $( "#slider3" ).slider({
+  max:5,   min: 0,  value: 2,  step: 1,
+  //orientation: "vertical", //縦設置か横設置か
+  slide: function( event, ui ) {
+   $("#rating_easy").attr("value",ui.value);
+  }  });
+  $( "#slider4" ).slider({
+  max:5,   min: 0,  value: 2,  step: 1,
+  //orientation: "vertical", //縦設置か横設置か
+  slide: function( event, ui ) {
+   $("#rating_atendance").attr("value",ui.value);
+  }  });
+  $( "#slider5" ).slider({
+  max:5,   min: 0,  value: 2,  step: 1,
+  //orientation: "vertical", //縦設置か横設置か
+  slide: function( event, ui ) {
+   $("#rating_homework").attr("value",ui.value);
+  }  });
+
+  });

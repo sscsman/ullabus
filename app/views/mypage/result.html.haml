@@ -1,0 +1,42 @@
+= stylesheet_link_tag "css/result", :media => "all"
+
+%h1.serchfor
+  - if params[:q]["coursename_cont"].empty?
+    全講義の一覧
+  - else
+    "#{params[:q]["coursename_cont"]}"で講義を検索
+
+.result_outer
+  - @res.each do |a|
+    - rats = Rating.find_by(courseid:a.id)
+    - if rats.vote == 0
+      - medrating = "none"
+    -else
+      - medrating = ((rats.courserate.to_f + rats.teacher.to_f + rats.easy.to_f + rats.attendance.to_f + rats.homework.to_f)/(rats.vote.to_f * 5)).round(2)
+
+    %a{:class => "btn btn-default btn-lg btn-block", :href => "/courses/#{a.id}"}
+      .eachresult
+        .row.firstrow
+          %span.col-md-12.col-sm-12.col-xs-12.rcourse 【#{a.coursename}】
+          %span.col-md-12.col-sm-12.col-xs-12.rteacher 教員名：　#{a.teacher}
+        .row.secondrow
+          %span.col-md-4.col-sm-12.col-xs-12.rdept 対象： #{a.dept}
+          %span.col-md-3.col-sm-4.col-xs-4.rduration 期間： #{a.duration}
+          %span.col-md-2.col-sm-4.col-xs-4.rcoms コメント(#{@com.where(courseid: a.id).count})
+          %span.col-md-3.col-sm-4.col-xs-4.rmed 総合評価： #{medrating}
+
+
+  %p 目当ての講義ページが存在しない場合・・・・
+  %p
+    %a{:class => "btn btn-primary btn-lg", :href => "/courses/new"}
+      新規講義情報登録
+  -#
+    参照値
+    #{a.coursename}
+    #{a.teacher}
+    #{a.duration}
+    #{a.weekday}
+    #{a.dept}
+    #{a.id}
+    #{@com.where(courseid: a.id).count}
+    #{medrating}

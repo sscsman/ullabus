@@ -1,0 +1,39 @@
+%canvas#myChart
+%p.ratedesc ※グラフが大きい方が(良い・簡単な・楽な)講義です
+
+:javascript
+  var ctx = document.getElementById("myChart");
+  var myChart = new Chart(ctx, {
+
+
+      type: 'polarArea',
+      data: {
+          labels: ["授業", "先生", "簡単さ", "出席", "課題"],
+          datasets: [
+                  {
+                      label: "平均",
+                      backgroundColor: [  "#FF6384","#4BC0C0","#FFCE56","#E7E9ED","#36A2EB"],
+                      data: [
+                      #{(@charts.teacher.to_f / @charts.vote.to_f).round(2)},
+                      #{(@charts.courserate.to_f / @charts.vote.to_f).round(2)},
+                      #{(@charts.easy.to_f / @charts.vote.to_f).round(2)},
+                      #{(@charts.attendance.to_f / @charts.vote.to_f).round(2)},
+                      #{(@charts.homework.to_f / @charts.vote.to_f).round(2)
+                      }]
+                  }
+              ]
+      },
+      options: {
+        scale: {
+                pointLabels: {
+                fontSize: 40
+                },
+                ticks: {
+                stepSize: 1, // 目盛の間隔
+                max: 5, //最大値
+                beginAtZero: true
+                }
+                }
+
+      }
+  });
