@@ -42,15 +42,12 @@ GEM
       activesupport (>= 3.0.0)
     bcrypt (3.1.11)
     bcrypt (3.1.11-x64-mingw32)
-    binding_of_caller (0.7.2)
-      debug_inspector (>= 0.0.1)
     bootstrap-sass (3.3.7)
       autoprefixer-rails (>= 5.2.1)
       sass (>= 3.3.4)
     bootswatch-rails (3.3.5)
       railties (>= 3.1)
     builder (3.2.3)
-    byebug (9.0.6)
     chart-js-rails (0.1.2)
       railties (> 3.1)
     coffee-rails (4.1.1)
@@ -61,7 +58,6 @@ GEM
       execjs
     coffee-script-source (1.12.2)
     concurrent-ruby (1.0.5)
-    debug_inspector (0.0.3)
     devise (4.3.0)
       bcrypt (~> 3.0)
       orm_adapter (~> 0.1)
@@ -75,8 +71,6 @@ GEM
       html2haml
     erubis (2.7.0)
     execjs (2.7.0)
-    font-awesome-rails (4.7.0.2)
-      railties (>= 3.2, < 5.2)
     globalid (0.4.0)
       activesupport (>= 4.2.0)
     haml (4.0.7)
@@ -103,9 +97,6 @@ GEM
     jquery-ui-rails (5.0.5)
       railties (>= 3.2.16)
     json (1.8.6)
-    kaminari (0.17.0)
-      actionpack (>= 3.0.0)
-      activesupport (>= 3.0.0)
     loofah (2.0.3)
       nokogiri (>= 1.5.9)
     mail (2.6.5)
@@ -118,7 +109,6 @@ GEM
     multi_json (1.12.1)
     mysql2 (0.4.6)
     mysql2 (0.4.6-x64-mingw32)
-    nested_form (0.3.2)
     nokogiri (1.7.2)
       mini_portile2 (~> 2.1.0)
     nokogiri (1.7.2-x64-mingw32)
@@ -129,9 +119,6 @@ GEM
     polyamorous (1.3.1)
       activerecord (>= 3.0)
     rack (1.6.8)
-    rack-pjax (1.0.0)
-      nokogiri (~> 1.5)
-      rack (>= 1.1)
     rack-test (0.6.3)
       rack (>= 1.0)
     rails (4.2.8)
@@ -156,19 +143,6 @@ GEM
     rails_12factor (0.0.2)
       rails_serve_static_assets
       rails_stdout_logging
-    rails_admin (1.1.1)
-      builder (~> 3.1)
-      coffee-rails (~> 4.0)
-      font-awesome-rails (>= 3.0, < 5)
-      haml (~> 4.0)
-      jquery-rails (>= 3.0, < 5)
-      jquery-ui-rails (~> 5.0)
-      kaminari (~> 0.14)
-      nested_form (~> 0.3)
-      rack-pjax (>= 0.7)
-      rails (>= 4.0, < 6)
-      remotipart (~> 1.3)
-      sass-rails (>= 4.0, < 6)
     rails_serve_static_assets (0.0.5)
     rails_stdout_logging (0.0.5)
     railties (4.2.8)
@@ -184,7 +158,6 @@ GEM
       i18n
       polyamorous (~> 1.3)
     rdoc (4.3.0)
-    remotipart (1.3.1)
     responders (2.4.0)
       actionpack (>= 4.2.0, < 5.3)
       railties (>= 4.2.0, < 5.3)
@@ -201,8 +174,6 @@ GEM
       json (~> 1.7, >= 1.7.7)
       rdoc (~> 4.0)
     sexp_processor (4.9.0)
-    spring (2.0.1)
-      activesupport (>= 4.2)
     sprockets (3.7.1)
       concurrent-ruby (~> 1.0)
       rack (> 1, < 3)
@@ -222,11 +193,6 @@ GEM
       execjs (>= 0.3.0, < 3)
     warden (1.2.7)
       rack (>= 1.0)
-    web-console (2.3.0)
-      activemodel (>= 4.0)
-      binding_of_caller (>= 0.7.2)
-      railties (>= 4.0)
-      sprockets-rails (>= 2.0, < 4.0)
 
 PLATFORMS
   ruby
@@ -236,7 +202,6 @@ DEPENDENCIES
   banken
   bootstrap-sass
   bootswatch-rails
-  byebug
   chart-js-rails
   coffee-rails (~> 4.1.0)
   devise
@@ -252,14 +217,11 @@ DEPENDENCIES
   pg (= 0.17.1)
   rails (= 4.2.8)
   rails_12factor (= 0.0.2)
-  rails_admin
   ransack
   sass-rails (~> 5.0)
   sdoc (~> 0.4.0)
-  spring
   turbolinks
   uglifier (>= 1.3.0)
-  web-console (~> 2.0)
 
 BUNDLED WITH
    1.14.6

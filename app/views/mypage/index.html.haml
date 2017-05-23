@@ -1,7 +1,5 @@
 = stylesheet_link_tag "css/mypageindex", :media => "all"
-.username_outer
-  .username
-    %h1= link_to current_user.email + "さん", mypage_index_path
+
 
 .mypage_outer
   .row
@@ -17,7 +15,7 @@
                 -@aaa = Course.find(a.to_i)
                 .col-xs-12.coursename #{@aaa.coursename.truncate(11)}
                 .col-xs-6 - #{@aaa.teacher.truncate(8)}
-                .col-xs-6  コメント (#{Comment.where(courseid: a.to_i).count})
+                .col-xs-6  コメント (#{Comment.where(courseid: a.to_i).last.id})
                 .clear
 
 

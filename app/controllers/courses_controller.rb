@@ -73,7 +73,7 @@ class CoursesController < ApplicationController
 
       @usrs = User.find(current_user.id)
       @usrs.commentedclass = @usrs.commentedclass.to_s + params[:id] + '#'
-      @usrs.commentedid = @usrs.commentedid.to_s  + Comment.count.to_s + '#'
+      @usrs.commentedid = @usrs.commentedid.to_s  + Comment.last.id.to_s + '#'
       @usrs.bycommented = @usrs.bycommented.to_s + Course.find(params[:id]).pv.to_s+ '#'
       @usrs.save
 
@@ -153,7 +153,7 @@ class CoursesController < ApplicationController
     respond_to do |format|
       if @course.save
         @usrs = User.find(current_user.id)
-        @usrs.createdclass = @usrs.createdclass.to_s + Course.count.to_s+ '#'
+        @usrs.createdclass = @usrs.createdclass.to_s + Course.last.id.to_s+ '#'
         @usrs.save
         format.html { redirect_to @course, notice: 'Course was successfully created.' }
         format.json { render :show, status: :created, location: @course }

@@ -45,7 +45,7 @@ ja:
         currently_waiting_confirmation_for_email: "%{email} の確認待ち"
         leave_blank_if_you_don_t_want_to_change_it: "空欄のままなら変更しません"
         title: "%{resource}編集"
-        unhappy: "→"
+        unhappy: "気に入りません"
         update: "更新"
         we_need_your_current_password_to_confirm_your_changes: "変更を反映するには現在のパスワードを入力してください"
       new:
@@ -65,3 +65,11 @@ ja:
     unlocks:
       new:
         resend_unlock_instructions: "アカウントの凍結解除方法を再送する"
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: パスワードが空です
+            password_confirmation:
+              confirmation: 確認用パスワードが空です

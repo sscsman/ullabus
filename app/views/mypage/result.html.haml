@@ -22,7 +22,7 @@
         .row.secondrow
           %span.col-md-4.col-sm-12.col-xs-12.rdept 対象： #{a.dept}
           %span.col-md-3.col-sm-4.col-xs-4.rduration 期間： #{a.duration}
-          %span.col-md-2.col-sm-4.col-xs-4.rcoms コメント(#{@com.where(courseid: a.id).count})
+          %span.col-md-2.col-sm-4.col-xs-4.rcoms コメント(#{@com.where(courseid: a.id).last.id})
           %span.col-md-3.col-sm-4.col-xs-4.rmed 総合評価： #{medrating}
 
 
@@ -38,5 +38,5 @@
     #{a.weekday}
     #{a.dept}
     #{a.id}
-    #{@com.where(courseid: a.id).count}
+    #{@com.where(courseid: a.id).last.id}
     #{medrating}

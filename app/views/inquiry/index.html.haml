@@ -1,63 +1,23 @@
-= form_for @inquiry, :url => inquiry_confirm_path do |f|
-  .page-header
-    %h1 &#x304A;&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;
-  - if @inquiry.errors.any?
-    .alert.alert-danger{:role => "alert"}
-      %strong &#x5165;&#x529B;&#x5185;&#x5BB9;&#x306B;&#x30A8;&#x30E9;&#x30FC;&#x304C;&#x3042;&#x308A;&#x307E;&#x3059;
+= stylesheet_link_tag "css/inquiry", :media => "all"
+.formouter.center-block
+  = form_for @inquiry, :url => '/inquiry/confirm' do |f|
+    - if @inquiry.errors.any?
+      %strong 入力内容にエラーがあります
       %ul
         - @inquiry.errors.each do |attr, msg|
           %li= msg
-  %table.table
-    %tr
-      %th
-        \&#x540D;&#x524D;
-        %span.text-danger &#xFF08;&#x5FC5;&#x9808;&#xFF09;
-      %td= f.text_field :name
-    %tr
-      %th
-        \&#x30E1;&#x30FC;&#x30EB;&#x30A2;&#x30C9;&#x30EC;&#x30B9;
-        %span.text-danger &#xFF08;&#x5FC5;&#x9808;&#xFF09;
-      %td= f.text_field :email
-    %tr
-      %th &#x304A;&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;&#x5185;&#x5BB9;
-      %td= f.text_area :message
-  = f.submit '確認', class: 'btn btn-primary'
-%form.form-horizontal
-  %fieldset
-    %legend &#x304A;&#x554F;&#x3044;&#x5408;&#x308F;&#x305B;
-    \&#x3000;
     .form-group
-      %label.col-lg-2.control-label{:for => "inputEmail"} &#x540D;&#x524D;
-      .col-lg-10
-        %input#inputEmail.ftext-danger{:placeholder => "田中 太郎", :type => "text"}
-      .form-group
-        %label.col-lg-2.control-label &#x6027;&#x5225;
-        .col-lg-10
-          .radio
-            %label
-              %input#optionsRadios1{:checked => "checked", :name => "optionsRadios", :type => "radio", :value => "option1"}
-                \&#x7537;
-            .radio
-              %label
-                %input#optionsRadios2{:name => "optionsRadios", :type => "radio", :value => "option2"}
-                  \&#x5973;
-          .form-group
-            %label.col-lg-2.control-label{:for => "inputEmail"} Email
-            .col-lg-10
-              %input#inputEmail.ftext-danger{:placeholder => "×××××@×××.co.jp", :type => "text"}
-            .form-group
-              %label.col-lg-2.control-label{:for => "textArea"} &#x5185;&#x5BB9;
-              .col-lg-10
-                %textarea#textArea.form-control{:placeholder => "お問い合わせ内容", :rows => "3"}
-            .form-group
-              .col-lg-10.col-lg-offset-2
-                %button.btn.btn-default{:type => "reset"} &#x3084;&#x3081;&#x308B;
-                = succeed "\u3000>\u78BA\u8A8D" do
-                  %button.btn.btn-primary{:type => "submit"}
+      %label 名前（必須）
+      = f.text_field :name, :class => "form-control"
+    .form-group
+      %label メールアドレス（必須）
+      = f.text_field :email, :class => "form-control"
+    .form-group
+      %label お問い合わせ内容
+      = f.text_area :message, :class => "form-control", :rows => 7
+    = f.submit '確認', :class => "btn btn-primary"
 
 
-
--# SQLを毎回発行するため管理用メニューをアクセスの少ないページに記述しているので消したりアクセスの多いページに移植しないこと
--if User.find(current_user.id).admin?
+- if User.find(current_user.id).admin?
   %a{:class => "admin", :href => "/courses/"} 授業管理
   %a{:class => "admin", :href => "/comment/index"} コメント管理

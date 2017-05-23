@@ -1715,3 +1715,2241 @@ Processing by RegistrationController#index as HTML
   Rendered registration/index.html.haml within layouts/application (18.3ms)
   Rendered layouts/_navbar.html.haml (0.8ms)
 Completed 200 OK in 308ms (Views: 300.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 06:58:35 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.1ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (9862.5ms)
+  Rendered layouts/_navbar.html.haml (5.4ms)
+Completed 200 OK in 10591ms (Views: 10567.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/application.self-2eb2ec4c2b1074880d18683c3e4e2b63e65b8d0fdbdc40ef77e834d4e6792551.css?body=1" for ::1 at 2017-05-23 06:58:46 +0900
+
+
+Started GET "/assets/css/toppage.self-1eb449c405aff689640728e645c3483260bfe5ca04c24dd170706c638c30ac89.css?body=1" for ::1 at 2017-05-23 06:58:46 +0900
+
+
+Started GET "/assets/devise_bootstrap_views.self-2a730cb9a9043f342a0ed1821332868c7c16b61f51dc453c93296aa2fd11fb63.css?body=1" for ::1 at 2017-05-23 06:58:46 +0900
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 06:59:17 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (773.0ms)
+  Rendered layouts/_navbar.html.haml (3.7ms)
+Completed 200 OK in 1203ms (Views: 1166.6ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2017-05-23 06:59:21 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (9.2ms)
+  Rendered layouts/_navbar.html.haml (3.0ms)
+Completed 200 OK in 454ms (Views: 453.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for ::1 at 2017-05-23 06:59:26 +0900
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UQzAFlIZSzjZjDuvRvEaAMLsYPnffXwwDzojLHzqg60ThdHcTr+QztMEFtVLS37vQGaHkwHvw3aHmNA/O3J/6g==", "user"=>{"email"=>"sscsman@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sscsman@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered devise/shared/_links.html.erb (0.5ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (4.8ms)
+  Rendered layouts/_navbar.html.haml (1.0ms)
+Completed 200 OK in 444ms (Views: 307.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-23 06:59:30 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (10.1ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 536ms (Views: 529.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 06:59:37 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"CkygYUjE6QG6IYKMMEijNMTcR3KsfnrI1HYq5/vSPJhIxbGrVGIy97Cpr/Y98sfbRlagGHLsxY5c1Nn0vErA3w==", "user"=>{"email"=>"sscsman@g", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'sscsman@g' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.erb (0.4ms)
+  Rendered devise/registrations/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 405ms (Views: 316.4ms | ActiveRecord: 1.2ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 06:59:47 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"TUGQHNIJIN/IgmF84W3P6/+X8N//fJiCOt3VP8h2zuoPyIHWzq/7KcIKTAbs16sEfR0XtSHuJ8SyfyYsj+4yrQ==", "user"=>{"email"=>"sscsman@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (1.8ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'sscsman@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.7ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`) VALUES ('sscsman@gmail.com', '$2a$11$ZvNA0k/4d7AE/fdrXU.dWenaawbweGo.pSbxq7/dRUHFMzIaT1odK', '2017-05-22 21:59:47', '2017-05-22 21:59:47')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2017-05-22 21:59:47', `current_sign_in_at` = '2017-05-22 21:59:47', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2017-05-22 21:59:47' WHERE `users`.`id` = 2[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 296ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 06:59:47 +0900
+Processing by RegistrationController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/mypage/index
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 06:59:47 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (18.3ms)
+  Rendered layouts/_navbar.html.haml (18.0ms)
+Completed 200 OK in 363ms (Views: 345.5ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/assets/css/mypageindex.self-2402a41e00555526de6b0684818d3a429c40f5f54c4a6643eee847a7c64595c8.css?body=1" for ::1 at 2017-05-23 06:59:48 +0900
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-05-23 06:59:51 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"K2vf130eSwwCLfHot8ZiknEHsfnbVOzOIzbcyIzErdJp4s4dYbiQ+gil3JK6fAZ9841WkwXGU4irlC/by1xRlQ=="}
+  [1m[35mUser Load (2.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 21ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 06:59:51 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (4.9ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 484ms (Views: 483.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 06:59:53 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.8ms)
+  Rendered layouts/_navbar.html.haml (1.7ms)
+Completed 200 OK in 320ms (Views: 318.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2017-05-23 06:59:57 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.7ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navbar.html.haml (1.0ms)
+Completed 200 OK in 316ms (Views: 315.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for ::1 at 2017-05-23 06:59:59 +0900
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SHv8to7PchBpjq4egR2HmQ19KO941O7PJ8/yTX37NShfp2yO0sH5T36mhCuYrJQjTYfXNW7Y9o5JaQEicJ0pIA==", "user"=>{"email"=>"sscsman@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[36mUser Load (1.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sscsman@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = 'e9648fd9a30f607abd41e85e8b0c04f4b3899b8299905c6ffc5a45124337f63e'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `users` SET `reset_password_token` = 'e9648fd9a30f607abd41e85e8b0c04f4b3899b8299905c6ffc5a45124337f63e', `reset_password_sent_at` = '2017-05-22 22:00:00', `updated_at` = '2017-05-22 22:00:00' WHERE `users`.`id` = 2
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  Rendered devise/mailer/reset_password_instructions.html.erb (1.6ms)
+
+Devise::Mailer#reset_password_instructions: processed outbound mail in 751.0ms
+
+Sent mail to sscsman@gmail.com (17.6ms)
+Date: Tue, 23 May 2017 07:00:01 +0900
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: sscsman@gmail.com
+Message-ID: <59235f611ebc5_c9a33ff0b98e7ee09565a@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=83=91=E3=82=B9=E3=83=AF=E3=83=BC=E3=83=89=E3=81=AE=E5=86=8D=E8=A8=AD=E5=AE=9A=E3=81=AB=E3=81=A4=E3=81=84=E3=81=A6?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello sscsman@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=128VyNhz7F6W67GJTsLa">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 1342ms (ActiveRecord: 3.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:00:01 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (0.6ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (5.0ms)
+  Rendered layouts/_navbar.html.haml (1.0ms)
+Completed 200 OK in 332ms (Views: 329.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 07:10:18 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MypageController#index as HTML
+Completed 401 Unauthorized in 32ms (ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:10:19 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (2.2ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (30.9ms)
+  Rendered layouts/_navbar.html.haml (4.9ms)
+Completed 200 OK in 1216ms (Views: 1171.6ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/users/password/new" for ::1 at 2017-05-23 07:10:28 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.0ms)
+  Rendered devise/passwords/new.html.erb within layouts/application (5.7ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 610ms (Views: 608.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for ::1 at 2017-05-23 07:10:32 +0900
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iaPsOm7+KJcLiqq9HmvFAlv+KvL4PYriq62XY3GDXKGef3wCMvCjyByigIgH2ta4GwTVKO4xkqPFC2QMfOVAqQ==", "user"=>{"email"=>"sscsman@gmail.com"}, "commit"=>"Send me reset password instructions"}
+  [1m[35mUser Load (1.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sscsman@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`reset_password_token` = '0b246b3ad6afc580d4f2cc39ec1cbcffb34d0cfaf241be13b1ce3272a72fa9c4'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE `users` SET `reset_password_token` = '0b246b3ad6afc580d4f2cc39ec1cbcffb34d0cfaf241be13b1ce3272a72fa9c4', `reset_password_sent_at` = '2017-05-22 22:10:33', `updated_at` = '2017-05-22 22:10:33' WHERE `users`.`id` = 2[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  Rendered devise/mailer/reset_password_instructions.html.erb (1.3ms)
+
+Devise::Mailer#reset_password_instructions: processed outbound mail in 473.8ms
+
+Sent mail to sscsman@gmail.com (4037.0ms)
+Date: Tue, 23 May 2017 07:10:33 +0900
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: sscsman@gmail.com
+Message-ID: <592361d9a4c02_ccf33fff31de114086053@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=83=91=E3=82=B9=E3=83=AF=E3=83=BC=E3=83=89=E3=81=AE=E5=86=8D=E8=A8=AD=E5=AE=9A=E3=81=AB=E3=81=A4=E3=81=84=E3=81=A6?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>Hello sscsman@gmail.com!</p>
+
+<p>Someone has requested a link to change your password. You can do this through the link below.</p>
+
+<p><a href="http://localhost:3000/users/password/edit?reset_password_token=XouxkKPNCDL1s6pza6Ka">Change my password</a></p>
+
+<p>If you didn't request this, please ignore this email.</p>
+<p>Your password won't change until you access the link above and create a new one.</p>
+
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 5093ms (ActiveRecord: 3.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:10:37 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.erb (1.1ms)
+  Rendered devise/sessions/new.html.erb within layouts/application (6.2ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 268ms (Views: 266.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:17:27 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (4.2ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (590.0ms)
+  Rendered layouts/_navbar.html.haml (5.7ms)
+Completed 200 OK in 1938ms (Views: 1871.3ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-05-23 07:17:32 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"WwhqNKzCAqZ2MzTqX7RIRjMuAqGTw9TKPUHcDrH9TrNM1PoM8MyJ+WEbHt9GBVv8c9T9e4XPzItT5y9hvJtSuw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[35mUser Load (1.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@test.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 401 Unauthorized in 311ms (ActiveRecord: 1.8ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:17:32 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (5.5ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 308ms (Views: 306.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-23 07:17:41 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.8ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (16.1ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 388ms (Views: 385.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 07:17:57 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tCGlTdEun57GqgXsUuuL+GQrn1tbzUpzIAD3SjeL9Nij/TV1jSAUwdGCL9lLWphCJNFggU3BUjJOpgQlOu3o0A==", "user"=>{"email"=>"onanie19@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (1.0ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.6ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'onanie19@gmail.com' LIMIT 1
+  [1m[36m (1.1ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.haml (0.5ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (6.0ms)
+  Rendered layouts/_navbar.html.haml (1.2ms)
+Completed 200 OK in 612ms (Views: 292.9ms | ActiveRecord: 2.7ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 07:18:05 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"iT1Nr3Zrh1EapNqpU5TY8mV/UiJ/5ePxmrhXtzvlUmee4d2XKmUMDg2M8JxKJctIJYWt+Gnp+7D0HqTYNoNObw==", "user"=>{"email"=>"onanie19@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'onanie19@gmail.com' LIMIT 1[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `confirmation_token`, `confirmation_sent_at`) VALUES ('onanie19@gmail.com', '$2a$11$sniDy4E3CBhglagYEPMEaeQfewzjHWpgVmWMpGxcheed7fGojHDbe', '2017-05-22 22:18:05', '2017-05-22 22:18:05', '7jHeVWUc4-p4_6geazyk', '2017-05-22 22:18:05')
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  Rendered devise/mailer/confirmation_instructions.html.haml (2.3ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 628.1ms
+
+Sent mail to onanie19@gmail.com (3289.2ms)
+Date: Tue, 23 May 2017 07:18:06 +0900
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: onanie19@gmail.com
+Message-ID: <5923639e992bd_cf343ff7f25950cc40215@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=82=A2=E3=82=AB=E3=82=A6=E3=83=B3=E3=83=88=E3=81=AE=E6=9C=89=E5=8A=B9=E5=8C=96=E3=81=AB=E3=81=A4=E3=81=84=E3=81=A6?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>
+  Welcome onanie19@gmail.com!
+</p>
+<p>You can confirm your account email through the link below:</p>
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=7jHeVWUc4-p4_6geazyk">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 4239ms (ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 07:18:09 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (11.3ms)
+  Rendered layouts/_navbar.html.haml (0.5ms)
+Completed 200 OK in 256ms (Views: 254.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=7jHeVWUc4-p4_6geazyk" for ::1 at 2017-05-23 07:18:56 +0900
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"7jHeVWUc4-p4_6geazyk"}
+  [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = '7jHeVWUc4-p4_6geazyk'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE `users` SET `confirmed_at` = '2017-05-22 22:18:56', `updated_at` = '2017-05-22 22:18:56' WHERE `users`.`id` = 3
+  [1m[36m (0.6ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 12ms (ActiveRecord: 3.2ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:18:56 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (5.9ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 309ms (Views: 307.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-05-23 07:19:12 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j7RQYNO7UfqEzRIYQCATb47kp0/8aeHHX3fKtaqnENyYaMBYj7XapZPlOC1ZkQDVzh5Ylepl+YYx0Tnap8EM1A==", "user"=>{"email"=>"onanie19@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[35mUser Load (2.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'onanie19@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 176ms (ActiveRecord: 2.0ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"j7RQYNO7UfqEzRIYQCATb47kp0/8aeHHX3fKtaqnENyYaMBYj7XapZPlOC1ZkQDVzh5Ylepl+YYx0Tnap8EM1A==", "user"=>{"email"=>"onanie19@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendered devise/shared/_links.html.haml (0.9ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (5.7ms)
+  Rendered layouts/_navbar.html.haml (0.5ms)
+Completed 200 OK in 485ms (Views: 296.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-05-23 07:19:16 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"b4djAPcMazYobAvM2VHwqm84fbQJO9XYna5W1b4qwC54W/M4qwLgaT9EIfnA4OMQL8KCbh83zZnzCKW6s0zcJg==", "user"=>{"email"=>"onanie19@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'onanie19@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2017-05-22 22:19:16', `current_sign_in_at` = '2017-05-22 22:19:16', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2017-05-22 22:19:16' WHERE `users`.`id` = 3[0m
+  [1m[35m (1.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/mypage/index
+Completed 302 Found in 254ms (ActiveRecord: 2.5ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 07:19:16 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (14.2ms)
+  Rendered layouts/_navbar.html.haml (15.6ms)
+Completed 200 OK in 279ms (Views: 257.0ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 07:19:25 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (1.0ms)[0m  SELECT DISTINCT `courses`.* FROM `courses`
+  [1m[36mRating Load (0.8ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered mypage/result.html.haml within layouts/application (157.1ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 639ms (Views: 630.4ms | ActiveRecord: 6.1ms)
+
+
+Started GET "/assets/css/result.self-a105821eeb87ba4cb693463717b411d89c293e5aa06936dfd48ab7dc8b2623f8.css?body=1" for ::1 at 2017-05-23 07:19:26 +0900
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 07:19:28 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (3.3ms)
+  Rendered layouts/_navbar.html.haml (2.5ms)
+Completed 200 OK in 309ms (Views: 298.4ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 07:21:20 +0900
+Processing by RegistrationController#index as HTML
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/mypage/index
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 07:21:20 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (5.5ms)
+  Rendered layouts/_navbar.html.haml (2.8ms)
+Completed 200 OK in 418ms (Views: 412.3ms | ActiveRecord: 1.1ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-05-23 07:21:23 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"o7rp05jXoqjet3bTxcc8fp7CHOK99p6kmBq4i3h15yHMC4KiQK4fBs6fkbY5HhE3O4SeLr5XVVNvCPAeAlXBeA=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 6ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 07:21:23 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (5.5ms)
+  Rendered layouts/_navbar.html.haml (1.5ms)
+Completed 200 OK in 271ms (Views: 269.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:21:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (1.1ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (8.3ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 319ms (Views: 317.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for ::1 at 2017-05-23 07:21:28 +0900
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.8ms)
+  Rendered devise/confirmations/new.html.haml within layouts/application (10.3ms)
+  Rendered layouts/_navbar.html.haml (1.1ms)
+Completed 200 OK in 411ms (Views: 409.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation/new" for ::1 at 2017-05-23 07:21:43 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (4.1ms)
+  Rendered devise/confirmations/new.html.haml within layouts/application (566.1ms)
+  Rendered layouts/_navbar.html.haml (18.0ms)
+Completed 200 OK in 1849ms (Views: 1795.5ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/users/confirmation/new" for ::1 at 2017-05-23 07:21:47 +0900
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/confirmations/new.html.haml within layouts/application (6.0ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 307ms (Views: 306.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/password/new" for ::1 at 2017-05-23 07:23:20 +0900
+Processing by Devise::PasswordsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.8ms)
+  Rendered devise/passwords/new.html.haml within layouts/application (9.1ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 420ms (Views: 418.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/password" for ::1 at 2017-05-23 07:23:27 +0900
+Processing by Devise::PasswordsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"+vXiHOjGEsEZR+pnkolgWfBbBfDnDYu5sPoDstZbuG8pLzvR2CkRqL8SW1L2ByJ7D95r5ncuLeJdsufNIdlwcA==", "user"=>{"email"=>"ds@fe.ff"}, "commit"=>"Send me reset password instructions"}
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'ds@fe.ff'  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered devise/shared/_links.html.haml (1.0ms)
+  Rendered devise/passwords/new.html.haml within layouts/application (7.5ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 643ms (Views: 446.1ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-23 07:23:41 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (1.0ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (18.6ms)
+  Rendered layouts/_navbar.html.haml (1.3ms)
+Completed 200 OK in 428ms (Views: 426.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 07:23:49 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VjUszkuLlENMof0hHoPC/+zZsHIFnWo5uD4OsiJn+v2F7/UDe2SXKur0TBR6DYDdE1zeZJW+zGJVdurN1eUy4g==", "user"=>{"email"=>"test@tesst.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (1.2ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'test@tesst.com' LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (10.1ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 409ms (Views: 317.5ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/users/confirmation/new" for ::1 at 2017-05-23 07:27:52 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::ConfirmationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (5.1ms)
+  Rendered devise/confirmations/new.html.haml within layouts/application (595.4ms)
+  Rendered layouts/_navbar.html.haml (12.1ms)
+Completed 200 OK in 1917ms (Views: 1867.0ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 07:27:59 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (10.8ms)
+  Rendered layouts/_navbar.html.haml (1.0ms)
+Completed 200 OK in 412ms (Views: 411.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:28:04 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (1.1ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (16.8ms)
+  Rendered layouts/_navbar.html.haml (1.3ms)
+Completed 200 OK in 354ms (Views: 349.9ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-05-23 07:28:06 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"bKHASYccWkcqCXKyJIzzl/E4A5ENJpEXfSDUPCFF3yC/exmEt/NZLoxcw4dAArG1Dr1th50FN0yQaDBD1scXPw==", "user"=>{"email"=>"test@test.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'test@test.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Completed 401 Unauthorized in 305ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:28:06 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (5.1ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 301ms (Views: 299.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-05-23 07:28:47 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"mFjL2vIgVsftZ10N2krMVJtZgFevyVocASMEMPIc2HdLghIXws9Vrksy7Di+xI52ZNzuQT/q/Efsa+BPBZ4QaA==", "user"=>{"email"=>"onanie19@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'onanie19@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (1.2ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2017-05-22 22:28:47', `sign_in_count` = 2, `updated_at` = '2017-05-22 22:28:47' WHERE `users`.`id` = 3[0m
+  [1m[35m (1.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 250ms (ActiveRecord: 3.7ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 07:28:47 +0900
+Processing by RegistrationController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/mypage/index
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 07:28:47 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (34.1ms)
+  Rendered layouts/_navbar.html.haml (17.0ms)
+Completed 200 OK in 329ms (Views: 310.1ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:28:51 +0900
+Processing by InquiryController#index as HTML
+  Rendered inquiry/index.html.haml within layouts/application (4.6ms)
+Completed 500 Internal Server Error in 32ms (ActiveRecord: 0.0ms)
+
+SyntaxError (/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:18: syntax error, unexpected '=', expecting keyword_end
+...ut.push_text("\n", 0, false); =begin
+...                               ^
+/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:21: syntax error, unexpected =>, expecting '}'
+ //  %a{:class => "admin", :href => "/courses/"} 授業管理
+                 ^
+/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:21: syntax error, unexpected ',', expecting '}'
+ //  %a{:class => "admin", :href => "/courses/"} 授業管理
+                          ^
+/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:21: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:22: syntax error, unexpected =>, expecting '}'
+ //  %a{:class => "admin", :href => "/comment/...
+                 ^
+/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:22: syntax error, unexpected ',', expecting '}'
+ //  %a{:class => "admin", :href => "/comment/index"} ...
+                          ^
+/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:22: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:25: syntax error, unexpected '=', expecting keyword_end
+));}\n", 0, false); =end
+                     ^
+/Users/shindenryuusei/rate/app/views/inquiry/index.html.haml:29: syntax error, unexpected end-of-input, expecting keyword_end):
+  app/views/inquiry/index.html.haml:18: syntax error, unexpected '=', expecting keyword_end
+  app/views/inquiry/index.html.haml:21: syntax error, unexpected =>, expecting '}'
+  app/views/inquiry/index.html.haml:21: syntax error, unexpected ',', expecting '}'
+  app/views/inquiry/index.html.haml:21: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  app/views/inquiry/index.html.haml:22: syntax error, unexpected =>, expecting '}'
+  app/views/inquiry/index.html.haml:22: syntax error, unexpected ',', expecting '}'
+  app/views/inquiry/index.html.haml:22: syntax error, unexpected tIDENTIFIER, expecting keyword_end
+  app/views/inquiry/index.html.haml:25: syntax error, unexpected '=', expecting keyword_end
+  app/views/inquiry/index.html.haml:29: syntax error, unexpected end-of-input, expecting keyword_end
+  app/controllers/inquiry_controller.rb:5:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (15.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (19.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (251.0ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 07:29:37 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (4.3ms)
+  Rendered layouts/_navbar.html.haml (3.0ms)
+Completed 200 OK in 345ms (Views: 340.0ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:29:40 +0900
+Processing by InquiryController#index as HTML
+  Rendered inquiry/index.html.haml within layouts/application (44.7ms)
+Completed 500 Internal Server Error in 67ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `contact_confirm_path' for #<#<Class:0x007fb0e4a285b8>:0x007fb0e4f3b4b0>):
+    1: = form_for @contact, :url => contact_confirm_path do |f|
+    2:   - if @contact.errors.any?
+    3:     %strong 入力内容にエラーがあります
+    4:     %ul
+  app/views/inquiry/index.html.haml:1:in `_app_views_inquiry_index_html_haml___1201735771265304650_70198866057380'
+  app/controllers/inquiry_controller.rb:5:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (19.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (10.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (3.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (165.8ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:30:22 +0900
+Processing by InquiryController#index as HTML
+  Rendered inquiry/index.html.haml within layouts/application (108.3ms)
+Completed 500 Internal Server Error in 142ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `contact_confirm_path' for #<#<Class:0x007fb0e4a285b8>:0x007fb0e71eb1b8>):
+    1: = form_for @contact, :url => contact_confirm_path do |f|
+    2:   - if @contact.errors.any?
+    3:     %strong 入力内容にエラーがあります
+    4:     %ul
+  app/views/inquiry/index.html.haml:1:in `_app_views_inquiry_index_html_haml___1201735771265304650_70198866057380'
+  app/controllers/inquiry_controller.rb:5:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (156.4ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 07:30:27 +0900
+Processing by Devise::SessionsController#new as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/
+Filter chain halted as :require_no_authentication rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:30:30 +0900
+Processing by InquiryController#index as HTML
+  Rendered inquiry/index.html.haml within layouts/application (37.7ms)
+Completed 500 Internal Server Error in 63ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `contact_confirm_path' for #<#<Class:0x007fb0e4a285b8>:0x007fb0e888a180>):
+    1: = form_for @contact, :url => contact_confirm_path do |f|
+    2:   - if @contact.errors.any?
+    3:     %strong 入力内容にエラーがあります
+    4:     %ul
+  app/views/inquiry/index.html.haml:1:in `_app_views_inquiry_index_html_haml___1201735771265304650_70198866057380'
+  app/controllers/inquiry_controller.rb:5:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (24.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (205.6ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:31:44 +0900
+Processing by InquiryController#index as HTML
+  Rendered inquiry/index.html.haml within layouts/application (9.7ms)
+Completed 500 Internal Server Error in 45ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (First argument in form cannot contain nil or be empty):
+    1: = form_for @contact, :url => '/contact/confirm' do |f|
+    2:   - if @contact.errors.any?
+    3:     %strong 入力内容にエラーがあります
+    4:     %ul
+  app/views/inquiry/index.html.haml:1:in `_app_views_inquiry_index_html_haml___1201735771265304650_70198878293860'
+  app/controllers/inquiry_controller.rb:5:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (16.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (201.4ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:32:43 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (11.7ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 319ms (Views: 317.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:32:49 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (4.4ms)
+  Rendered layouts/_navbar.html.haml (2.9ms)
+Completed 200 OK in 269ms (Views: 265.9ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/contact/confirm" for ::1 at 2017-05-23 07:33:02 +0900
+
+ActionController::RoutingError (No route matches [POST] "/contact/confirm"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (7.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (331.4ms)
+
+
+Started POST "/contact/confirm" for ::1 at 2017-05-23 07:33:27 +0900
+
+ActionController::RoutingError (No route matches [POST] "/contact/confirm"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (203.7ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:33:31 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (8.8ms)
+  Rendered layouts/_navbar.html.haml (2.6ms)
+Completed 200 OK in 353ms (Views: 351.6ms | ActiveRecord: 0.9ms)
+
+
+Started POST "/inquiry/confirm" for ::1 at 2017-05-23 07:33:35 +0900
+Processing by InquiryController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BawhLgSEEL63WPzBoN7Kk4UvM2J7XLC9q7Z7KCQSVMRvP8R9vLNfQZWuSwlQhaGyy+DNGfdO3xVK/l+f88X+cg==", "inquiry"=>{"name"=>"aa", "email"=>"aa", "message"=>"aa"}, "commit"=>"確認"}
+  Rendered inquiry/confirm.html.haml within layouts/application (53.0ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_navbar.html.haml (5.0ms)
+Completed 200 OK in 449ms (Views: 446.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/inquiry/thanks" for ::1 at 2017-05-23 07:33:38 +0900
+Processing by InquiryController#thanks as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BVRASD3AgmHm8KaZC6XNrX/+x2rCrvs0ncRSgRkwd0Rvx6UbhffNnsQGEVH7/qaMMTE5EU68lJx8jHY2zufd8g==", "inquiry"=>{"name"=>"aa", "email"=>"aa", "message"=>"aa"}, "commit"=>"送信"}
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from thanks at /Users/shindenryuusei/rate/app/controllers/inquiry_controller.rb:23)
+  Rendered inquiry_mailer/received_email.text.haml (2.2ms)
+
+InquiryMailer#received_email: processed outbound mail in 456.1ms
+
+Sent mail to rateclass@gmail.com (3384.7ms)
+Date: Tue, 23 May 2017 07:33:39 +0900
+From: rateclass@gmail.com
+To: rateclass@gmail.com
+Message-ID: <59236743ba02_d2513fd87390da4045388@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B=E3=82=92=E6=89=BF=E3=82=8A=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+V2Vi44K144Kk44OI44GL44KJ44GK5ZWP44GE5ZCI44KP44Gb44GM44GC44KK
+44G+44GX44Gf44CCCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCk5hbWU6
+IGFhCkVtYWlsOiBhYQpNZXNzYWdlOgphYQotLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLQo=
+
+  Rendered inquiry/thanks.html.haml within layouts/application (1.6ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered layouts/_navbar.html.haml (5.0ms)
+Completed 200 OK in 4107ms (Views: 245.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 07:43:43 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (3.4ms)
+  Rendered layouts/_navbar.html.haml (27.0ms)
+Completed 200 OK in 396ms (Views: 348.4ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:43:47 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (5.3ms)
+  Rendered layouts/_navbar.html.haml (14.4ms)
+Completed 200 OK in 330ms (Views: 323.6ms | ActiveRecord: 1.0ms)
+
+
+Started POST "/inquiry/confirm" for ::1 at 2017-05-23 07:43:53 +0900
+Processing by InquiryController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"ON603pAb54Eupf3KSHn/LaUHLciNlPNdECAX0RfqOVVSTVGNKCyofgxTSgK4IpQM68jTswGGnPXxaDNmwD2T4w==", "inquiry"=>{"name"=>"aa", "email"=>"aa", "message"=>"aa"}, "commit"=>"確認"}
+  Rendered inquiry/confirm.html.haml within layouts/application (1.9ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_navbar.html.haml (4.2ms)
+Completed 200 OK in 333ms (Views: 331.7ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/inquiry/thanks" for ::1 at 2017-05-23 07:43:55 +0900
+Processing by InquiryController#thanks as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"hVjkvIEz3Rv/UqxN3TdhBcCMCC+lWrRXJugRKTeK/lbvywHvOQSS5N2kG4UtbAokjkP2VClI2//HoDWe4F1U4A==", "inquiry"=>{"name"=>"aa", "email"=>"aa", "message"=>"aa"}, "commit"=>"送信"}
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from thanks at /Users/shindenryuusei/rate/app/controllers/inquiry_controller.rb:23)
+  Rendered inquiry_mailer/received_email.text.haml (0.2ms)
+
+InquiryMailer#received_email: processed outbound mail in 51.2ms
+
+Sent mail to sscsman@gmail.com (4652.6ms)
+Date: Tue, 23 May 2017 07:43:55 +0900
+From: urasyllabus@gmail.com
+To: sscsman@gmail.com
+Message-ID: <592369ab360e0_d2513fd875791b4c45416@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B=E3=82=92=E6=89=BF=E3=82=8A=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+V2Vi44K144Kk44OI44GL44KJ44GK5ZWP44GE5ZCI44KP44Gb44GM44GC44KK
+44G+44GX44Gf44CCCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCk5hbWU6
+IGFhCkVtYWlsOiBhYQpNZXNzYWdlOgphYQotLS0tLS0tLS0tLS0tLS0tLS0t
+LS0tLS0tLQo=
+
+  Rendered inquiry/thanks.html.haml within layouts/application (0.1ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered layouts/_navbar.html.haml (4.8ms)
+Completed 200 OK in 4968ms (Views: 250.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 07:44:55 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (1.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (7.3ms)
+  Rendered layouts/_navbar.html.haml (2.9ms)
+Completed 200 OK in 315ms (Views: 312.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:07:46 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (73.1ms)
+  Rendered layouts/_navbar.html.haml (3.1ms)
+Completed 200 OK in 612ms (Views: 601.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:07:59 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (8.7ms)
+  Rendered layouts/_navbar.html.haml (2.9ms)
+Completed 200 OK in 300ms (Views: 297.8ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:09:43 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (9.9ms)
+  Rendered layouts/_navbar.html.haml (5.5ms)
+Completed 200 OK in 364ms (Views: 362.5ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:13:10 +0900
+Processing by InquiryController#index as HTML
+  Rendered inquiry/index.html.haml within layouts/application (249.2ms)
+Completed 500 Internal Server Error in 267ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (undefined local variable or method `f' for #<#<Class:0x007fb0ea3e0038>:0x007fb0eb959d10>):
+     8:           %li= msg
+     9:   .form-group
+    10:     %label 名前（必須）
+    11:     = f.text_field :name, :class => "form-control"
+    12:   .form-group
+    13:     %label メールアドレス（必須）
+    14:     = f.text_field :email, :class => "form-control"
+  app/views/inquiry/index.html.haml:11:in `_app_views_inquiry_index_html_haml___1201735771265304650_70198921708720'
+  app/controllers/inquiry_controller.rb:5:in `index'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (13.7ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (148.8ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:13:40 +0900
+Processing by InquiryController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  Rendered inquiry/index.html.haml within layouts/application (15.8ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 270ms (Views: 268.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/assets/css/inquiry.self-cc00e6b1f7bb4c8226d6737715f5a1edae49ba53193ae615f6147ba5a685b929.css?body=1" for ::1 at 2017-05-23 08:13:41 +0900
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:14:39 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by InquiryController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered inquiry/index.html.haml within layouts/application (601.3ms)
+  Rendered layouts/_navbar.html.haml (25.6ms)
+Completed 200 OK in 1111ms (Views: 1085.7ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:15:08 +0900
+Processing by InquiryController#index as HTML
+  [1m[35mUser Load (1.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered inquiry/index.html.haml within layouts/application (18.9ms)
+  Rendered layouts/_navbar.html.haml (2.6ms)
+Completed 200 OK in 366ms (Views: 362.9ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:16:07 +0900
+Processing by InquiryController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered inquiry/index.html.haml within layouts/application (20.0ms)
+  Rendered layouts/_navbar.html.haml (3.0ms)
+Completed 200 OK in 282ms (Views: 280.0ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:16:23 +0900
+Processing by InquiryController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered inquiry/index.html.haml within layouts/application (90.6ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 332ms (Views: 330.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/css/inquiry.self-05a5cc40c2775919f18643001ef5988ff48c313f8561a76762e4cdfb16bc30c0.css?body=1" for ::1 at 2017-05-23 08:16:24 +0900
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 08:17:00 +0900
+Processing by InquiryController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered inquiry/index.html.haml within layouts/application (19.5ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 273ms (Views: 271.3ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/inquiry/confirm" for ::1 at 2017-05-23 08:17:06 +0900
+Processing by InquiryController#confirm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"xCCNWcSyvEpcvvLdb5inI9S+rg6szXh7JV0A71ASVieus2gKfIXztX5IRRWfw8wCmnFQdSDfF9PEFSRYh8X8kQ==", "inquiry"=>{"name"=>"aaa", "email"=>"aaaa", "message"=>"aaaa"}, "commit"=>"確認"}
+  Rendered inquiry/confirm.html.haml within layouts/application (8.7ms)
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered layouts/_navbar.html.haml (5.5ms)
+Completed 200 OK in 356ms (Views: 354.1ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/inquiry/thanks" for ::1 at 2017-05-23 08:17:11 +0900
+Processing by InquiryController#thanks as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"2+v2FNgEm5oF1B87QmvI3hVuj3Hxy0i6sbbFI/9fRraxeBNHYDPUZSciqPOyMKP/W6FxCn3ZJxJQ/uGUKIjsAA==", "inquiry"=>{"name"=>"aaa", "email"=>"aaaa", "message"=>"aaaa"}, "commit"=>"送信"}
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from thanks at /Users/shindenryuusei/rate/app/controllers/inquiry_controller.rb:23)
+  Rendered inquiry_mailer/received_email.text.haml (1.9ms)
+
+InquiryMailer#received_email: processed outbound mail in 438.4ms
+
+Sent mail to sscsman@gmail.com (3477.4ms)
+Date: Tue, 23 May 2017 08:17:12 +0900
+From: urasyllabus@gmail.com
+To: sscsman@gmail.com
+Message-ID: <59237178464d8_dbfb3fc63e20993472560@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=81=8A=E5=95=8F=E3=81=84=E5=90=88=E3=82=8F=E3=81=9B=E3=82=92=E6=89=BF=E3=82=8A=E3=81=BE=E3=81=97=E3=81=9F?=
+Mime-Version: 1.0
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+V2Vi44K144Kk44OI44GL44KJ44GK5ZWP44GE5ZCI44KP44Gb44GM44GC44KK
+44G+44GX44Gf44CCCi0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tLS0tCk5hbWU6
+IGFhYQpFbWFpbDogYWFhYQpNZXNzYWdlOgphYWFhCi0tLS0tLS0tLS0tLS0t
+LS0tLS0tLS0tLS0tCg==
+
+  Rendered inquiry/thanks.html.haml within layouts/application (1.5ms)
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered layouts/_navbar.html.haml (4.7ms)
+Completed 200 OK in 4164ms (Views: 231.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 08:17:34 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (1.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (6.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (19.5ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 291ms (Views: 264.2ms | ActiveRecord: 7.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-05-23 08:17:39 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"ulBVo+tJOnLs6HjyVkzM27vkoxuwLqvh94lNyBYm1CLQw7DwU351jc4ezzqmF6f69StdYDw8xEkWwWl/wfF+lA=="}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 514ms (ActiveRecord: 1.3ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 08:17:39 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (10.5ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 238ms (Views: 231.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 08:19:42 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (45.1ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 307ms (Views: 306.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-fb06ca4144629fd0500b68b63d4cfdbc9c2a5243a6a1fbae15496c1beda08d72.css?body=1" for ::1 at 2017-05-23 08:19:43 +0900
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 09:42:57 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (5.8ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (49.6ms)
+  Rendered layouts/_navbar.html.haml (1.6ms)
+Completed 200 OK in 701ms (Views: 665.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-05-23 09:43:06 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wTEadIqmABCJtXbDcq1VA7epo+VQvEQJx6OjPUIh/Zlp9pYwE5FFMAiZ+o3G/FwoQsaieCys/7fUGqeM+7zCgQ==", "user"=>{"email"=>"onanie19@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'onanie19@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.8ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2017-05-22 22:28:47', `current_sign_in_at` = '2017-05-23 00:43:07', `sign_in_count` = 3, `updated_at` = '2017-05-23 00:43:07' WHERE `users`.`id` = 3[0m
+  [1m[35m (1.7ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 302ms (ActiveRecord: 4.3ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 09:43:07 +0900
+Processing by RegistrationController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/mypage/index
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 09:43:07 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (5.0ms)
+  Rendered layouts/_navbar.html.haml (3.9ms)
+Completed 200 OK in 350ms (Views: 346.1ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 09:43:11 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (9.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered mypage/result.html.haml within layouts/application (57.4ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 350ms (Views: 326.7ms | ActiveRecord: 14.2ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 09:43:15 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `courses` SET `pv` = 11, `updated_at` = '2017-05-23 00:43:15' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (3.8ms)
+  Rendered courses/_chartbox.html.haml (4.5ms)
+  Rendered courses/_rateform.html.haml (13.4ms)
+  Rendered courses/_commentform.html.haml (6.3ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (20.6ms)
+  Rendered courses/show.html.haml within layouts/application (67.9ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 365ms (Views: 344.4ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/assets/css/courses.self-88e6ba06281d75e0e100086881bb424a486880ad38377bee3087cc931fe88a35.css?body=1" for ::1 at 2017-05-23 09:43:16 +0900
+
+
+Started POST "/like/1" for ::1 at 2017-05-23 09:44:34 +0900
+Processing by CoursesController#like as */*
+  Parameters: {"id"=>"1"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.9ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `users` SET `likedclass` = '1#', `updated_at` = '2017-05-23 00:44:34' WHERE `users`.`id` = 3[0m
+  [1m[35m (0.9ms)[0m  COMMIT
+Completed 500 Internal Server Error in 294ms (ActiveRecord: 3.2ms)
+
+ActionView::MissingTemplate (Missing template courses/like, application/like with {:locale=>[:ja], :formats=>[:html, :text, :js, :css, :ics, :csv, :vcf, :png, :jpeg, :gif, :bmp, :tiff, :mpeg, :xml, :rss, :atom, :yaml, :multipart_form, :url_encoded_form, :json, :pdf, :zip], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/shindenryuusei/rate/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/devise-i18n-1.1.2/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/devise-i18n-views-0.3.7/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/devise-bootstrap-views-0.0.11/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/devise-4.3.0/app/views"
+):
+  actionview (4.2.8) lib/action_view/path_set.rb:46:in `find'
+  actionview (4.2.8) lib/action_view/lookup_context.rb:121:in `find'
+  actionview (4.2.8) lib/action_view/renderer/abstract_renderer.rb:18:in `find_template'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:40:in `determine_template'
+  actionview (4.2.8) lib/action_view/renderer/template_renderer.rb:8:in `render'
+  actionview (4.2.8) lib/action_view/renderer/renderer.rb:46:in `render_template'
+  actionview (4.2.8) lib/action_view/renderer/renderer.rb:27:in `render'
+  actionview (4.2.8) lib/action_view/rendering.rb:100:in `_render_template'
+  actionpack (4.2.8) lib/action_controller/metal/streaming.rb:217:in `_render_template'
+  actionview (4.2.8) lib/action_view/rendering.rb:83:in `render_to_body'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:32:in `render_to_body'
+  actionpack (4.2.8) lib/action_controller/metal/renderers.rb:37:in `render_to_body'
+  actionpack (4.2.8) lib/abstract_controller/rendering.rb:25:in `render'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:16:in `render'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:44:in `block (2 levels) in render'
+  activesupport (4.2.8) lib/active_support/core_ext/benchmark.rb:12:in `block in ms'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/benchmark.rb:303:in `realtime'
+  activesupport (4.2.8) lib/active_support/core_ext/benchmark.rb:12:in `ms'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:44:in `block in render'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:87:in `cleanup_view_runtime'
+  activerecord (4.2.8) lib/active_record/railties/controller_runtime.rb:25:in `cleanup_view_runtime'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:43:in `render'
+  actionpack (4.2.8) lib/action_controller/metal/implicit_render.rb:10:in `default_render'
+  actionpack (4.2.8) lib/action_controller/metal/implicit_render.rb:5:in `send_action'
+  actionpack (4.2.8) lib/abstract_controller/base.rb:198:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/rendering.rb:10:in `process_action'
+  actionpack (4.2.8) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:117:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:555:in `block (2 levels) in compile'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:505:in `call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:92:in `__run_callbacks__'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:778:in `_run_process_action_callbacks'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.8) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/rescue.rb:29:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (4.2.8) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (4.2.8) lib/active_support/notifications/instrumenter.rb:20:in `instrument'
+  activesupport (4.2.8) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (4.2.8) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (4.2.8) lib/action_controller/metal/params_wrapper.rb:250:in `process_action'
+  activerecord (4.2.8) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (4.2.8) lib/abstract_controller/base.rb:137:in `process'
+  actionview (4.2.8) lib/action_view/rendering.rb:30:in `process'
+  actionpack (4.2.8) lib/action_controller/metal.rb:196:in `dispatch'
+  actionpack (4.2.8) lib/action_controller/metal/rack_delegation.rb:13:in `dispatch'
+  actionpack (4.2.8) lib/action_controller/metal.rb:237:in `block in action'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:74:in `call'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:74:in `dispatch'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:43:in `serve'
+  actionpack (4.2.8) lib/action_dispatch/journey/router.rb:43:in `block in serve'
+  actionpack (4.2.8) lib/action_dispatch/journey/router.rb:30:in `each'
+  actionpack (4.2.8) lib/action_dispatch/journey/router.rb:30:in `serve'
+  actionpack (4.2.8) lib/action_dispatch/routing/route_set.rb:817:in `call'
+  warden (1.2.7) lib/warden/manager.rb:36:in `block in call'
+  warden (1.2.7) lib/warden/manager.rb:35:in `catch'
+  warden (1.2.7) lib/warden/manager.rb:35:in `call'
+  rack (1.6.8) lib/rack/etag.rb:24:in `call'
+  rack (1.6.8) lib/rack/conditionalget.rb:38:in `call'
+  rack (1.6.8) lib/rack/head.rb:13:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/params_parser.rb:27:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/flash.rb:260:in `call'
+  rack (1.6.8) lib/rack/session/abstract/id.rb:225:in `context'
+  rack (1.6.8) lib/rack/session/abstract/id.rb:220:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/cookies.rb:560:in `call'
+  activerecord (4.2.8) lib/active_record/query_cache.rb:36:in `call'
+  activerecord (4.2.8) lib/active_record/connection_adapters/abstract/connection_pool.rb:653:in `call'
+  activerecord (4.2.8) lib/active_record/migration.rb:377:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:29:in `block in call'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:88:in `__run_callbacks__'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:778:in `_run_call_callbacks'
+  activesupport (4.2.8) lib/active_support/callbacks.rb:81:in `run_callbacks'
+  actionpack (4.2.8) lib/action_dispatch/middleware/callbacks.rb:27:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/reloader.rb:73:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/remote_ip.rb:78:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/missing_template.text.erb (0.8ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 09:44:40 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered mypage/index.html.haml within layouts/application (9.0ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 286ms (Views: 276.9ms | ActiveRecord: 6.0ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 09:44:55 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (1.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT DISTINCT `courses`.* FROM `courses`
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered mypage/result.html.haml within layouts/application (7.2ms)
+  Rendered layouts/_navbar.html.haml (2.7ms)
+Completed 200 OK in 294ms (Views: 289.1ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 09:44:56 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `courses` SET `pv` = 12, `updated_at` = '2017-05-23 00:44:56' WHERE `courses`.`id` = 1
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (3.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  Rendered courses/_likebutton.html.haml (1.5ms)
+  Rendered courses/_chartbox.html.haml (0.6ms)
+  Rendered courses/_rateform.html.haml (2.0ms)
+  Rendered courses/_commentform.html.haml (2.4ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (12.0ms)
+  Rendered courses/show.html.haml within layouts/application (31.6ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 496ms (Views: 471.1ms | ActiveRecord: 7.7ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-05-23 09:45:07 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"rQel1JS0FLY1P4lyN7YUuxgSx/gvr8NqZmCw++Cfz09Ug2Ut2Vl5xkVa/0EVxCYaUL7xs4jpAi2BJmROBkboog==", "comment"=>{"typos"=>"0", "year"=>"0", "message"=>"コメントテスト"}, "commit"=>"登録", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 3, 'コメントテスト', 0, 12, '2017-05-23 00:45:07', '2017-05-23 00:45:07')
+  [1m[36m (0.7ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mSELECT COUNT(*) FROM `comments`[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `commentedclass` = '1#', `commentedid` = '2#', `bycommented` = '12#', `updated_at` = '2017-05-23 00:45:07' WHERE `users`.`id` = 3
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 21ms (ActiveRecord: 4.9ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 09:45:07 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `courses` SET `pv` = 13, `updated_at` = '2017-05-23 00:45:07' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mRating Load (0.7ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.6ms)
+  Rendered courses/_chartbox.html.haml (0.5ms)
+  Rendered courses/_rateform.html.haml (1.9ms)
+  Rendered courses/_commentform.html.haml (2.1ms)
+  [1m[36mComment Load (0.8ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (18.6ms)
+  Rendered courses/show.html.haml within layouts/application (63.9ms)
+  Rendered layouts/_navbar.html.haml (2.8ms)
+Completed 200 OK in 439ms (Views: 367.5ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 09:45:09 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (6.2ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 3 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mComment Load (0.6ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (10.5ms)
+Completed 500 Internal Server Error in 52ms (ActiveRecord: 8.3ms)
+
+ActiveRecord::RecordNotFound (Couldn't find Comment with 'id'=2):
+  app/views/mypage/index.html.haml:45:in `block in _app_views_mypage_index_html_haml___4404064000786134839_70120742844300'
+  app/views/mypage/index.html.haml:43:in `each'
+  app/views/mypage/index.html.haml:43:in `_app_views_mypage_index_html_haml___4404064000786134839_70120742844300'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/diagnostics.html.erb within rescues/layout (167.7ms)
+  [1m[36m (18.0ms)[0m  [1mCREATE TABLE `schema_migrations` (`version` varchar(255) NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (21.1ms)[0m  CREATE UNIQUE INDEX `unique_schema_migrations`  ON `schema_migrations` (`version`) 
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Migrating to CreateCourses (20170514180357)
+  [1m[35m (10.6ms)[0m  CREATE TABLE `courses` (`id` int(11) auto_increment PRIMARY KEY, `coursename` varchar(255), `teacher` varchar(255), `credits` int(11), `duration` varchar(255), `weekday` varchar(255), `code` varchar(255), `univ` varchar(255), `dept` varchar(255), `creator` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170514180357')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to DeviseCreateUsers (20170514184019)
+  [1m[35m (17.2ms)[0m  CREATE TABLE `users` (`id` int(11) auto_increment PRIMARY KEY, `email` varchar(255) DEFAULT '' NOT NULL, `encrypted_password` varchar(255) DEFAULT '' NOT NULL, `reset_password_token` varchar(255), `reset_password_sent_at` datetime, `remember_created_at` datetime, `sign_in_count` int(11) DEFAULT 0 NOT NULL, `current_sign_in_at` datetime, `last_sign_in_at` datetime, `current_sign_in_ip` varchar(255), `last_sign_in_ip` varchar(255), `confirmation_token` varchar(255), `confirmed_at` datetime, `confirmation_sent_at` datetime, `unconfirmed_email` varchar(255), `univ` varchar(255), `dept` varchar(255), `majorin` varchar(255), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (18.3ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_email`  ON `users` (`email`) [0m
+  [1m[35m (23.2ms)[0m  CREATE UNIQUE INDEX `index_users_on_reset_password_token`  ON `users` (`reset_password_token`) 
+  [1m[36m (16.0ms)[0m  [1mCREATE UNIQUE INDEX `index_users_on_confirmation_token`  ON `users` (`confirmation_token`) [0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20170514184019')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to CreateRatings (20170514195149)
+  [1m[36m (9.9ms)[0m  [1mCREATE TABLE `ratings` (`id` int(11) auto_increment PRIMARY KEY, `courseid` int(11) DEFAULT 0, `vote` int(11) DEFAULT 0, `teacher` int(11) DEFAULT 0, `courserate` int(11) DEFAULT 0, `easy` int(11) DEFAULT 0, `attendance` int(11) DEFAULT 0, `homework` int(11) DEFAULT 0, `credit` int(11) DEFAULT 0, `taker` int(11) DEFAULT 0, `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.3ms)[0m  [1mINSERT INTO `schema_migrations` (`version`) VALUES ('20170514195149')[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Migrating to AddColumnToUser (20170514201539)
+  [1m[36m (18.4ms)[0m  [1mALTER TABLE `users` ADD `createdclass` text[0m
+  [1m[35m (16.3ms)[0m  ALTER TABLE `users` ADD `ratedclass` text
+  [1m[36m (17.7ms)[0m  [1mALTER TABLE `users` ADD `votedclass` text[0m
+  [1m[35m (23.5ms)[0m  ALTER TABLE `users` ADD `commentedclass` text
+  [1m[36m (17.8ms)[0m  [1mALTER TABLE `users` ADD `commentedid` text[0m
+  [1m[35m (19.3ms)[0m  ALTER TABLE `users` ADD `votedcomid` text
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170514201539')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Migrating to CreateComments (20170515050811)
+  [1m[35m (19.1ms)[0m  CREATE TABLE `comments` (`id` int(11) auto_increment PRIMARY KEY, `courseid` int(11), `message` text, `year` int(11), `typos` int(11) DEFAULT 0, `goods` int(11) DEFAULT 0, `bads` int(11) DEFAULT 0, `usersid` int(11), `created_at` datetime NOT NULL, `updated_at` datetime NOT NULL) ENGINE=InnoDB
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170515050811')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToUser2 (20170516033139)
+  [1m[35m (15.3ms)[0m  ALTER TABLE `users` ADD `likedclass` text
+  [1m[36m (17.1ms)[0m  [1mALTER TABLE `users` ADD `bycommented` text[0m
+  [1m[35m (14.6ms)[0m  ALTER TABLE `courses` ADD `pv` int(11) DEFAULT 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170516033139')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToComment (20170516061923)
+  [1m[35m (12.5ms)[0m  ALTER TABLE `comments` ADD `bycommented` int(11) DEFAULT 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170516061923')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+Migrating to AddColumnToUserWithAdmin (20170522182741)
+  [1m[35m (17.4ms)[0m  ALTER TABLE `users` ADD `admin` tinyint(1) DEFAULT 0
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  INSERT INTO `schema_migrations` (`version`) VALUES ('20170522182741')
+  [1m[36m (0.3ms)[0m  [1mCOMMIT[0m
+  [1m[35mActiveRecord::SchemaMigration Load (0.3ms)[0m  SELECT `schema_migrations`.* FROM `schema_migrations`
+  [1m[36m (0.3ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'ullabus_development'
+  AND fk.table_name = 'comments'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `comments`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'ullabus_development'
+  AND fk.table_name = 'courses'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `courses`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'ullabus_development'
+  AND fk.table_name = 'ratings'
+[0m
+  [1m[35m (0.1ms)[0m  SHOW CREATE TABLE `ratings`
+  [1m[36m (0.2ms)[0m  [1mSELECT fk.referenced_table_name as 'to_table'
+      ,fk.referenced_column_name as 'primary_key'
+      ,fk.column_name as 'column'
+      ,fk.constraint_name as 'name'
+FROM information_schema.key_column_usage fk
+WHERE fk.referenced_column_name is not null
+  AND fk.table_schema = 'ullabus_development'
+  AND fk.table_name = 'users'
+[0m
+  [1m[35m (0.2ms)[0m  SHOW CREATE TABLE `users`
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:23:13 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (1.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 3  ORDER BY `users`.`id` ASC LIMIT 1
+Completed 401 Unauthorized in 51ms (ActiveRecord: 4.6ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 10:23:13 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (4.1ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (35.0ms)
+  Rendered layouts/_navbar.html.haml (5.0ms)
+Completed 200 OK in 1283ms (Views: 1250.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-23 10:23:17 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.6ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (11.0ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 360ms (Views: 358.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 10:23:26 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"VxIH37LXMj0QmcoUsc/ZjgBvOOfHDuse178K6mpGAQmulscm/zpfTWD8vCeTvesvSMMOrGBIKlkw+d5fjJ8m5A==", "user"=>{"email"=>"sscsman@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'sscsman@gmail.com' LIMIT 1
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `users` (`email`, `encrypted_password`, `created_at`, `updated_at`, `confirmation_token`, `confirmation_sent_at`) VALUES ('sscsman@gmail.com', '$2a$11$fJwz8MPCuv47tg/GRUudg.2lnZPHB5NJDgz9gF.fAqUKvdroTfBpO', '2017-05-23 01:23:26', '2017-05-23 01:23:26', 'TZJbG-uuV4QyLv8mkadP', '2017-05-23 01:23:26')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered devise/mailer/confirmation_instructions.html.haml (2.4ms)
+
+Devise::Mailer#confirmation_instructions: processed outbound mail in 488.1ms
+
+Sent mail to sscsman@gmail.com (4432.5ms)
+Date: Tue, 23 May 2017 10:23:26 +0900
+From: please-change-me-at-config-initializers-devise@example.com
+Reply-To: please-change-me-at-config-initializers-devise@example.com
+To: sscsman@gmail.com
+Message-ID: <59238f0ee10ec_e9b03fcedeca721c8284c@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=82=A2=E3=82=AB=E3=82=A6=E3=83=B3=E3=83=88=E3=81=AE=E7=99=BB=E9=8C=B2=E6=96=B9=E6=B3=95?=
+Mime-Version: 1.0
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+<p>
+  Welcome sscsman@gmail.com!
+</p>
+<p>You can confirm your account email through the link below:</p>
+<p><a href="http://localhost:3000/users/confirmation?confirmation_token=TZJbG-uuV4QyLv8mkadP">Confirm my account</a></p>
+
+Redirected to http://localhost:3000/
+Completed 302 Found in 5225ms (ActiveRecord: 1.7ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 10:23:31 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (9.2ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 244ms (Views: 243.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/confirmation?confirmation_token=TZJbG-uuV4QyLv8mkadP" for ::1 at 2017-05-23 10:23:45 +0900
+Processing by Devise::ConfirmationsController#show as HTML
+  Parameters: {"confirmation_token"=>"TZJbG-uuV4QyLv8mkadP"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`confirmation_token` = 'TZJbG-uuV4QyLv8mkadP'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `confirmed_at` = '2017-05-23 01:23:45', `updated_at` = '2017-05-23 01:23:45' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/users/sign_in
+Completed 302 Found in 10ms (ActiveRecord: 1.5ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 10:23:45 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (6.4ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 325ms (Views: 324.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 10:24:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (5.7ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 309ms (Views: 307.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-05-23 10:24:33 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"Y1XVYUlQAPJyZI96CpiapZVPgprnwSxdY2rejKKBGTqa0RWYBL1tggIB+Uko6qgE3eO00UCH7RqELAo5RFg+1w==", "user"=>{"email"=>"sscsman@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sscsman@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `last_sign_in_at` = '2017-05-23 01:24:33', `current_sign_in_at` = '2017-05-23 01:24:33', `last_sign_in_ip` = '::1', `current_sign_in_ip` = '::1', `sign_in_count` = 1, `updated_at` = '2017-05-23 01:24:33' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.0ms)[0m  COMMIT
+Redirected to http://localhost:3000/mypage/index
+Completed 302 Found in 228ms (ActiveRecord: 2.3ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:24:33 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (19.0ms)
+  Rendered layouts/_navbar.html.haml (15.6ms)
+Completed 200 OK in 331ms (Views: 313.9ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 10:24:40 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (5.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT DISTINCT `courses`.* FROM `courses`
+  Rendered mypage/result.html.haml within layouts/application (16.5ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 275ms (Views: 260.9ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:25:02 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (4.1ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 266ms (Views: 261.7ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:25:13 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (1.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (1.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (4.2ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 261ms (Views: 254.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/users/edit" for ::1 at 2017-05-23 10:25:17 +0900
+Processing by Devise::RegistrationsController#edit as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered devise/registrations/edit.html.haml within layouts/application (10.0ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 277ms (Views: 269.8ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:25:20 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (2.9ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 226ms (Views: 222.3ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:28:46 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (3.4ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 261ms (Views: 255.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/users" for ::1 at 2017-05-23 10:34:38 +0900
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (2.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (2.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (230.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 10:34:48 +0900
+Processing by RegistrationController#index as HTML
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/mypage/index
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 30ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:34:49 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  Rendered mypage/index.html.haml within layouts/application (4.9ms)
+  Rendered layouts/_navbar.html.haml (12.9ms)
+Completed 200 OK in 411ms (Views: 393.5ms | ActiveRecord: 1.8ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-05-23 10:34:52 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"aBT76mHy5y9yRpeYTmr6PgT4TQkBAfTzqjj+uf+RAI+QD/pPjfmZgv1VdRtnWZCmDjcR8bTuBe+UDjykgJ3vYw=="}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 520ms (ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 10:34:53 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (4.8ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 253ms (Views: 251.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-23 10:34:55 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.5ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (6.8ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 280ms (Views: 278.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 10:35:02 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"uvPlK6aTT7aIyIlzSSARsUoVYLVBNeUH+hwKFAj7rG4fB2FYNVOvt6GaY70uoYmRJanEtZQbGutNLCdWDhvTpg==", "user"=>{"email"=>"sscsmdan@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.6ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'sscsmdan@gmail.com' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (7.0ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 476ms (Views: 408.9ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 10:36:55 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"UMP/KaDKMhnihk3+xNBWKN954LaeUyZv0s+o4WAHG9T1N3taMwrSGMvUpzCjUc4IsMVEtkt92YNl/4WjZudkHA==", "user"=>{"email"=>"sscsmdan@gmail.com", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mUser Exists (0.5ms)[0m  SELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'sscsmdan@gmail.com' LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mROLLBACK[0m
+  Rendered devise/shared/_links.html.haml (0.5ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (6.6ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 872ms (Views: 279.0ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/users" for ::1 at 2017-05-23 10:37:31 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+
+ActionController::RoutingError (No route matches [GET] "/users"):
+  actionpack (4.2.8) lib/action_dispatch/middleware/debug_exceptions.rb:21:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/show_exceptions.rb:30:in `call'
+  railties (4.2.8) lib/rails/rack/logger.rb:38:in `call_app'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `block in call'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `block in tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (4.2.8) lib/active_support/tagged_logging.rb:68:in `tagged'
+  railties (4.2.8) lib/rails/rack/logger.rb:20:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/request_id.rb:21:in `call'
+  rack (1.6.8) lib/rack/methodoverride.rb:22:in `call'
+  rack (1.6.8) lib/rack/runtime.rb:18:in `call'
+  activesupport (4.2.8) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  actionpack (4.2.8) lib/action_dispatch/middleware/static.rb:120:in `call'
+  rack (1.6.8) lib/rack/sendfile.rb:113:in `call'
+  railties (4.2.8) lib/rails/engine.rb:518:in `call'
+  railties (4.2.8) lib/rails/application.rb:165:in `call'
+  rack (1.6.8) lib/rack/lock.rb:17:in `call'
+  rack (1.6.8) lib/rack/content_length.rb:15:in `call'
+  rack (1.6.8) lib/rack/handler/webrick.rb:88:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:138:in `service'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/httpserver.rb:94:in `run'
+  /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/2.2.0/webrick/server.rb:294:in `block in start_thread'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (2.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_route.html.erb (4.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/routes/_table.html.erb (5.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (17.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/routing_error.html.erb within rescues/layout (242.3ms)
+
+
+Started GET "/users/sign_up" for ::1 at 2017-05-23 10:37:38 +0900
+Processing by Devise::RegistrationsController#new as HTML
+  Rendered devise/shared/_links.html.haml (4.0ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (595.6ms)
+  Rendered layouts/_navbar.html.haml (5.4ms)
+Completed 200 OK in 1787ms (Views: 1749.4ms | ActiveRecord: 1.9ms)
+
+
+Started POST "/users" for ::1 at 2017-05-23 10:37:46 +0900
+Processing by Devise::RegistrationsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"APwEQ9SCmt6dc+Y+NKH8Fk3vJAQ+2An0bgk+qVBq2U6lCIAwR0J637QhDPBTIGQ2IlOABOv29hjZORPrVoqmhg==", "user"=>{"email"=>"sscsmasn@gmail.coms", "password"=>"[FILTERED]", "password_confirmation"=>"[FILTERED]"}, "commit"=>"登録"}
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mUser Exists (0.5ms)[0m  [1mSELECT  1 AS one FROM `users` WHERE `users`.`email` = BINARY 'sscsmasn@gmail.coms' LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  ROLLBACK
+  Rendered devise/shared/_links.html.haml (0.6ms)
+  Rendered devise/registrations/new.html.haml within layouts/application (6.7ms)
+  Rendered layouts/_navbar.html.haml (1.1ms)
+Completed 200 OK in 462ms (Views: 292.3ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 10:38:05 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (11.8ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 250ms (Views: 248.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-05-23 10:38:07 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.9ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (13.8ms)
+  Rendered layouts/_navbar.html.haml (1.8ms)
+Completed 200 OK in 302ms (Views: 299.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-05-23 10:38:12 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"BmXeZ82XAE/FhwOb6R5vnHfjf/AfSsBuiXW0Gulwzs+jkVoUXlfgTuzV6VWOn/e8GF/b8MpkP4I+RZlY75CxBw==", "user"=>{"email"=>"sscsman@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sscsman@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.9ms)[0m  [1mUPDATE `users` SET `current_sign_in_at` = '2017-05-23 01:38:12', `sign_in_count` = 2, `updated_at` = '2017-05-23 01:38:12' WHERE `users`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 262ms (ActiveRecord: 2.8ms)
+
+
+Started GET "/" for ::1 at 2017-05-23 10:38:12 +0900
+Processing by RegistrationController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Redirected to http://localhost:3000/mypage/index
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 4ms (ActiveRecord: 0.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:38:12 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered mypage/index.html.haml within layouts/application (28.3ms)
+  Rendered layouts/_navbar.html.haml (12.5ms)
+Completed 200 OK in 295ms (Views: 279.5ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 10:38:14 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT DISTINCT `courses`.* FROM `courses`[0m
+  Rendered mypage/result.html.haml within layouts/application (14.7ms)
+  Rendered layouts/_navbar.html.haml (3.2ms)
+Completed 200 OK in 287ms (Views: 281.1ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-05-23 10:38:16 +0900
+Processing by CoursesController#new as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered courses/_form.html.haml (16.4ms)
+  Rendered courses/new.html.haml within layouts/application (100.2ms)
+  Rendered layouts/_navbar.html.haml (2.5ms)
+Completed 200 OK in 511ms (Views: 489.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/assets/css/newcourse.self-08cb3c1341c6eaf012c522b600fed351d755e6d5a46feee37863fbb8b53ab4c0.css?body=1" for ::1 at 2017-05-23 10:38:17 +0900
+
+
+Started POST "/courses" for ::1 at 2017-05-23 10:38:32 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"OeReSDyJRpFEwScxmsxTn1viOOcsOYCjk0hlgRwHQ4gFgHO2ib04gbIgKOr8PgHQQ6R+k8l2Q7DlRQ70JAvMRA==", "course"=>{"coursename"=>"テスト講義", "teacher"=>"RYUSEI NITTA", "dept"=>"経済", "credits"=>"2", "duration"=>"前期", "weekday"=>"月1", "code"=>"32423"}, "commit"=>"登録"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `courses` (`coursename`, `teacher`, `credits`, `duration`, `weekday`, `code`, `dept`, `creator`, `created_at`, `updated_at`) VALUES ('テスト講義', 'RYUSEI NITTA', 2, '前期', '月1', '32423', '経済', 1, '2017-05-23 01:38:32', '2017-05-23 01:38:32')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses`  ORDER BY `courses`.`id` DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `createdclass` = '1#', `updated_at` = '2017-05-23 01:38:32' WHERE `users`.`id` = 1
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 21ms (ActiveRecord: 3.6ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 10:38:32 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `courses` SET `pv` = 1, `updated_at` = '2017-05-23 01:38:32' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.5ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.0ms)[0m  INSERT INTO `ratings` (`courseid`, `created_at`, `updated_at`) VALUES (1, '2017-05-23 01:38:32', '2017-05-23 01:38:32')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  Rendered courses/_likebutton.html.haml (3.5ms)
+  Rendered courses/_chartbox.html.haml (4.6ms)
+  Rendered courses/_rateform.html.haml (16.9ms)
+  Rendered courses/_commentform.html.haml (5.0ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (18.7ms)
+  Rendered courses/show.html.haml within layouts/application (89.5ms)
+  Rendered layouts/_navbar.html.haml (1.8ms)
+Completed 200 OK in 464ms (Views: 332.5ms | ActiveRecord: 10.2ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-05-23 10:38:41 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"JmZTsUqx9rcE/2yJZ8IHJUXSqKcF/YAqc8Q3YpL+DiIaAn5P/4WIp/IeY1IBMFVqXZTu0+CyQzkFyVwXqvKB7g==", "comment"=>{"typos"=>"3", "year"=>"0", "message"=>"dふぁdふぁdf"}, "commit"=>"登録", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  INSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `typos`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 1, 'dふぁdふぁdf', 0, 3, 1, '2017-05-23 01:38:41', '2017-05-23 01:38:41')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments`  ORDER BY `comments`.`id` DESC LIMIT 1[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `users` SET `commentedclass` = '1#', `commentedid` = '1#', `bycommented` = '1#', `updated_at` = '2017-05-23 01:38:41' WHERE `users`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 32ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 10:38:41 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `courses` SET `pv` = 2, `updated_at` = '2017-05-23 01:38:41' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.5ms)
+  Rendered courses/_rateform.html.haml (2.2ms)
+  Rendered courses/_commentform.html.haml (2.7ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (17.3ms)
+  Rendered courses/show.html.haml within layouts/application (100.2ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 371ms (Views: 359.1ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-05-23 10:38:45 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"pCpiHFQ/5f5iMYw0A0L2jd/3TUrOBK7E1X5jfti2oaWYTk/i4Qub7pTQg+9lsKTCx7ELPitLbdejcwgL4LouaQ==", "comment"=>{"typos"=>"0", "year"=>"0", "message"=>"dファdファfdファsf"}, "commit"=>"登録", "id"=>"1"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 1, 'dファdファfdファsf', 0, 2, '2017-05-23 01:38:45', '2017-05-23 01:38:45')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments`  ORDER BY `comments`.`id` DESC LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `users` SET `commentedclass` = '1#1#', `commentedid` = '1#2#', `bycommented` = '1#2#', `updated_at` = '2017-05-23 01:38:45' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 18ms (ActiveRecord: 4.5ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 10:38:45 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `courses` SET `pv` = 3, `updated_at` = '2017-05-23 01:38:45' WHERE `courses`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (2.1ms)
+  Rendered courses/_commentform.html.haml (2.1ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (9.9ms)
+  Rendered courses/show.html.haml within layouts/application (25.1ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 365ms (Views: 351.5ms | ActiveRecord: 3.3ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:38:53 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (9.7ms)
+  Rendered layouts/_navbar.html.haml (2.5ms)
+Completed 200 OK in 283ms (Views: 254.5ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 10:38:56 +0900
+Processing by InquiryController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered inquiry/index.html.haml within layouts/application (14.6ms)
+  Rendered layouts/_navbar.html.haml (3.7ms)
+Completed 200 OK in 359ms (Views: 351.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/inquiry" for ::1 at 2017-05-23 10:39:18 +0900
+Processing by InquiryController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  Rendered inquiry/index.html.haml within layouts/application (13.8ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 383ms (Views: 380.9ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 10:39:21 +0900
+Processing by CommentController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments`[0m
+  Rendered comment/index.html.haml within layouts/application (8.2ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 289ms (Views: 282.1ms | ActiveRecord: 0.9ms)
+
+
+Started DELETE "/comment/1" for ::1 at 2017-05-23 10:39:25 +0900
+Processing by CommentController#destroy as HTML
+  Parameters: {"authenticity_token"=>"LX2J0nu/RDAYz+KDzIDhnGi/f5Bw9GUYYvpONMtm6t8RGaQszos6IO4u7ViqcrPTcPk55JW7pgsU9yVB82plEw==", "id"=>"1"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `commentedid` = '2#', `updated_at` = '2017-05-23 01:39:25' WHERE `users`.`id` = 1
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mDELETE FROM `comments` WHERE `comments`.`id` = 1[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/comment/index
+Completed 302 Found in 13ms (ActiveRecord: 3.9ms)
+
+
+Started GET "/comment/index" for ::1 at 2017-05-23 10:39:25 +0900
+Processing by CommentController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mComment Load (1.4ms)[0m  SELECT `comments`.* FROM `comments`
+  Rendered comment/index.html.haml within layouts/application (3.4ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 282ms (Views: 277.3ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 10:39:26 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (4.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT DISTINCT `courses`.* FROM `courses`
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.6ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1  ORDER BY `comments`.`id` DESC LIMIT 1
+  Rendered mypage/result.html.haml within layouts/application (10.1ms)
+  Rendered layouts/_navbar.html.haml (2.7ms)
+Completed 200 OK in 279ms (Views: 270.1ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:39:28 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (8.4ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 249ms (Views: 243.2ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-05-23 10:39:29 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT DISTINCT `courses`.* FROM `courses`
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1  ORDER BY `comments`.`id` DESC LIMIT 1
+  Rendered mypage/result.html.haml within layouts/application (8.7ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 281ms (Views: 277.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 10:39:30 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  UPDATE `courses` SET `pv` = 4, `updated_at` = '2017-05-23 01:39:30' WHERE `courses`.`id` = 1
+  [1m[36m (0.9ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (1.7ms)
+  Rendered courses/_commentform.html.haml (2.0ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (8.3ms)
+  Rendered courses/show.html.haml within layouts/application (24.5ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 271ms (Views: 259.8ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-05-23 10:39:32 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"PbYD8eI+ACgfrZOqJH4zcFopNK6Dew5V07/yqObtg4oB0i4PVwp+OOlMnHFCjGE/Qm9y2mY0zUalspnd3uEMRg==", "comment"=>{"typos"=>"0", "year"=>"0", "message"=>"dfasdfasf"}, "commit"=>"登録", "id"=>"1"}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (2.4ms)[0m  INSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 1, 'dfasdfasf', 0, 4, '2017-05-23 01:39:32', '2017-05-23 01:39:32')
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (3.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.9ms)[0m  [1mSELECT  `comments`.* FROM `comments`  ORDER BY `comments`.`id` DESC LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE `users` SET `commentedclass` = '1#1#1#', `commentedid` = '2#3#', `bycommented` = '1#2#4#', `updated_at` = '2017-05-23 01:39:32' WHERE `users`.`id` = 1
+  [1m[36m (1.0ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 25ms (ActiveRecord: 10.6ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 10:39:32 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mUPDATE `courses` SET `pv` = 5, `updated_at` = '2017-05-23 01:39:32' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.3ms)
+  Rendered courses/_rateform.html.haml (1.7ms)
+  Rendered courses/_commentform.html.haml (2.0ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (67.3ms)
+  Rendered courses/show.html.haml within layouts/application (81.5ms)
+  Rendered layouts/_navbar.html.haml (3.3ms)
+Completed 200 OK in 492ms (Views: 481.6ms | ActiveRecord: 3.2ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:39:36 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (14.0ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.9ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.7ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (12.3ms)
+  Rendered layouts/_navbar.html.haml (2.7ms)
+Completed 200 OK in 352ms (Views: 328.3ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:40:03 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (1.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (2.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (10.4ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 281ms (Views: 271.6ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-05-23 10:40:12 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (1.1ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (1.1ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE `courses` SET `pv` = 6, `updated_at` = '2017-05-23 01:40:12' WHERE `courses`.`id` = 1[0m
+  [1m[35m (1.1ms)[0m  COMMIT
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (1.2ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_rateform.html.haml (2.5ms)
+  Rendered courses/_commentform.html.haml (3.3ms)
+  [1m[36mComment Load (1.1ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (13.3ms)
+  Rendered courses/show.html.haml within layouts/application (29.9ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 458ms (Views: 436.3ms | ActiveRecord: 6.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-05-23 10:46:10 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (1.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (9.5ms)
+  Rendered layouts/_navbar.html.haml (10.8ms)
+Completed 200 OK in 341ms (Views: 334.4ms | ActiveRecord: 2.9ms)
