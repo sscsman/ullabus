@@ -15,7 +15,7 @@
                 -@aaa = Course.find(a.to_i)
                 .col-xs-12.coursename #{@aaa.coursename.truncate(11)}
                 .col-xs-6 - #{@aaa.teacher.truncate(8)}
-                .col-xs-6  コメント (#{Comment.where(courseid: a.to_i).last.id})
+                .col-xs-6  コメント (#{Comment.where(courseid: a.to_i).count})
                 .clear
 
 
