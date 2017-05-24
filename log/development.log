@@ -5272,3 +5272,50 @@ Processing by MypageController#result as HTML
   Rendered mypage/result.html.haml within layouts/application (13.3ms)
   Rendered layouts/_navbar.html.haml (3.2ms)
 Completed 200 OK in 485ms (Views: 477.1ms | ActiveRecord: 2.6ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=w&commit=Search" for ::1 at 2017-05-24 12:35:23 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (3.7ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>"w"}, "commit"=>"Search"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  Rendered mypage/result.html.haml within layouts/application (697.8ms)
+Completed 500 Internal Server Error in 858ms (ActiveRecord: 6.4ms)
+
+ActionView::Template::Error (undefined method `empty?' for nil:NilClass):
+    3: %h1.serchfor
+    4:   - if params[:q]["coursename_cont"].empty? && params[:q]["teacher_cont"].empty?
+    5:     全講義の一覧
+    6:   - elsif params[:q]["teacher_cont"].empty?
+    7:     "#{params[:q]["coursename_cont"]}"で講義を検索
+    8:   - elsif params[:q]["coursename_cont"].empty?
+    9:     "#{params[:q]["teacher_cont"]}"で講義を検索
+  app/views/mypage/result.html.haml:6:in `_app_views_mypage_result_html_haml___2405942539910586481_70349739891000'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (11.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.3ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (169.1ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=w&commit=Search" for ::1 at 2017-05-24 12:35:33 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>"w"}, "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses` WHERE (`courses`.`coursename` LIKE '%w%')
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  DISTINCT `courses`.* FROM `courses` WHERE (`courses`.`coursename` LIKE '%w%') LIMIT 50 OFFSET 0[0m
+  Rendered mypage/result.html.haml within layouts/application (42.3ms)
+  Rendered layouts/_navbar.html.haml (7.1ms)
+Completed 200 OK in 445ms (Views: 437.1ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=w&commit=Search" for ::1 at 2017-05-24 12:35:36 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>"w"}, "commit"=>"Search"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses` WHERE (`courses`.`coursename` LIKE '%w%')[0m
+  [1m[35mCourse Load (0.8ms)[0m  SELECT  DISTINCT `courses`.* FROM `courses` WHERE (`courses`.`coursename` LIKE '%w%') LIMIT 50 OFFSET 0
+  Rendered mypage/result.html.haml within layouts/application (13.7ms)
+  Rendered layouts/_navbar.html.haml (5.0ms)
+Completed 200 OK in 336ms (Views: 330.0ms | ActiveRecord: 1.9ms)

@@ -1,15 +1,15 @@
 = stylesheet_link_tag "css/result", :media => "all"
 
 %h1.serchfor
-  - if params[:q]["coursename_cont"].empty? && params[:q]["teacher_cont"].empty?
+  - if params[:q]["coursename_cont"].blank? && params[:q]["teacher_cont"].blank?
     全講義の一覧
-  - elsif params[:q]["teacher_cont"].empty?
+  - elsif params[:q]["teacher_cont"].blank?
     "#{params[:q]["coursename_cont"]}"で講義を検索
-  - elsif params[:q]["coursename_cont"].empty?
+  - elsif params[:q]["coursename_cont"].blank?
     "#{params[:q]["teacher_cont"]}"で講義を検索
   - else
     "#{params[:q]["teacher_cont"]}"&"#{params[:q]["coursename_cont"]}"で講義を検索
-    
+
 .boxouter
   = search_form_for Course.search(params[:q]), :class => 'searchbox', :url => '/search/result' do |f|
     .form-group.row
