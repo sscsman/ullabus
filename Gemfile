@@ -48,8 +48,12 @@ gem 'devise-bootstrap-views'
 gem 'devise-i18n-views'
 gem 'devise-i18n'
 gem 'banken'
+gem 'kaminari'
 
 group :production do
   gem 'pg',             '0.17.1'
   gem 'rails_12factor', '0.0.2'
+end
+group :development, :test do
+  gem 'bullet'
 end

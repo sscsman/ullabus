@@ -5,6 +5,9 @@
     全講義の一覧
   - else
     "#{params[:q]["coursename_cont"]}"で講義を検索
+.row
+  .col-xs-12
+    = paginate @res
 
 .result_outer
   - @res.each do |a|
