@@ -1,10 +1,30 @@
 = stylesheet_link_tag "css/result", :media => "all"
 
 %h1.serchfor
-  - if params[:q]["coursename_cont"].empty?
+  - if params[:q]["coursename_cont"].empty? && params[:q]["teacher_cont"].empty?
     全講義の一覧
-  - else
+  - elsif params[:q]["teacher_cont"].empty?
     "#{params[:q]["coursename_cont"]}"で講義を検索
+  - elsif params[:q]["coursename_cont"].empty?
+    "#{params[:q]["teacher_cont"]}"で講義を検索
+  - else
+    "#{params[:q]["teacher_cont"]}"&"#{params[:q]["coursename_cont"]}"で講義を検索
+    
+.boxouter
+  = search_form_for Course.search(params[:q]), :class => 'searchbox', :url => '/search/result' do |f|
+    .form-group.row
+      %label.col-xs-2 講義名:
+      .col-xs-10
+        = f.search_field :coursename_cont, :class => 'form-control', :placeholder => '講義名'
+    .form-group.row
+      %label.col-xs-2 教員名:
+      .col-xs-10
+        = f.search_field :teacher_cont, :class => 'form-control', :placeholder => '教員名'
+    .form-group
+      = f.submit "Search", :class => 'btn btn-default pull-right'
+    .clear
+
+
 .row
   .col-xs-12
     = paginate @res

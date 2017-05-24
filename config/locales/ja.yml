@@ -6,3 +6,14 @@ ja:
       truncate: "..."
       first: "最初"
       last: "最後"
+
+
+  activerecords:
+    errors:
+      models:
+        user:
+          attributes:
+            password:
+              blank: パスワードが空です
+            password_confirmation:
+              confirmation: 確認用パスワードが空です
