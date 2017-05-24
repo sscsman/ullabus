@@ -21,7 +21,7 @@ class MypageController < ApplicationController
   def result
     #@products = Product.all
     @q   = Course.search(params[:q])
-    @res = @q.result(distinct: true).page(params[:page]).per(50)
+    @res = @q.result(distinct: true).page(params[:page]).per(1)
     @com = Comment.all
 
 

@@ -4,3 +4,5 @@ ja:
       previous: "« 前ページ"
       next: "次ページ »"
       truncate: "..."
+      first: "最初のページ"
+      last: "最後のページ"
