@@ -49,6 +49,7 @@ gem 'devise-i18n-views'
 gem 'devise-i18n'
 gem 'banken'
 gem 'kaminari'
+gem 'redcarpet'
 
 group :production do
   gem 'pg',             '0.17.1'

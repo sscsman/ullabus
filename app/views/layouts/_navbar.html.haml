@@ -3,6 +3,7 @@
     %ul.nav.navbar-nav.navbar-left
       -unless user_signed_in?
         %li= link_to 'ウラバス', "/"
+        %li= link_to 'このサイトについて', "/agreement"
 
       -else
         %li= link_to 'マイページ', "/mypage/index"

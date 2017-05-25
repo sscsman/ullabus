@@ -5319,3 +5319,493 @@ Processing by MypageController#result as HTML
   Rendered mypage/result.html.haml within layouts/application (13.7ms)
   Rendered layouts/_navbar.html.haml (5.0ms)
 Completed 200 OK in 336ms (Views: 330.0ms | ActiveRecord: 1.9ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-05-25 21:09:59 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (0.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"y3Wbydd3F2cgDx39fKENtFWcWtauDcgBgqGHMxaL4yOoAqPdvQJc91KsH136TEObulvBfFOJPYFXJIW4dCjieg=="}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.3ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 602ms (ActiveRecord: 4.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:09:59 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (6.3ms)
+Completed 500 Internal Server Error in 50ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    26:     =render 'agreement'
+    27: .footer
+    28:   %p
+    29:       Copyright 2017 Ullabus
+  app/views/registration/index.html.haml:29
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (4.8ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (162.8ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:10:20 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (6.2ms)
+  Rendered registration/index.html.haml within layouts/application (754.3ms)
+  Rendered layouts/_navbar.html.haml (5.2ms)
+Completed 200 OK in 1103ms (Views: 1101.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-84e64a6ca6bd5c098f0437fb52bc1a535ebf0c122fc80aad48f6280c34c639d5.css?body=1" for ::1 at 2017-05-25 21:10:21 +0900
+
+
+Started GET "/" for ::1 at 2017-05-25 21:10:47 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (49.5ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 324ms (Views: 322.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-a85071cb8f0de7d0f660c5622bb9e17415ddf25bce50be19596a7750c4612c0b.css?body=1" for ::1 at 2017-05-25 21:10:47 +0900
+
+
+Started GET "/" for ::1 at 2017-05-25 21:18:54 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (84.1ms)
+  Rendered registration/index.html.haml within layouts/application (92.7ms)
+Completed 500 Internal Server Error in 118ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error ("markdown" filter's pandoc-ruby dependency missing: try installing it or adding it to your Gemfile):
+  app/views/registration/index.html.haml:26:in `_app_views_registration_index_html_haml___3786084009884047285_70300108138380'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (159.8ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:20:49 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.9ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (31.4ms)
+  Rendered registration/index.html.haml within layouts/application (667.0ms)
+  Rendered layouts/_navbar.html.haml (4.5ms)
+Completed 200 OK in 1181ms (Views: 1157.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:23:05 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (8.2ms)
+  Rendered registration/index.html.haml within layouts/application (15.2ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 257ms (Views: 255.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:23:08 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (6.4ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 292ms (Views: 291.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:23:27 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (8.3ms)
+  Rendered registration/index.html.haml within layouts/application (14.6ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 259ms (Views: 257.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:24:55 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (7.0ms)
+  Rendered registration/index.html.haml within layouts/application (14.0ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 288ms (Views: 287.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:25:40 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_agreement.html.haml (4.9ms)
+  Rendered registration/index.html.haml within layouts/application (11.9ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 257ms (Views: 256.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:28:22 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (46.7ms)
+Completed 500 Internal Server Error in 72ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Missing partial registration/_agreement, application/_agreement with {:locale=>[:ja], :formats=>[:html], :variants=>[], :handlers=>[:erb, :builder, :raw, :ruby, :coffee, :haml, :jbuilder]}. Searched in:
+  * "/Users/shindenryuusei/rate/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/kaminari-0.17.0/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/devise-i18n-1.1.2/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/devise-i18n-views-0.3.7/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/devise-bootstrap-views-0.0.11/app/views"
+  * "/Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/devise-4.3.0/app/views"
+):
+    23: 
+    24: .secondbox
+    25:   .agreement
+    26:     =render 'agreement'
+    27: .footer
+    28:   %p
+    29:     Copyright 2017 Ullabus
+  app/views/registration/index.html.haml:26:in `_app_views_registration_index_html_haml__3258135295766756684_70272618731520'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (157.8ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:30:32 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (9.8ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 269ms (Views: 268.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:30:39 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (12.3ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 331ms (Views: 330.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:31:22 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (3.8ms)
+  Rendered layouts/_navbar.html.haml (29.7ms)
+Completed 200 OK in 394ms (Views: 392.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:31:24 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (6.7ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 360ms (Views: 358.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:32:15 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (4.9ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 282ms (Views: 281.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:32:19 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (9.5ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 269ms (Views: 268.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:32:50 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (61.8ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 313ms (Views: 311.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-db50707864b40f9f1e609adeb272713cfb4d12f667ecc7349017fbc68898af0b.css?body=1" for ::1 at 2017-05-25 21:32:50 +0900
+
+
+Started GET "/" for ::1 at 2017-05-25 21:33:03 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (4.3ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 297ms (Views: 296.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:34:22 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (4.9ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 272ms (Views: 270.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:34:23 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (4.3ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 267ms (Views: 266.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:36:13 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (1.5ms)
+  Rendered registration/index.html.haml within layouts/application (12.4ms)
+  Rendered layouts/_navbar.html.haml (1.2ms)
+Completed 200 OK in 292ms (Views: 291.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:41:10 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/index.html.haml within layouts/application (8.6ms)
+Completed 500 Internal Server Error in 29ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (The line was indented 2 levels deeper than the previous line.):
+    1: = stylesheet_link_tag "css/toppage", :media => "all"
+    2: .firstbox
+    3:   .row
+    4:     .col-md-6
+  app/assets/stylesheets/css/toppage.css.sass:22
+  app/views/registration/index.html.haml:1:in `_app_views_registration_index_html_haml__3258135295766756684_70272665567280'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (18.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (6.2ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (159.8ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:41:33 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (63.1ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 364ms (Views: 362.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-2bd8623eb00219157652b2b58d86652a243cddcbd6ef91c27a2256782ab1435c.css?body=1" for ::1 at 2017-05-25 21:41:34 +0900
+
+
+Started GET "/" for ::1 at 2017-05-25 21:42:06 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (1.2ms)
+  Rendered registration/index.html.haml within layouts/application (8.1ms)
+Completed 500 Internal Server Error in 31ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    2:   .col-xs-8.center-block
+    3:     .news
+    4:     　%p
+    5:         このサイトについて
+  app/views/registration/_news.html.haml:5
+  app/views/registration/index.html.haml:25:in `_app_views_registration_index_html_haml__3258135295766756684_70272665567280'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.0ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.4ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (153.6ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:42:16 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (2.2ms)
+  Rendered registration/index.html.haml within layouts/application (10.0ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 257ms (Views: 256.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:44:27 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (3.3ms)
+  Rendered registration/index.html.haml within layouts/application (12.6ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 307ms (Views: 306.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:45:39 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (8.1ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 268ms (Views: 266.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:45:52 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (1.7ms)
+  Rendered registration/index.html.haml within layouts/application (8.0ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 267ms (Views: 265.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:46:20 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.9ms)
+  Rendered registration/index.html.haml within layouts/application (52.6ms)
+Completed 500 Internal Server Error in 73ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Inconsistent indentation: 6 spaces used for indentation, but the rest of the document was indented using 4 spaces.):
+    1: .row
+    2:     .news.center-block
+    3:       %p
+    4:         このサイトについて
+  app/views/registration/_news.html.haml:3
+  app/views/registration/index.html.haml:25:in `_app_views_registration_index_html_haml__3258135295766756684_70272665567280'
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (14.1ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (147.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:46:38 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (1.6ms)
+  Rendered registration/index.html.haml within layouts/application (7.8ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 265ms (Views: 264.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-e7cc494aa647c252f15b19ac2ce21289ad8bdb7895b3c590883192a0129d7695.css?body=1" for ::1 at 2017-05-25 21:46:38 +0900
+
+
+Started GET "/" for ::1 at 2017-05-25 21:46:54 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (2.2ms)
+  Rendered registration/index.html.haml within layouts/application (10.1ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 282ms (Views: 280.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:47:04 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (2.2ms)
+  Rendered registration/index.html.haml within layouts/application (10.5ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 280ms (Views: 279.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:47:07 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (7.8ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 397ms (Views: 395.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:47:36 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (2.3ms)
+  Rendered registration/index.html.haml within layouts/application (13.2ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 289ms (Views: 287.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:47:39 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (6.9ms)
+  Rendered layouts/_navbar.html.haml (1.6ms)
+Completed 200 OK in 284ms (Views: 282.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:48:05 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (3.1ms)
+  Rendered registration/index.html.haml within layouts/application (12.2ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 279ms (Views: 278.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:48:50 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (1.9ms)
+  Rendered registration/index.html.haml within layouts/application (9.5ms)
+  Rendered layouts/_navbar.html.haml (1.4ms)
+Completed 200 OK in 282ms (Views: 281.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:49:12 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (6.2ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 259ms (Views: 257.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:50:23 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (6.1ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 294ms (Views: 292.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:50:25 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (7.0ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 304ms (Views: 302.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-05-25 21:50:38 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (1.0ms)
+  Rendered registration/index.html.haml within layouts/application (7.7ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 320ms (Views: 319.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:50:43 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (4.7ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 405ms (Views: 404.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:51:32 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (10.7ms)
+  Rendered layouts/_navbar.html.haml (51.0ms)
+Completed 200 OK in 374ms (Views: 373.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:52:13 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (11.5ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 310ms (Views: 308.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:58:09 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (1.4ms)
+Completed 500 Internal Server Error in 23ms (ActiveRecord: 0.0ms)
+
+ActionView::Template::Error (Illegal nesting: nesting within plain text is illegal.):
+    4:     %pre
+    5:       このサイトについて:
+    6:       　このサイトは、阪大の４回生が個人的な趣味で運営しているものであり、
+    7:         サークルの活動やカルト的活動でもありません。
+    8:         現在のところ無収入で行っておりますが、今後スケールのコストを賄うために収益化もありえます。
+    9:         その際のマネタイズ方法は広告に限ります。
+   10:         登録されたメールアドレス等を第三者に販売、譲渡することはありません。
+  app/views/registration/agreement.html.haml:7
+
+
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_source.erb (12.9ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_trace.html.erb (5.5ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/_request_and_response.html.erb (1.6ms)
+  Rendered /Users/shindenryuusei/.rbenv/versions/2.2.7/lib/ruby/gems/2.2.0/gems/actionpack-4.2.8/lib/action_dispatch/middleware/templates/rescues/template_error.html.erb within rescues/layout (184.6ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:58:32 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (11.2ms)
+  Rendered layouts/_navbar.html.haml (1.0ms)
+Completed 200 OK in 279ms (Views: 278.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/agreement" for ::1 at 2017-05-25 21:59:07 +0900
+Processing by RegistrationController#agreement as HTML
+  Rendered registration/agreement.html.haml within layouts/application (60.1ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 339ms (Views: 337.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-59dc34237c16d5030936265e37b533e86a82ad61afa27def3d25050dbca67e65.css?body=1" for ::1 at 2017-05-25 21:59:07 +0900

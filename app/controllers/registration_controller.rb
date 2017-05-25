@@ -6,6 +6,10 @@ class RegistrationController < ApplicationController
   def show
   end
 
+  def agreement
+
+  end
+
   def check
     if user_signed_in?
      redirect_to   mypage_index_path

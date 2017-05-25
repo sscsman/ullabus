@@ -42,6 +42,7 @@ Rails.application.routes.draw do
   post '/dislike/:id', to: 'courses#dislike'
 
   get  '/search/result', to: 'mypage#result'
+  get  '/agreement', to: 'registration#agreement'
 
   get 'inquiry' => 'inquiry#index'              # 入力画面
   post 'inquiry/confirm' => 'inquiry#confirm'   # 確認画面
