@@ -6877,3 +6877,105 @@ Processing by MypageController#result as HTML
   Rendered mypage/result.html.haml within layouts/application (630.7ms)
   Rendered layouts/_navbar.html.haml (7.6ms)
 Completed 200 OK in 1175ms (Views: 1070.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-05 15:55:47 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1[0m
+  [1m[35m (0.7ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4
+  Rendered mypage/result.html.haml within layouts/application (1058.3ms)
+  Rendered layouts/_navbar.html.haml (18.9ms)
+Completed 200 OK in 1837ms (Views: 1689.0ms | ActiveRecord: 24.4ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-06-05 15:55:52 +0900
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered courses/_form.html.haml (33.3ms)
+  Rendered courses/new.html.haml within layouts/application (46.8ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 335ms (Views: 331.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/assets/css/newcourse.self-08cb3c1341c6eaf012c522b600fed351d755e6d5a46feee37863fbb8b53ab4c0.css?body=1" for ::1 at 2017-06-05 15:55:52 +0900
+
+
+Started POST "/courses" for ::1 at 2017-06-05 15:56:06 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"DfFlIufhf8iItqrmLfHR4PzlAGiVw151eX9nv5fUEuOtnMmKc2gC52MVbqFhiH60musQlmY32h9nthh0qCkX9A==", "course"=>{"coursename"=>"aa", "teacher"=>"aa", "dept"=>"基礎工", "credits"=>"", "duration"=>"前期", "weekday"=>"", "code"=>""}, "commit"=>"登録"}
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.4ms)[0m  ROLLBACK
+  Rendered courses/_form.html.haml (4.4ms)
+  Rendered courses/new.html.haml within layouts/application (11.3ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 1000ms (Views: 386.8ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/courses" for ::1 at 2017-06-05 15:57:17 +0900
+Processing by CoursesController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT `courses`.* FROM `courses`
+  Rendered courses/index.html.haml within layouts/application (10.1ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 289ms (Views: 282.4ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/courses/new" for ::1 at 2017-06-05 15:57:21 +0900
+Processing by CoursesController#new as HTML
+  [1m[36mUser Load (4.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  Rendered courses/_form.html.haml (9.3ms)
+  Rendered courses/new.html.haml within layouts/application (14.6ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 263ms (Views: 255.6ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/courses" for ::1 at 2017-06-05 15:57:40 +0900
+Processing by CoursesController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tyDFJxyoQ4DivN47qXJYSkxJMMNvw1HnG7A1Rj6VOnIXTWmPiCE+rwkfGnzlC/ceKkcgPZw31Y0FeUqNAWg/ZQ==", "course"=>{"coursename"=>"xc", "teacher"=>"っx", "dept"=>"法", "credits"=>"2", "duration"=>"前期", "weekday"=>"", "code"=>""}, "commit"=>"登録"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (1.4ms)[0m  INSERT INTO `courses` (`coursename`, `teacher`, `credits`, `duration`, `weekday`, `code`, `dept`, `creator`, `created_at`, `updated_at`) VALUES ('xc', 'っx', 2, '前期', '', '', '法', 1, '2017-06-05 06:57:40', '2017-06-05 06:57:40')
+  [1m[36m (1.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  `courses`.* FROM `courses`  ORDER BY `courses`.`id` DESC LIMIT 1[0m
+  [1m[35m (0.1ms)[0m  BEGIN
+  [1m[36mSQL (1.0ms)[0m  [1mUPDATE `users` SET `createdclass` = '1#2#3#4#5#', `updated_at` = '2017-06-05 06:57:40' WHERE `users`.`id` = 1[0m
+  [1m[35m (0.8ms)[0m  COMMIT
+Redirected to http://localhost:3000/courses/5
+Completed 302 Found in 24ms (ActiveRecord: 6.3ms)
+
+
+Started GET "/courses/5" for ::1 at 2017-06-05 15:57:40 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"5"}
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 5 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  UPDATE `courses` SET `pv` = 1, `updated_at` = '2017-06-05 06:57:40' WHERE `courses`.`id` = 5
+  [1m[36m (0.5ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.4ms)[0m  [1mINSERT INTO `ratings` (`courseid`, `created_at`, `updated_at`) VALUES (5, '2017-06-05 06:57:40', '2017-06-05 06:57:40')[0m
+  [1m[35m (0.4ms)[0m  COMMIT
+  Rendered courses/_likebutton.html.haml (4.0ms)
+  Rendered courses/_chartbox.html.haml (4.7ms)
+  Rendered courses/_rateform.html.haml (17.6ms)
+  Rendered courses/_commentform.html.haml (5.6ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 5[0m
+  Rendered courses/_commentbox.html.haml (24.2ms)
+  Rendered courses/show.html.haml within layouts/application (132.1ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 466ms (Views: 438.3ms | ActiveRecord: 4.6ms)

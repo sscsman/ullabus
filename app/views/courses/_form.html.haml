@@ -19,7 +19,7 @@
     .field.form-group
       %label.col-md-2.control-label 対象学部
       .col-md-10
-        = f.text_field :dept, :class => "form-control", :placeholder =>"例：　経済・法・文"
+        = f.select :dept, options_for_select([['-学部-', ''],['文学部', '文'],['法学部', '法'],['経済学部', '経済'],['人間科学部', '人間科学'],['外国語学部', '外国語'],['工学部', '工'],['基礎工学部', '基礎工'],['薬学部', '薬'],['歯学部', '歯'],['医学部', '医'],['理学部', '理'],['その他', ''] ]),{} ,{:class => "form-control", :id => "select"}
     .field.form-group
       %label.col-md-2.control-label 単位数 *
       .col-md-10
