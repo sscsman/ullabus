@@ -20,6 +20,10 @@
       %label.col-xs-2 教員名:
       .col-xs-10
         = f.search_field :teacher_cont, :class => 'form-control', :placeholder => '教員名'
+    .form-group.row
+      %label.col-xs-2 学部:
+      .col-xs-10
+        = f.select :dept_start, options_for_select([['全て', ''],['文学部', '文'],['法学部', '法'],['経済学部', '経済'],['人間科学部', '人'],['外国語学部', '外国語'],['工学部', '工'],['基礎工学部', '基礎'],['薬学部', '薬'],['歯学部', '歯'],['医学部', '医'],['理学部', '理'] ]),{} ,{:class => "form-control", :id => "select"}
     .form-group
       = f.submit "Search", :class => 'btn btn-default pull-right'
     .clear
