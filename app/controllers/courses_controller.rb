@@ -33,6 +33,29 @@ class CoursesController < ApplicationController
       @likedornot ={}
     end
 
+    if @charts.vote = 0
+      random = Random.new(params[:id].to_i)
+      @r1 = (random.rand(5..25).to_f/5)
+      @r2 = (random.rand(5..25).to_f/5)
+      @r3 = (random.rand(5..25).to_f/5)
+      @r4 = (random.rand(5..25).to_f/5)
+      @r5 = (random.rand(5..25).to_f/5)
+
+    elsif @charts.vote = 1
+      random = Random.new(params[:id].to_i)
+      @r1 = (((random.rand(5..25).to_f/5) + @charts.teacher.to_f)/2).round(2)
+      @r2 = (((random.rand(5..25).to_f/5) + @charts.courserate.to_f)/2).round(2)
+      @r3 = (((random.rand(5..25).to_f/5) + @charts.easy.to_f)/2).round(2)
+      @r4 = (((random.rand(5..25).to_f/5) + @charts.homework.to_f)/2).round(2)
+      @r5 = (((random.rand(5..25).to_f/5) + @charts.attendance.to_f)/2).round(2)
+    else
+      @r1 = (@charts.teacher.to_f / @charts.vote.to_f).round(2)
+      @r2 = (@charts.courserate.to_f / @charts.vote.to_f).round(2)
+      @r3 = (@charts.easy.to_f / @charts.vote.to_f).round(2)
+      @r4 = (@charts.homework.to_f / @charts.vote.to_f).round(2)
+      @r5 = (@charts.attendance.to_f / @charts.vote.to_f).round(2)
+    end
+
   end
 
   def rate
