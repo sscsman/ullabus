@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170522182741) do
+ActiveRecord::Schema.define(version: 20170617065617) do
 
   create_table "comments", force: :cascade do |t|
     t.integer  "courseid",    limit: 4
@@ -36,9 +36,10 @@ ActiveRecord::Schema.define(version: 20170522182741) do
     t.string   "univ",       limit: 255
     t.string   "dept",       limit: 255
     t.integer  "creator",    limit: 4
-    t.datetime "created_at",                         null: false
-    t.datetime "updated_at",                         null: false
-    t.integer  "pv",         limit: 4,   default: 0
+    t.datetime "created_at",                           null: false
+    t.datetime "updated_at",                           null: false
+    t.integer  "pv",         limit: 4,     default: 0
+    t.text     "likedby",    limit: 65535
   end
 
   create_table "ratings", force: :cascade do |t|
@@ -84,6 +85,7 @@ ActiveRecord::Schema.define(version: 20170522182741) do
     t.text     "likedclass",             limit: 65535
     t.text     "bycommented",            limit: 65535
     t.boolean  "admin",                                default: false
+    t.boolean  "comnotfy",                             default: false
   end
 
   add_index "users", ["confirmation_token"], name: "index_users_on_confirmation_token", unique: true, using: :btree

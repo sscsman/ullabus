@@ -11,6 +11,7 @@ class CoursesController < ApplicationController
   # GET /courses/1
   # GET /courses/1.json
   def show
+
     @course.pv +=1
     @course.save
     @usrs = User.find(current_user.id)
@@ -93,12 +94,24 @@ class CoursesController < ApplicationController
 
       ccc.save
 
+      @courses = Course.find(params[:id])
 
       @usrs = User.find(current_user.id)
       @usrs.commentedclass = @usrs.commentedclass.to_s + params[:id] + '#'
       @usrs.commentedid = @usrs.commentedid.to_s  + Comment.last.id.to_s + '#'
-      @usrs.bycommented = @usrs.bycommented.to_s + Course.find(params[:id]).pv.to_s+ '#'
+      @usrs.bycommented = @usrs.bycommented.to_s + @courses.pv.to_s+ '#'
       @usrs.save
+
+      bcclist = ""
+      unless @courses.likedby.blank?
+        @courses.likedby.split(",").each{|var|
+        unless var.blank?
+          bcclist += User.find(var.to_i).email + ","
+        end
+        }
+        ComNotifyMail.commentnotify( bcclist , params[:id] ).deliver
+      end
+
 
 
       end
@@ -143,6 +156,10 @@ class CoursesController < ApplicationController
     if @likedornot.blank?
       @usrs.likedclass = @usrs.likedclass.to_s + params[:id]  + '#'
       @usrs.save
+
+      @courses = Course.find(params[:id])
+      @courses.likedby =  @courses.likedby.to_s + current_user.id.to_s + ","
+      @courses.save
     end
 
   end
@@ -155,6 +172,10 @@ class CoursesController < ApplicationController
     @usrs.likedclass.slice!(0)
     @usrs.save
 
+    @courses = Course.find(params[:id])
+    @courses.likedby = ("," + @courses.likedby).gsub(","+current_user.id.to_s+",", ",")
+    @courses.likedby.slice!(0)
+    @courses.save
 
   end
 
