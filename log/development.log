@@ -9817,3 +9817,1071 @@ Processing by CoursesController#show as HTML
   Rendered courses/show.html.haml within layouts/application (623.0ms)
   Rendered layouts/_navbar.html.haml (10.1ms)
 Completed 200 OK in 1009ms (Views: 978.5ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 20:57:09 +0900
+  [1m[36mActiveRecord::SchemaMigration Load (6.8ms)[0m  [1mSELECT `schema_migrations`.* FROM `schema_migrations`[0m
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0
+  [1m[36mRating Load (0.6ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5
+  Rendered mypage/result.html.haml within layouts/application (5329.1ms)
+  Rendered layouts/_navbar.html.haml (7.0ms)
+Completed 200 OK in 6084ms (Views: 5953.0ms | ActiveRecord: 27.4ms)
+
+
+Started GET "/assets/application.self-f0daf68ca8830c1a33a931145dc45915e35555ad986857139f4f525ba4a1ce15.css?body=1" for ::1 at 2017-06-18 20:57:16 +0900
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 20:57:37 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (3.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (7.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 12 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.5ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 11 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.7ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (65.6ms)
+  Rendered layouts/_navbar.html.haml (3.4ms)
+Completed 200 OK in 503ms (Views: 475.7ms | ActiveRecord: 14.9ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 20:59:15 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mComment Load (0.5ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 12 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 11 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.8ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (1.9ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (1.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (176.6ms)
+  Rendered layouts/_navbar.html.haml (2.7ms)
+Completed 200 OK in 4261ms (Views: 4250.6ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/assets/application.self-1059b52fd3ddabac2c451239f35d8133b12f96bf7e03f4ccec2087c34cd1fdea.css?body=1" for ::1 at 2017-06-18 20:59:20 +0900
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 20:59:33 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (5.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5[0m
+  Rendered mypage/result.html.haml within layouts/application (23.6ms)
+  Rendered layouts/_navbar.html.haml (5.7ms)
+Completed 200 OK in 353ms (Views: 339.2ms | ActiveRecord: 9.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 20:59:38 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 12 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 11 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 10 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 9 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 8 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 7 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 6 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (20.2ms)
+  Rendered layouts/_navbar.html.haml (5.3ms)
+Completed 200 OK in 339ms (Views: 331.0ms | ActiveRecord: 4.5ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 20:59:39 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (1.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`
+  [1m[36mCourse Load (0.8ms)[0m  [1mSELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0[0m
+  [1m[35mRating Load (3.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (1.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mRating Load (0.6ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5[0m
+  Rendered mypage/result.html.haml within layouts/application (42.6ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 385ms (Views: 370.1ms | ActiveRecord: 11.0ms)
+
+
+Started GET "/courses/4" for ::1 at 2017-06-18 20:59:42 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"4"}
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 4 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `courses` SET `pv` = 10, `updated_at` = '2017-06-18 11:59:42' WHERE `courses`.`id` = 4[0m
+  [1m[35m (0.6ms)[0m  COMMIT
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1
+  Rendered courses/_likebutton.html.haml (3.5ms)
+  Rendered courses/_chartbox.html.haml (5.0ms)
+  Rendered courses/_rateform.html.haml (19.5ms)
+  Rendered courses/_commentform.html.haml (6.4ms)
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 4[0m
+  Rendered courses/_commentbox.html.haml (21.5ms)
+  Rendered courses/show.html.haml within layouts/application (76.5ms)
+  Rendered layouts/_navbar.html.haml (6.5ms)
+Completed 200 OK in 407ms (Views: 387.1ms | ActiveRecord: 3.9ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 20:59:51 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.9ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1[0m
+  [1m[35m (0.8ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5
+  Rendered mypage/result.html.haml within layouts/application (22.4ms)
+  Rendered layouts/_navbar.html.haml (7.4ms)
+Completed 200 OK in 309ms (Views: 298.4ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 21:00:07 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (26.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 12 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 11 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 10 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 9 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 8 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 7 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 6 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (19.4ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 375ms (Views: 337.9ms | ActiveRecord: 30.5ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-06-18 21:00:10 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"faJMz7t+D9V6QiUxQ8nsSio4d6hL/zg4I0uMB0/xA8obFWHOoqqOR9qoI7mgBnnNDSA0kFQjQ7Te1Q/aw8EY6w=="}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 2  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35m (0.2ms)[0m  COMMIT
+Redirected to http://localhost:3000/
+Completed 302 Found in 567ms (ActiveRecord: 0.9ms)
+
+
+Started GET "/" for ::1 at 2017-06-18 21:00:10 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (1.0ms)
+  Rendered registration/index.html.haml within layouts/application (15.2ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 275ms (Views: 267.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-06-18 21:00:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (3.6ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (27.7ms)
+  Rendered layouts/_navbar.html.haml (1.0ms)
+Completed 200 OK in 344ms (Views: 338.2ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-06-18 21:00:34 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KDcnLdLiMWXUfYHmlEoKA/tUP2fyiAl1NrrQyijtvQi370YMInwBYaliPHpvo5KHa1mnAqqRiQ01dnmkU0WXvA==", "user"=>{"email"=>"urasyllabus@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`email` = 'urasyllabus@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1[0m
+Completed 401 Unauthorized in 4ms (ActiveRecord: 0.5ms)
+Processing by Devise::SessionsController#new as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"KDcnLdLiMWXUfYHmlEoKA/tUP2fyiAl1NrrQyijtvQi370YMInwBYaliPHpvo5KHa1mnAqqRiQ01dnmkU0WXvA==", "user"=>{"email"=>"urasyllabus@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  Rendered devise/shared/_links.html.haml (0.7ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (5.3ms)
+  Rendered layouts/_navbar.html.haml (0.6ms)
+Completed 200 OK in 498ms (Views: 292.1ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-06-18 21:00:45 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"tvCkbJrq/z/zeS24h1HGgInFTPrfAs9TdjswOD4XKr8pKMVNanTPO45mkCR8uF4EGcjUn4cbTyt195lWRb8ACw==", "user"=>{"email"=>"sscsman@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sscsman@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2017-06-05 05:49:46', `current_sign_in_at` = '2017-06-18 12:00:45', `sign_in_count` = 5, `updated_at` = '2017-06-18 12:00:45' WHERE `users`.`id` = 1
+  [1m[36m (1.1ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 266ms (ActiveRecord: 2.4ms)
+
+
+Started GET "/" for ::1 at 2017-06-18 21:00:45 +0900
+Processing by RegistrationController#index as HTML
+  [1m[35mUser Load (2.1ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/mypage/index
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 5ms (ActiveRecord: 2.1ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 21:00:45 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.9ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 5 LIMIT 1[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (21.9ms)
+  Rendered layouts/_navbar.html.haml (3.1ms)
+Completed 200 OK in 313ms (Views: 303.7ms | ActiveRecord: 5.8ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:00:50 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (1.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`[0m
+  [1m[35mCourse Load (1.0ms)[0m  SELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0
+  [1m[36mRating Load (0.9ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (1.6ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mRating Load (1.1ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1[0m
+  [1m[35m (1.0ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5
+  Rendered mypage/result.html.haml within layouts/application (61.6ms)
+  Rendered layouts/_navbar.html.haml (7.9ms)
+Completed 200 OK in 483ms (Views: 455.5ms | ActiveRecord: 10.5ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:02:57 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5[0m
+  Rendered mypage/result.html.haml within layouts/application (56.1ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 336ms (Views: 327.3ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/assets/css/result.self-76c59c92b6fcfae849785d6a638153b0772172515a94b9c94f193e0c68c06277.css?body=1" for ::1 at 2017-06-18 21:02:58 +0900
+
+
+Started GET "/courses/1" for ::1 at 2017-06-18 21:03:15 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (0.7ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (6.2ms)[0m  [1mUPDATE `courses` SET `pv` = 37, `updated_at` = '2017-06-18 12:03:15' WHERE `courses`.`id` = 1[0m
+  [1m[35m (0.9ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.6ms)
+  Rendered courses/_chartbox.html.haml (1.4ms)
+  Rendered courses/_commentform.html.haml (2.4ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (48.3ms)
+  Rendered courses/show.html.haml within layouts/application (71.0ms)
+  Rendered layouts/_navbar.html.haml (65.9ms)
+Completed 200 OK in 595ms (Views: 575.3ms | ActiveRecord: 10.1ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 21:05:07 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.8ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 5 LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (2.1ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (28.9ms)
+  Rendered layouts/_navbar.html.haml (2.5ms)
+Completed 200 OK in 319ms (Views: 307.2ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:05:11 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (2.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5[0m
+  Rendered mypage/result.html.haml within layouts/application (25.4ms)
+  Rendered layouts/_navbar.html.haml (2.7ms)
+Completed 200 OK in 303ms (Views: 291.2ms | ActiveRecord: 7.6ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 21:05:12 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 5 LIMIT 1
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.6ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (1.1ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (26.5ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 319ms (Views: 308.1ms | ActiveRecord: 7.4ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 21:06:57 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (1.6ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mCourse Load (7.3ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mCourse Load (1.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 5 LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.6ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (37.2ms)
+  Rendered layouts/_navbar.html.haml (7.6ms)
+Completed 200 OK in 345ms (Views: 323.2ms | ActiveRecord: 16.8ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:07:01 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (46.3ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5
+  Rendered mypage/result.html.haml within layouts/application (26.0ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 413ms (Views: 354.5ms | ActiveRecord: 50.8ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:07:58 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.6ms)[0m  SELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`
+  [1m[36mCourse Load (0.6ms)[0m  [1mSELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.6ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4[0m
+  [1m[35mRating Load (0.7ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5[0m
+  Rendered mypage/result.html.haml within layouts/application (436.6ms)
+  Rendered layouts/_navbar.html.haml (2.5ms)
+Completed 200 OK in 719ms (Views: 709.8ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/assets/css/result.self-36e1674ad18f7a1f3848e91d5f1d8a1991c80c8e049023a91a332ade007f9bd7.css?body=1" for ::1 at 2017-06-18 21:07:58 +0900
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:08:20 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5
+  Rendered mypage/result.html.haml within layouts/application (55.1ms)
+  Rendered layouts/_navbar.html.haml (2.2ms)
+Completed 200 OK in 340ms (Views: 331.4ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/assets/css/result.self-0028bb9768b498c8de445b86ca8422a241b10d188669d6787bfe5296284337b8.css?body=1" for ::1 at 2017-06-18 21:08:21 +0900
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:08:28 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`
+  [1m[36mCourse Load (0.7ms)[0m  [1mSELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5[0m
+  Rendered mypage/result.html.haml within layouts/application (56.6ms)
+  Rendered layouts/_navbar.html.haml (2.3ms)
+Completed 200 OK in 335ms (Views: 327.1ms | ActiveRecord: 4.9ms)
+
+
+Started GET "/assets/css/result.self-8e2b10cb02537a64b483ca83be7dbec07e9c3e1e14348e2e397142fe9d9e049e.css?body=1" for ::1 at 2017-06-18 21:08:29 +0900
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 21:08:46 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mCourse Load (0.3ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 5 LIMIT 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.3ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (22.3ms)
+  Rendered layouts/_navbar.html.haml (2.7ms)
+Completed 200 OK in 290ms (Views: 281.5ms | ActiveRecord: 5.3ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-06-18 21:09:02 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"KkJfAOCXwUn/4ki6rHrKd14AurLQNVuRWbwTBCMcRnJnwFZhWwZruaALO9cGsrTzXnlRkb7tgT1vwa7py+qWGg=="}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 7ms (ActiveRecord: 1.1ms)
+
+
+Started GET "/" for ::1 at 2017-06-18 21:09:02 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (6.8ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 271ms (Views: 269.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/users/sign_in" for ::1 at 2017-06-18 21:25:25 +0900
+Processing by Devise::SessionsController#new as HTML
+  Rendered devise/shared/_links.html.haml (0.9ms)
+  Rendered devise/sessions/new.html.haml within layouts/application (6.5ms)
+  Rendered layouts/_navbar.html.haml (0.9ms)
+Completed 200 OK in 406ms (Views: 404.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/users/sign_in" for ::1 at 2017-06-18 21:25:32 +0900
+Processing by Devise::SessionsController#create as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"LqsbfLtnsiyOpe1ErriO3TBdXaTcEvtoBhlADU2JORJg7xoGAMe3SDkj0j1rvc/6ObD0mP+NSUGQdsLUa+jn/A==", "user"=>{"email"=>"sscsman@gmail.com", "password"=>"[FILTERED]", "remember_me"=>"0"}, "commit"=>"ログイン"}
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`email` = 'sscsman@gmail.com'  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  UPDATE `users` SET `last_sign_in_at` = '2017-06-18 12:00:45', `current_sign_in_at` = '2017-06-18 12:25:32', `sign_in_count` = 6, `updated_at` = '2017-06-18 12:25:32' WHERE `users`.`id` = 1
+  [1m[36m (1.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 309ms (ActiveRecord: 3.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-18 21:25:32 +0900
+Processing by RegistrationController#index as HTML
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+Redirected to http://localhost:3000/mypage/index
+Filter chain halted as :check rendered or redirected
+Completed 302 Found in 3ms (ActiveRecord: 0.5ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 21:25:32 +0900
+Processing by MypageController#index as HTML
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1[0m
+  [1m[35m (0.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 5 LIMIT 1[0m
+  [1m[35mCourse Load (1.2ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1[0m  [["id", 3]]
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 5 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.5ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (30.4ms)
+  Rendered layouts/_navbar.html.haml (2.6ms)
+Completed 200 OK in 315ms (Views: 305.4ms | ActiveRecord: 6.4ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:27:27 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[35mUser Load (4.7ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`[0m
+  [1m[35mCourse Load (0.8ms)[0m  SELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  [1m[35m (1.4ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1
+  [1m[36mRating Load (1.8ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2
+  [1m[36mRating Load (0.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1[0m
+  [1m[35m (2.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3
+  [1m[36mRating Load (1.3ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4
+  [1m[36mRating Load (0.6ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  SELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5
+  Rendered mypage/result.html.haml within layouts/application (99.8ms)
+  Rendered layouts/_navbar.html.haml (11.1ms)
+Completed 200 OK in 447ms (Views: 426.4ms | ActiveRecord: 15.7ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-06-18 21:32:04 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `courses` SET `pv` = 38, `updated_at` = '2017-06-18 12:32:04' WHERE `courses`.`id` = 1
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRating Load (0.5ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  Rendered courses/_likebutton.html.haml (0.6ms)
+  Rendered courses/_chartbox.html.haml (0.7ms)
+  Rendered courses/_commentform.html.haml (4.6ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (30.4ms)
+  Rendered courses/show.html.haml within layouts/application (49.7ms)
+  Rendered layouts/_navbar.html.haml (2.5ms)
+Completed 200 OK in 628ms (Views: 615.0ms | ActiveRecord: 3.9ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-06-18 21:33:59 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"SLJpXbap7eTNsxtvAVlc4Tj7iSKmbkX5UR3rrsiftShhoMY0/RBFxM27Id8J2VK+9yGSVGiPGW1B6Z94MYkrPg==", "comment"=>{"typos"=>"2", "year"=>"2017", "message"=>"試験100パーセントで評価されるらしい。"}, "commit"=>"登録", "id"=>"1"}
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (2.3ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `typos`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 1, '試験100パーセントで評価されるらしい。', 2017, 2, 38, '2017-06-18 12:33:59', '2017-06-18 12:33:59')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments`  ORDER BY `comments`.`id` DESC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `commentedclass` = '1#1#1#1#1#1#', `commentedid` = '2#3#4#5#13#', `bycommented` = '1#2#4#25#26#38#', `updated_at` = '2017-06-18 12:33:59' WHERE `users`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from comm at /Users/shindenryuusei/rate/app/controllers/courses_controller.rb:112)
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  Rendered com_notify_mail/commentnotify.html.haml (4.2ms)
+  Rendered com_notify_mail/commentnotify.text.haml (2.1ms)
+
+ComNotifyMail#commentnotify: processed outbound mail in 493.3ms
+
+Sent mail to  (3805.8ms)
+Date: Sun, 18 Jun 2017 21:34:00 +0900
+From: urasyllabus@gmail.com
+Message-ID: <5946733852415_5c9d3fe37163c790450cf@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=83=86=E3=82=B9=E3=83=88=E8=AC=9B=E7=BE=A9=E3=81=AB=E3=82=B3=E3=83=A1=E3=83=B3=E3=83=88=E3=81=8C=E6=8A=95=E7=A8=BF=E3=81=95=E3=82=8C=E3=81=BE=E3=81=97=E3=81=9F?=
+ =?UTF-8?Q?_-=E3=82=A6=E3=83=A9=E3=83=90=E3=82=B9?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_594673384f207_5c9d3fe37163c7904495a";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_594673384f207_5c9d3fe37163c7904495a
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44OG44K544OI6Kyb576p44Gr44Kz44Oh44Oz44OI44GM44Gk44GN44G+44GX
+44Gf44CCCmh0dHA6Ly9oYW5kYWkudWxsYWJ1cy5jb20vY291cnNlcy8xCj09
+PT09PQpVbGxhYnVzCmh0dHA6Ly9oYW5kYWkudWxsYWJ1cy5jb20K
+
+----==_mimepart_594673384f207_5c9d3fe37163c7904495a
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PHA+44OG44K544OI6Kyb576p44Gr44Kz44Oh44Oz44OI44GM44Gk44GN44G+
+44GX44Gf44CCPC9wPgo8cD4KICA8YSBocmVmPSJodHRwOi8vaGFuZGFpLnVs
+bGFidXMuY29tL2NvdXJzZXMvMSI+aHR0cDovL2hhbmRhaS51bGxhYnVzLmNv
+bS9jb3Vyc2VzLzE8L2E+CjwvcD4KPGJyPgo8YnI+CjxwPj09PT09PT09PC9w
+Pgo8cD5VbGxhYnVzPC9wPgo8cD5odHRwOi8vaGFuZGFpLnVsbGFidXMuY29t
+PC9wPgo=
+
+----==_mimepart_594673384f207_5c9d3fe37163c7904495a--
+
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 4367ms (ActiveRecord: 7.8ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-06-18 21:34:04 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.2ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `courses` SET `pv` = 39, `updated_at` = '2017-06-18 12:34:04' WHERE `courses`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.5ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRating Load (0.4ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  Rendered courses/_likebutton.html.haml (0.5ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_commentform.html.haml (2.5ms)
+  [1m[35mComment Load (0.5ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (34.1ms)
+  Rendered courses/show.html.haml within layouts/application (46.8ms)
+  Rendered layouts/_navbar.html.haml (4.0ms)
+Completed 200 OK in 368ms (Views: 356.2ms | ActiveRecord: 3.3ms)
+
+
+Started POST "/comm/1" for ::1 at 2017-06-18 21:34:34 +0900
+Processing by CoursesController#comm as HTML
+  Parameters: {"utf8"=>"✓", "authenticity_token"=>"wxvbirqHqE3jUDSu5oH6lhIIlD3ETMlnByNI/NmSFuHqCXTj8T4AbeNYDh7uAfTJ3dKPSwqtlfMX1zwqIISI9w==", "comment"=>{"typos"=>"6", "year"=>"2016", "message"=>"出席は取らない"}, "commit"=>"登録", "id"=>"1"}
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  INSERT INTO `comments` (`courseid`, `usersid`, `message`, `year`, `typos`, `bycommented`, `created_at`, `updated_at`) VALUES (1, 1, '出席は取らない', 2016, 6, 39, '2017-06-18 12:34:34', '2017-06-18 12:34:34')
+  [1m[36m (0.8ms)[0m  [1mCOMMIT[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.4ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments`  ORDER BY `comments`.`id` DESC LIMIT 1
+  [1m[36m (0.1ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  UPDATE `users` SET `commentedclass` = '1#1#1#1#1#1#1#', `commentedid` = '2#3#4#5#13#14#', `bycommented` = '1#2#4#25#26#38#39#', `updated_at` = '2017-06-18 12:34:34' WHERE `users`.`id` = 1
+  [1m[36m (0.4ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (0.4ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (0.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 2 LIMIT 1[0m
+DEPRECATION WARNING: `#deliver` is deprecated and will be removed in Rails 5. Use `#deliver_now` to deliver immediately or `#deliver_later` to deliver through Active Job. (called from comm at /Users/shindenryuusei/rate/app/controllers/courses_controller.rb:112)
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  Rendered com_notify_mail/commentnotify.html.haml (0.3ms)
+  Rendered com_notify_mail/commentnotify.text.haml (0.2ms)
+
+ComNotifyMail#commentnotify: processed outbound mail in 228.5ms
+
+Sent mail to  (3265.1ms)
+Date: Sun, 18 Jun 2017 21:34:34 +0900
+From: urasyllabus@gmail.com
+Message-ID: <5946735ad26e0_5c9d3fe37163c7904524f@MBP.local.mail>
+Subject: =?UTF-8?Q?=E3=83=86=E3=82=B9=E3=83=88=E8=AC=9B=E7=BE=A9=E3=81=AB=E3=82=B3=E3=83=A1=E3=83=B3=E3=83=88=E3=81=8C=E6=8A=95=E7=A8=BF=E3=81=95=E3=82=8C=E3=81=BE=E3=81=97=E3=81=9F?=
+ =?UTF-8?Q?_-=E3=82=A6=E3=83=A9=E3=83=90=E3=82=B9?=
+Mime-Version: 1.0
+Content-Type: multipart/alternative;
+ boundary="--==_mimepart_5946735ad19ad_5c9d3fe37163c790451fa";
+ charset=UTF-8
+Content-Transfer-Encoding: 7bit
+
+
+----==_mimepart_5946735ad19ad_5c9d3fe37163c790451fa
+Content-Type: text/plain;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+44OG44K544OI6Kyb576p44Gr44Kz44Oh44Oz44OI44GM44Gk44GN44G+44GX
+44Gf44CCCmh0dHA6Ly9oYW5kYWkudWxsYWJ1cy5jb20vY291cnNlcy8xCj09
+PT09PQpVbGxhYnVzCmh0dHA6Ly9oYW5kYWkudWxsYWJ1cy5jb20K
+
+----==_mimepart_5946735ad19ad_5c9d3fe37163c790451fa
+Content-Type: text/html;
+ charset=UTF-8
+Content-Transfer-Encoding: base64
+
+PHA+44OG44K544OI6Kyb576p44Gr44Kz44Oh44Oz44OI44GM44Gk44GN44G+
+44GX44Gf44CCPC9wPgo8cD4KICA8YSBocmVmPSJodHRwOi8vaGFuZGFpLnVs
+bGFidXMuY29tL2NvdXJzZXMvMSI+aHR0cDovL2hhbmRhaS51bGxhYnVzLmNv
+bS9jb3Vyc2VzLzE8L2E+CjwvcD4KPGJyPgo8YnI+CjxwPj09PT09PT09PC9w
+Pgo8cD5VbGxhYnVzPC9wPgo8cD5odHRwOi8vaGFuZGFpLnVsbGFidXMuY29t
+PC9wPgo=
+
+----==_mimepart_5946735ad19ad_5c9d3fe37163c790451fa--
+
+Redirected to http://localhost:3000/courses/1
+Completed 302 Found in 3514ms (ActiveRecord: 5.7ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-06-18 21:34:38 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[36mCourse Load (0.4ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m
+  [1m[35mUser Load (0.8ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36m (0.7ms)[0m  [1mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  UPDATE `courses` SET `pv` = 40, `updated_at` = '2017-06-18 12:34:38' WHERE `courses`.`id` = 1
+  [1m[36m (1.6ms)[0m  [1mCOMMIT[0m
+  [1m[35mUser Load (1.2ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1
+  [1m[36mRating Load (0.9ms)[0m  [1mSELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1[0m
+  Rendered courses/_likebutton.html.haml (0.6ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_commentform.html.haml (2.5ms)
+  [1m[35mComment Load (0.6ms)[0m  SELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1
+  Rendered courses/_commentbox.html.haml (33.7ms)
+  Rendered courses/show.html.haml within layouts/application (45.4ms)
+  Rendered layouts/_navbar.html.haml (2.0ms)
+Completed 200 OK in 307ms (Views: 290.9ms | ActiveRecord: 6.8ms)
+
+
+Started GET "/search/result?utf8=%E2%9C%93&q%5Bcoursename_cont%5D=&commit=Search" for ::1 at 2017-06-18 21:35:30 +0900
+Processing by MypageController#result as HTML
+  Parameters: {"utf8"=>"✓", "q"=>{"coursename_cont"=>""}, "commit"=>"Search"}
+  [1m[36mUser Load (2.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.5ms)[0m  SELECT DISTINCT COUNT(DISTINCT `courses`.`id`) FROM `courses`
+  [1m[36mCourse Load (0.5ms)[0m  [1mSELECT  DISTINCT `courses`.* FROM `courses` LIMIT 50 OFFSET 0[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1
+  [1m[36m (0.9ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 2[0m
+  [1m[35mRating Load (0.4ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 3 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mRating Load (0.7ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 4 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 4[0m
+  [1m[35mRating Load (0.3ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 5 LIMIT 1
+  [1m[36m (0.4ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 5[0m
+  Rendered mypage/result.html.haml within layouts/application (32.3ms)
+  Rendered layouts/_navbar.html.haml (2.1ms)
+Completed 200 OK in 376ms (Views: 363.6ms | ActiveRecord: 8.8ms)
+
+
+Started GET "/courses/1" for ::1 at 2017-06-18 21:35:50 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"1"}
+  [1m[35mCourse Load (17.3ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36mUser Load (88.0ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.5ms)[0m  [1mUPDATE `courses` SET `pv` = 41, `updated_at` = '2017-06-18 12:35:50' WHERE `courses`.`id` = 1[0m
+  [1m[35m (1.9ms)[0m  COMMIT
+  [1m[36mUser Load (1.3ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 1 LIMIT 1
+  Rendered courses/_likebutton.html.haml (0.6ms)
+  Rendered courses/_chartbox.html.haml (0.4ms)
+  Rendered courses/_commentform.html.haml (3.0ms)
+  [1m[36mComment Load (0.6ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  Rendered courses/_commentbox.html.haml (80.2ms)
+  Rendered courses/show.html.haml within layouts/application (113.5ms)
+  Rendered layouts/_navbar.html.haml (2.5ms)
+Completed 200 OK in 799ms (Views: 668.4ms | ActiveRecord: 110.3ms)
+
+
+Started GET "/courses/2" for ::1 at 2017-06-18 21:35:55 +0900
+Processing by CoursesController#show as HTML
+  Parameters: {"id"=>"2"}
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1
+  [1m[36mUser Load (0.7ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.2ms)[0m  BEGIN
+  [1m[36mSQL (0.6ms)[0m  [1mUPDATE `courses` SET `pv` = 5, `updated_at` = '2017-06-18 12:35:55' WHERE `courses`.`id` = 2[0m
+  [1m[35m (1.3ms)[0m  COMMIT
+  [1m[36mUser Load (0.6ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mRating Load (0.5ms)[0m  SELECT  `ratings`.* FROM `ratings` WHERE `ratings`.`courseid` = 2 LIMIT 1
+  Rendered courses/_likebutton.html.haml (1.1ms)
+  Rendered courses/_chartbox.html.haml (2.2ms)
+  Rendered courses/_commentform.html.haml (2.2ms)
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT `comments`.* FROM `comments` WHERE `comments`.`courseid` = 2[0m
+  Rendered courses/_commentbox.html.haml (5.5ms)
+  Rendered courses/show.html.haml within layouts/application (25.0ms)
+  Rendered layouts/_navbar.html.haml (2.6ms)
+Completed 200 OK in 333ms (Views: 319.3ms | ActiveRecord: 4.8ms)
+
+
+Started GET "/mypage/index" for ::1 at 2017-06-18 21:36:12 +0900
+Processing by MypageController#index as HTML
+  [1m[35mUser Load (0.6ms)[0m  SELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1
+  [1m[36mUser Load (0.5ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1 LIMIT 1[0m
+  [1m[35mCourse Load (0.5ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1
+  [1m[36m (0.5ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 1[0m
+  [1m[35mCourse Load (0.6ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1
+  [1m[36m (0.3ms)[0m  [1mSELECT COUNT(*) FROM `comments` WHERE `comments`.`courseid` = 3[0m
+  [1m[35mCourse Load (0.4ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 5 LIMIT 1
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 4 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 3 LIMIT 1  [["id", 3]]
+  [1m[36mCourse Load (0.3ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 2 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.4ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 14 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 13 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 5 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.6ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 4 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mComment Load (0.3ms)[0m  [1mSELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 3 LIMIT 1[0m
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mComment Load (0.4ms)[0m  SELECT  `comments`.* FROM `comments` WHERE `comments`.`id` = 2 LIMIT 1
+  [1m[36mCACHE (0.0ms)[0m  [1mSELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1[0m  [["id", 1]]
+  [1m[35mCACHE (0.0ms)[0m  SELECT  `courses`.* FROM `courses` WHERE `courses`.`id` = 1 LIMIT 1  [["id", 1]]
+  Rendered mypage/index.html.haml within layouts/application (26.7ms)
+  Rendered layouts/_navbar.html.haml (2.4ms)
+Completed 200 OK in 318ms (Views: 304.5ms | ActiveRecord: 6.7ms)
+
+
+Started DELETE "/users/sign_out" for ::1 at 2017-06-18 21:53:20 +0900
+Processing by Devise::SessionsController#destroy as HTML
+  Parameters: {"authenticity_token"=>"AyYytC7bH3k94YSkiMKgqdK3GUXgU9yIRRYECAFWQiEqNJ3dZWK3WT3pvhSAQq72HW0CMy6ygBxV4nDe+EDcNw=="}
+  [1m[36mUser Load (0.8ms)[0m  [1mSELECT  `users`.* FROM `users` WHERE `users`.`id` = 1  ORDER BY `users`.`id` ASC LIMIT 1[0m
+  [1m[35m (0.3ms)[0m  BEGIN
+  [1m[36m (0.2ms)[0m  [1mCOMMIT[0m
+Redirected to http://localhost:3000/
+Completed 302 Found in 9ms (ActiveRecord: 1.2ms)
+
+
+Started GET "/" for ::1 at 2017-06-18 21:53:20 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.7ms)
+  Rendered registration/index.html.haml within layouts/application (4422.5ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 5136ms (Views: 5133.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/description-0043a2034afd6f358ee91c320b729b8a289b3d361a90b86609d634811fde40f0.jpg" for ::1 at 2017-06-18 21:53:25 +0900
+
+
+Started GET "/" for ::1 at 2017-06-18 21:53:58 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.2ms)
+  Rendered registration/index.html.haml within layouts/application (48.3ms)
+  Rendered layouts/_navbar.html.haml (0.7ms)
+Completed 200 OK in 409ms (Views: 407.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for ::1 at 2017-06-18 21:55:15 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (70.5ms)
+  Rendered layouts/_navbar.html.haml (0.8ms)
+Completed 200 OK in 380ms (Views: 378.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-e4b64be0d8c72f78a8fba1d6c83f503cefe73b0600a3e8513ea9416732af18c2.css?body=1" for ::1 at 2017-06-18 21:55:16 +0900
+
+
+Started GET "/" for ::1 at 2017-06-18 21:56:19 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (69.9ms)
+  Rendered layouts/_navbar.html.haml (1.1ms)
+Completed 200 OK in 373ms (Views: 371.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-5234a0fe12bcb3c0b34ce03faa95265a5b7f98536404e954020ab1f358be4b84.css?body=1" for ::1 at 2017-06-18 21:56:20 +0900
+
+
+Started GET "/" for ::1 at 2017-06-18 21:56:37 +0900
+Processing by RegistrationController#index as HTML
+  Rendered registration/_news.html.haml (0.1ms)
+  Rendered registration/index.html.haml within layouts/application (80.3ms)
+  Rendered layouts/_navbar.html.haml (1.2ms)
+Completed 200 OK in 393ms (Views: 391.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/assets/css/toppage.self-95d25a15eeb2b1f2b45aa60390c8e77d8e82a7e74cfdcaa942eade463bc343dd.css?body=1" for ::1 at 2017-06-18 21:56:38 +0900
